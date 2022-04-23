@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/icomoon.css">
+<link rel="stylesheet" href="css/main.css">
+<title>Document</title>
+</head>
+<body>
+    <div style="padding: 0 1rem;">
+        <!-- header -->
+        <div>tester dfg</div>
+
+        <!-- menu -->
+        <aside>
+    <nav></nav>
+</aside>
+
+        <!-- content -->
+        <div class="test __icon-check">объект с иконкой</div>
+        <p>Простой текст</p>
+        <br/>
+
+        <h1>Заголовок H1</h1>
+        <h2>Заголовок H2</h2>
+        <h3>Заголовок H3</h3>
+        <br/>
+
+        <a href="#">Cсылка</a>
+        <br/>
+        <br/>
+
+        <div style="width: 480px;">
+            <div class="field">
+                <label for="f1" class="field__label">Адрес доставки</label>
+                <input id="f1" type="text" class="field__element" placeholder="Адрес"/>
+            </div>
+            <br/>
+
+            <div class="field">
+                <input type="text" class="field__element" placeholder="Адрес"/>
+            </div>
+            <br/>
+
+            <div class="field field--icon-right">
+                <div class="field__wrapper">
+                    <input type="text" class="field__element" placeholder="Адрес" value="lksdfsdfsdf"/>
+                    <div class="field__icon"><a href="#"><i class="icons __icon-eye-show"></i></a></div>
+                </div>
+                <!-- <a class="field__icon"></a> -->
+                <!-- <span class="field__icon"></span> -->
+            </div>
+            <br/>
+
+            <div class="field">
+                <input type="text" class="field__element" placeholder="Адрес" value="disabled" disabled/>
+            </div>
+            <br/>
+
+            <div class="field field--icon-left field--disabled">
+                <div class="field__wrapper">
+                    <input type="text" class="field__element" placeholder="Адрес" disabled/>
+                    <div class="field__icon"><a href="#"><i class="icons __icon-eye-show"></i></a></div>
+                </div>
+                <!-- <a class="field__icon"></a> -->
+                <!-- <span class="field__icon"></span> -->
+            </div>
+            <br/>
+
+            <div class="field field--error">
+                <input type="text" class="field__element" placeholder="Адрес"/>
+                <p class="field__error-message">Какой-то текст ошибки</p>
+            </div>
+        </div>
+        <br/>
+        <br/>
+
+        <div style="width: 480px;">
+            <button type="button" class="btn btn--primary">Primary M</button>
+            <input type="submit" class="btn btn--primary" value="Primary M input">
+            <button type="button" class="btn btn--primary" disabled>Primary M disable</button>
+            <button type="button" class="btn btn--primary _disabled">Primary M disable class</button>
+            <button type="button" class="btn btn--primary btn--icon"><span>Primary M</span><i class="icons __icon-plus-only"></i></button>
+            <button type="button" class="btn btn--primary btn--icon-only"><i class="icons __icon-plus-only"></i></button>
+            <br/>
+            <br/>
+            <button type="button" class="btn btn--secondary">Secondary M</button>
+            <button type="button" class="btn btn--secondary" disabled>Secondary M disabled</button>
+            <button type="button" class="btn btn--secondary btn--icon"><span>Secondary M</span><i class="icons __icon-plus-only"></i></button>
+            <button type="button" class="btn btn--secondary btn--icon-only"><i class="icons __icon-plus-only"></i></button>
+        </div>
+        <br/>
+
+        <!-- footer -->
+        
+    </div>
+</body>
+
+<script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+</html>

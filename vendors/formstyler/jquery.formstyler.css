@@ -1,0 +1,196 @@
+.jq-checkbox,
+.jq-radio {
+	position: relative;
+	display: inline-block;
+	overflow: hidden;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+.jq-checkbox input,
+.jq-radio input {
+	position: absolute;
+	z-index: -1;
+	margin: 0;
+	padding: 0;
+	opacity: 0;
+}
+.jq-file {
+	position: relative;
+	display: inline-block;
+	overflow: hidden;
+}
+.jq-file input {
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: auto;
+	margin: 0;
+	padding: 0;
+	opacity: 0;
+	font-size: 100px;
+	line-height: 1em;
+}
+.jq-file__name {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.jq-selectbox,
+.jq-select-multiple {
+	position: relative;
+	display: inline-block;
+}
+.jq-selectbox select,
+.jq-select-multiple select {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	opacity: 0;
+}
+.jq-selectbox li,
+.jq-select-multiple li {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	white-space: nowrap;
+}
+.jq-selectbox {
+	z-index: 10;
+}
+.jq-selectbox__select {
+	position: relative;
+}
+.jq-selectbox__select-text {
+	overflow: hidden;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.jq-selectbox__dropdown {
+	position: absolute;
+}
+.jq-selectbox__search input {
+	-webkit-appearance: textfield;
+}
+.jq-selectbox__search input::-webkit-search-cancel-button,
+.jq-selectbox__search input::-webkit-search-decoration {
+	-webkit-appearance: none;
+}
+.jq-selectbox__dropdown ul {
+	position: relative;
+	overflow: auto;
+	overflow-x: hidden;
+	list-style: none;
+	-webkit-overflow-scrolling: touch;
+}
+.jq-select-multiple ul {
+	position: relative;
+	overflow-x: hidden;
+	-webkit-overflow-scrolling: touch;
+}
+.jq-number {
+	display: inline-block;
+}
+.jq-number__field input {
+	-moz-appearance: textfield;
+	text-align: left; /* для Opera Presto */
+}
+.jq-number__field input::-webkit-inner-spin-button,
+.jq-number__field input::-webkit-outer-spin-button {
+	margin: 0; /* в каких-то браузерах присутствует отступ */
+	-webkit-appearance: none;
+}
+
+/* Select */
+.jq-selectbox {
+	cursor: pointer;
+	font-size: 0;
+	vertical-align: middle;
+}
+.jq-selectbox__select {
+	display: inline-block;
+	color: #fff;
+	line-height: 1;
+	vertical-align: top;
+}
+.fs-select._big .jq-selectbox__select {
+	font-size: 16px;
+	padding-right: 15px;
+	text-transform: uppercase;
+}
+.fs-select._small .jq-selectbox__select {
+	border: 1px solid #fff;
+	font-size: 14px;
+	padding: 2px 15px 2px 5px ;
+}
+.jq-selectbox__select:hover,
+.jq-selectbox.dropdown .jq-selectbox__select {
+	color: #EB5757;
+}
+.jq-selectbox__select-text {
+	width: 100% !important;
+}
+.jq-selectbox__trigger {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 12px;
+	height: 100%;
+}
+.jq-selectbox__trigger-arrow {
+	background: url(../../img/icons/17.1.svg) 0 0 no-repeat;
+	margin-top: -2px;
+	position: absolute;
+	top: 50%;
+	right: 3px;
+	width: 7px;
+	height: 4px;
+}
+.jq-selectbox:hover .jq-selectbox__trigger-arrow {
+	background-image: url(../../img/icons/17.2.svg);
+}
+.jq-selectbox.dropdown .jq-selectbox__trigger-arrow{
+	background-image: url(../../img/icons/17.2.svg);
+	-moz-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	-webkit-transform: rotate(180deg);
+	-o-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
+.jq-selectbox__dropdown {
+	background: #FFF;
+	box-shadow: 0 2px 10px rgba(0,0,0,.2);
+	border-radius: 5px;
+	box-sizing: border-box;
+	padding: 10px 0;
+	width: 100%;
+	margin-top: 2px;
+}
+.jq-selectbox ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+.jq-selectbox li {
+	color: #000;
+	font-size: 14px;
+	line-height: 1;
+	padding: 6px 15px 7px 15px;
+}
+.jq-selectbox li.sel {
+	background-color: #efefef;
+}
+.jq-selectbox li:hover {
+	background-color: #EB5757;
+	color: #FFF;
+}
