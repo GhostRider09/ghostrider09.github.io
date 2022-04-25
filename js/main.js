@@ -13,5 +13,17 @@ $(document).ready(function(){
         }
         
         e.preventDefault();
+    })
+    .on('click', '._show-main-menu', function(e){
+        $('._main-menu-area').addClass('__opened');
+        $('body').addClass('_open-window');
+
+        e.preventDefault;
+    })
+    .on('click', '._close', function(e){
+        $( $(this).data('target') ).removeClass('__opened');
+        $('body').removeClass('_open-window');
+
+        e.preventDefault;
     });
 });

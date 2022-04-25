@@ -96,12 +96,14 @@
 }
 .__icon-close:before {
   content: "\e914";
+  font-size: 13px;
 }
 .__icon-copy:before {
   content: "\e915";
 }
 .__icon-copy-dir:before {
   content: "\e916";
+  font-size: 18px;
 }
 .__icon-diamond:before {
   content: "\e917";
@@ -111,6 +113,7 @@
 }
 .__icon-doc:before {
   content: "\e919";
+  font-size: 20px;
 }
 .__icon-dog-mail:before {
   content: "\e91a";
@@ -170,6 +173,7 @@
 }
 .__icon-manager:before {
   content: "\e92c";
+  font-size: 22px;
 }
 .__icon-message:before {
   content: "\e92d";
@@ -185,27 +189,32 @@
 }
 .__icon-notice-ring:before {
   content: "\e931";
+  font-size: 20px;
 }
 .__icon-notice-ring-active:before {
   content: "\e932";
+  font-size: 20px;
 }
 .__icon-page:before {
   content: "\e933";
 }
 .__icon-people:before {
   content: "\e934";
+  font-size: 19px;
 }
 .__icon-percent:before {
   content: "\e935";
 }
 .__icon-phone:before {
   content: "\e936";
+  font-size: 18px;
 }
 .__icon-plus:before {
   content: "\e937";
 }
 .__icon-plus-in-circle:before {
   content: "\e938";
+  font-size: 20px;
 }
 .__icon-poker-face:before {
   content: "\e939";
@@ -251,6 +260,7 @@
 }
 .__icon-user:before {
   content: "\e947";
+  font-size: 21px;
 }
 .__icon-very-laugh:before {
   content: "\e948";

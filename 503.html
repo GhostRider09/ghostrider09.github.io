@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="css/main.css">
 <title>Document</title>
 </head>
-<body class="no-auth">
+<body class="error-inner-pages">
     <div class="container">
         <!-- header -->
         <header>
@@ -40,7 +40,6 @@
 </header>
 
         <div class="content-wrapper">
-            
             <!-- menu -->
             <aside class="side-area _main-menu-area">    
     <div class="side-area__content">
@@ -85,41 +84,21 @@
 </aside>
 
             <!-- content -->
-            <div class="page-content auth-page">
-                <div class="auth-block">
-                    <div class="auth-block__logo">
-                        <img src="img/logo-01.svg" alt="auth logo">
-                    </div>
-                    <div class="auth-block__title">Вход в личный кабинет дилера</div>
-                    <form action="" class="auth-block__form form">
-                        <div class="form__body">
-                            <div class="form__field field">
-                                <input type="text" class="field__element" placeholder="Логин"/>
-                            </div>
-                            <div class="form__field field field--icon-right --field--disabled">
-                                <div class="field__wrapper">
-                                    <input type="password" class="field__element" placeholder="Адрес" value="lksdfsdfsdf"/>
-                                    <div class="field__icon"><i class="icons __icon-eye-hide _switch-pass"></i></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form__footer">
-                            <input type="submit" class="auth-block__btn btn btn--primary" value="Войти"/>
-                        </div>
-                    </form>
-                    <div class="auth-block__footer">
-                        <p>Пожалуйста, обратитесь к вашему менеджеру продаж, если не знаете или забыли данные для входа</p>
-                    </div>
-                </div>                
+            <div class="page-content page-content--not-found not-found-page">
+                <div class="not-found-page__container">
+                    <div class="not-found-page__number"></div>
+                    <div class="not-found-page__text">Страница не найдена</div>
+                </div>
+                
+                                
             </div>
-
         </div>
 
         <!-- овелей с волнами -->
         <div class="overlay-half">
             <div class="overlay-half__figure"></div>
         </div>
-    </div>   
+    </div>
 </body>
 
 <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
