@@ -546,11 +546,73 @@ header {
 .page-content {
   width: calc(100% - 240px);
   position: relative;
-  z-index: 4;
   display: inline-block;
   vertical-align: top;
   font-size: 1rem;
   height: 100%;
+  background-color: #F4F5F9;
+  padding: 1.5rem;
+}
+
+.page-content--bg2 {
+  background-color: #FFFFFF;
+}
+
+.page-title {
+  padding: 0.25rem 0 1.75rem;
+}
+
+.table {
+  display: table;
+  width: 100%;
+}
+
+.table__tr {
+  display: table-row;
+}
+
+.table__tr.__head {
+  padding: 0 .25rem;
+  background: #0E3F96;
+}
+
+.table__td {
+  display: table-cell;
+  padding: 1rem;
+  font-size: 0.875rem;
+  line-height: 128.57143%;
+  vertical-align: top;
+}
+
+.__head .table__td {
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 150%;
+  padding: 0.75rem 1rem;
+}
+
+.table__order-link.__changed {
+  font-weight: 600;
+  padding-right: 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+.table__order-link.__changed:after {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 0.5rem;
+  height: 0.5rem;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  right: 0;
+  border-radius: .25rem;
+  background-color: #FF9900;
 }
 
 .btn {
@@ -796,6 +858,7 @@ header {
   position: relative;
   z-index: 3;
   min-height: 480px;
+  background-color: transparent;
 }
 
 .auth-block {
@@ -852,6 +915,11 @@ header {
   justify-content: center;
 }
 
+.not-found-page__container {
+  position: relative;
+  z-index: 4;
+}
+
 .not-found-page__number {
   display: block;
   width: 368px;
@@ -885,6 +953,8 @@ header {
 .faluire-page__container {
   color: #ffffff;
   text-align: center;
+  position: relative;
+  z-index: 4;
 }
 
 .faluire-page__image {
@@ -907,6 +977,20 @@ header {
   font-size: 20px;
   line-height: 140%;
   padding-top: 0.5rem;
+}
+
+.__txt-right {
+  text-align: right;
+}
+
+.__rub:after {
+  content: "₽";
+  display: inline-block;
+  padding-left: 0.25em;
+}
+
+.__nowrap {
+  white-space: nowrap;
 }
 
 @media (max-width: 767px) {
@@ -999,6 +1083,73 @@ header {
 
   .page-content {
     width: 100%;
+    padding: 1rem;
+  }
+
+  .page-title {
+    padding: .5rem 0 1.5rem;
+  }
+
+  .table {
+    display: block;
+  }
+
+  .table__tr.__head {
+    display: none;
+  }
+
+  .table__tr {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    padding-bottom: 0.5rem;
+  }
+
+  .table__tr:not(:last-child) {
+    margin-bottom: 0.5rem;
+  }
+
+  .table__td {
+    padding: 2px 0.75rem;
+  }
+
+  .table__td--order {
+    padding: 0.75rem;
+  }
+
+  .table__td--mob-footer {
+    padding: 0.25rem .75rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+
+  .table__td--mob-footer:before {
+    display: block;
+    content: attr(data-title);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #9599AC;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 20%;
+    flex: 0 0 20%;
+    -moz-text-align-last: left;
+    text-align-last: left;
+  }
+
+  .table__td--mob-footer.table__td--first-footer-row {
+    border-top: 1px solid #E3E3ED;
+    margin-top: .625rem;
+    padding-top: 0.75rem;
   }
 
   .btn {
@@ -1095,6 +1246,23 @@ header {
   .faluire-page__image {
     width: 300px;
     height: 180px;
+  }
+}
+
+@media (max-width: 399px) {
+  h1 {
+    font-size: 28px;
+    line-height: 128.57143%;
+  }
+
+  h2 {
+    font-size: 24px;
+    line-height: 116.66667%;
+  }
+
+  h3 {
+    font-size: 18px;
+    line-height: 133.33333%;
   }
 }
 
