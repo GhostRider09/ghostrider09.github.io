@@ -39,6 +39,7 @@
 }
 .__icon-subtract-line:before {
   content: "\e94f";
+  font-size: 1.5rem;
 }
 .__icon-arrow-down:before {
   content: "\e900";
@@ -197,6 +198,7 @@
 }
 .__icon-page:before {
   content: "\e933";
+  font-size: 18px;
 }
 .__icon-people:before {
   content: "\e934";
