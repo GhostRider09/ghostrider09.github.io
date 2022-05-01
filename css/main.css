@@ -1177,7 +1177,7 @@ header {
 }
 
 .order-form__summary {
-  position: absolute;
+  position: fixed;
   width: 100%;
   bottom: 0;
   left: 0;
@@ -1194,7 +1194,6 @@ header {
   justify-content: flex-end;
   -webkit-box-shadow: 0px 0px 20px rgba(0, 23, 69, 0.08);
   box-shadow: 0px 0px 20px rgba(0, 23, 69, 0.08);
-  position: fixed;
 }
 
 .order-form__sum {
