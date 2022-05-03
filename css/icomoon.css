@@ -91,6 +91,7 @@
 }
 .__icon-checkbox-checked:before {
   content: "\e910";
+  font-size: 18px;
 }
 .__icon-clock:before {
   content: "\e913";
