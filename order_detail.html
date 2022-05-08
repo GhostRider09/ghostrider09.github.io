@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/icomoon.css">
+<link rel="stylesheet" href="vendors/formstyler/jquery.formstyler.css">
+<link rel="stylesheet" href="css/formstyler.aquadoor.theme.css">
+<link rel="stylesheet" href="css/main.css">
+<title>Document</title>
+</head>
+<body class="">
+    <div class="container">
+        <!-- header -->
+        <header>
+    <div class="head-logo">
+        <div class="head-logo__burger icon __icon-burger _show-main-menu"></div>
+        <div class="head-logo__logo"><a href="#"><img src="../img/logo-02.svg" alt="Aquadoor"></a></div>
+        <div class="head-logo__notifications">
+            <a href="#" class="head-logo__notification icon __icon-notice-ring-active"></a>
+        </div>
+    </div>
+    <div class="head-info">
+        <div class="head-info__contacts">
+            <a href="tel:88003502198" class="head-info__contact icon __icon-phone">8 800 350 2198</a>
+        </div>
+        <div class="head-info__cabinet">
+            <!-- предполагаю, что если отсюда будет делаться выбор, то он будет на модалке -->
+            <a href="#" class="head-info__label-cabinet icon __icon-user"><span>Иваненко Сигизмунд Венеаминович - (ИП)</span></a>
+        </div>
+        <div class="head-info__notifications">
+            <!-- notice-ring-active -->
+            <a href="#" class="head-info__notification icon __icon-notice-ring"></a>
+        </div>
+    </div>
+</header>
+
+        <div class="content-wrapper">
+            <!-- menu -->
+            <aside class="side-area _main-menu-area">    
+    <div class="side-area__content">
+        <button type="button" class="side-area__close close-btn icon __icon-close-only _close" data-target="._main-menu-area"></button>
+        
+        <div class="side-area__cabinet">
+            <a href="#" class="side-area__label-cabinet icon __icon-user"><span>Иваненко Сигизмунд Венеаминович - (ИП)</span></a>
+        </div>
+        
+        <nav class="main-menu">
+            <ul class="main-menu__group">
+                <li class="main-menu__item">
+                    <a href="#" class="main-menu__link icon __icon-plus-in-circle">Сделать заказ</a>
+                </li>
+                <li class="main-menu__item main-menu__item--selected">
+                    <span class="main-menu__link icon __icon-page">История заказов</span>
+                </li>
+                <li class="main-menu__item">
+                    <a href="#" class="main-menu__link icon __icon-people">Заявки</span></a>
+                </li>
+            </ul>
+            <ul class="main-menu__group">
+                <li class="main-menu__item">
+                    <a href="#" class="main-menu__link icon __icon-copy-dir">Маркетинг</a>
+                </li>
+                <li class="main-menu__item">
+                    <a href="#" class="main-menu__link icon __icon-doc">Новости</a>
+                </li>
+                <li class="main-menu__item">
+                    <a href="#" class="main-menu__link icon __icon-manager">Поддержка</a>
+                </li>
+            </ul>
+        </nav>
+        
+        <footer>
+            <div class="menu-contacts">
+                <a href="tel:88003502198" class="menu-contacts__item icon __icon-phone">8 800 350 2198</a>
+            </div>
+        </footer>
+    </div>
+    <div class="side-area__overlay"></div>
+</aside>
+
+            <!-- content -->
+            <div class="page-content page-content--bg2">
+                <h1 class="page-title">Заказ №12345</h1>
+
+                <div class="order-tabs tabs _tabs">
+                    <nav class="order-tabs__items tabs__items">
+                        <div class="tabs__item _active" data-tab="_tab-01"><span>Информация</span></div>
+                        <div class="tabs__item" data-tab="_tab-02"><span>Заказ</span></div>
+                        <div class="tabs__item" data-tab="_tab-03"><span>История</span></div>
+                    </nav>
+                    <div class="order-tabs__body tabs__body">
+                        <div class="tabs__block _tab-01">
+                            <div class="order-tabs__info-tab">
+
+                                <!-- информация -->
+                                <div class="info-block">
+                                    <div class="info-block__header"><span class="info-block__title __subtitle2">Информация</span></div>
+                                    <div class="info-block__body">
+                                        <div class="property-list order-props-list">
+                                            <div class="property-list__item">
+                                                <div class="property-list__title">Дата</div>
+                                                <div class="property-list__value">28 фев, 2020</div>
+                                            </div>
+                                            <div class="property-list__item">
+                                                <div class="property-list__title">Статус</div>
+                                                <div class="property-list__value">Отменен</div>
+                                            </div>
+                                            <div class="property-list__item">
+                                                <div class="property-list__title">Грузополучатель</div>
+                                                <div class="property-list__value">ИП "Иванов Петр"</div>
+                                            </div>
+                                            <div class="property-list__item">
+                                                <div class="property-list__title">Адрес</div>
+                                                <div class="property-list__value">г. Москва, ул. Плеханова, 26 корпус 2</div>
+                                            </div>
+                                            <div class="property-list__item">
+                                                <div class="property-list__title">Контрагент</div>
+                                                <div class="property-list__value">ИП "Иванов Петр"</div>
+                                            </div>
+                                            <div class="property-list__item">
+                                                <div class="property-list__title">Договор</div>
+                                                <div class="property-list__value">Договор №345</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- действия -->
+                                <div class="info-block order-tabs__actions-block">
+                                    <div class="info-block__header"><span class="info-block__title __subtitle2">Действия</span></div>
+                                    <div class="info-block__body">
+                                        <div class="order-actions">
+                                            <div class="order-actions__action">
+                                                <button type="button" class="btn btn--primary btn--icon order-actions__button">
+                                                    <span>Согласовать<i class="icons __icon-check-only"></i></span></i>
+                                                </button>
+                                                <div class="order-actions__hint">Пожалуйста, проверьте верность содержания заказа. После согласования изменить заказ будет нельзя</div>
+                                            </div>
+                                            <div class="order-actions__action">
+                                                <button type="button" class="btn btn--secondary btn--icon order-actions__button">
+                                                    <span>Редактировать<i class="icons __icon-edit-pencil"></i></span></i>
+                                                </button>
+                                                <div class="order-actions__hint">Нажмите, если хотите изменить ваш заказ. Изменение будет недоступно после того, как вы согласуете заказ</div>
+                                            </div>
+                                            <div class="order-actions__action">
+                                                <button type="button" class="btn btn--secondary btn--icon order-actions__button">
+                                                    <span>Отменить<i class="icons __icon-close-only"></i></span></i>
+                                                </button>
+                                                <div class="order-actions__hint">Нажмите, если хотите отменить заказ</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- форма -->
+                                <div class="info-block">
+                                    <div class="info-block__body">
+                                        <form action="#" class="form comment-form">
+                                            <div class="form__body">
+                                                <div class="form__field field">
+                                                    <label class="field__label">Написать сообщение</label>
+                                                    <textarea class="field__element" placeholder="Сообщение" name=""></textarea>
+                                                </div>
+                                                <div class="form__field field field--file">
+                                                    <label>
+                                                        <input type="file" class="field__element _inputFile" required/><span class="field__btn-text __icon-blank _text">Прикрепить файл</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="form__error">
+                                                <p>ошибка 1</p>
+                                            </div>
+                                            <div class="form__footer comment-form__footer">
+                                                <input type="submit" class="comment-form__submit btn btn--primary" value="Отправить"/>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="tabs__block _tab-02">
+                            
+                            <div class="order-tabs__order-list">
+                                <div class="table">
+                                    <div class="table__tr __head">
+                                        <div class="table__td">Номенклатура</div>
+                                        <div class="table__td table__td--features">Характеристики</div>
+                                        <div class="table__td __txt-right">Количество</div>
+                                        <div class="table__td __txt-right">Сумма</div>
+                                    </div>
+                                    <div class="table__tr">
+                                        <div class="table__td">Дверное полотно ZARGO Duo 600 скандинавский дуб с/о (армированное)</div>
+                                        <div class="table__td table__td--features" data-title="Характеристики">Заполнение пенополистеролом, отбойная пластина 300 мм с двух сторон, Усиление под доводчик, Ф2</div>
+                                        <div class="table__td table__td--mob-footer table__td--first-footer-row __txt-right" data-title="Количество"><span>12</span></div>
+                                        <div class="table__td table__td--mob-footer __txt-right" data-title="Сумма"><span class="__nowrap __rub">2 344 000</span></div>
+                                    </div>
+                                    <div class="table__tr">
+                                        <div class="table__td">Дверное полотно ZARGO Duo 600 скандинавский дуб с/о (армированное)</div>
+                                        <div class="table__td table__td--features" data-title="Характеристики">Заполнение пенополистеролом, отбойная пластина 300 мм с двух сторон, Усиление под доводчик, Ф2</div>
+                                        <div class="table__td table__td--mob-footer table__td--first-footer-row __txt-right" data-title="Количество"><span>12</span></div>
+                                        <div class="table__td table__td--mob-footer __txt-right" data-title="Сумма"><span class="__nowrap __rub">2 344 000</span></div>
+                                    </div>
+                                    <div class="table__tr">
+                                        <div class="table__td">Дверное полотно ZARGO Duo 600 скандинавский дуб с/о (армированное)</div>
+                                        <div class="table__td table__td--features" data-title="Характеристики">Заполнение пенополистеролом, отбойная пластина 300 мм с двух сторон, Усиление под доводчик, Ф2</div>
+                                        <div class="table__td table__td--mob-footer table__td--first-footer-row __txt-right" data-title="Количество"><span>12</span></div>
+                                        <div class="table__td table__td--mob-footer __txt-right" data-title="Сумма"><span class="__nowrap __rub">2 344 000</span></div>
+                                    </div>
+                                </div>
+                                <div class="order-tabs__order-summarize">
+                                    <p>Общая сумма: <span class="__nowrap __rub">2 344 000</span></p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="tabs__block _tab-03">
+                            
+                            <div class="info-block">
+                                <div class="info-block__body">
+
+                                    <div class="comment comment--good">
+                                        <div class="comment__icon __icon-check-only"></div>
+                                        <div class="comment__content">
+                                            <div class="comment__header">
+                                                <div class="comment__label">Сервисное сообщение</div>
+                                                <div class="comment__date">12 мар, 2020. 15:32</div>
+                                            </div>
+                                            <div class="comment__body">
+                                                <p>Изменился статус заказа с “В обработке” на “Скоро ответим”</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="comment comment--out">
+                                        <div class="comment__icon __icon-arrow-left"></div>
+                                        <div class="comment__content">
+                                            <div class="comment__header">
+                                                <div class="comment__label">ООО “Повезло”</div>
+                                                <div class="comment__date">12 мар, 2020. 15:32</div>
+                                            </div>
+                                            <div class="comment__body">
+                                                <p>Выслал договор</p>
+                                                <a href="#" class="comment__file __icon-blank">Договор_28.02.doc</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="comment comment--in">
+                                        <div class="comment__icon __icon-arrow-left"></div>
+                                        <div class="comment__content">
+                                            <div class="comment__header">
+                                                <div class="comment__label">Менеджер</div>
+                                                <div class="comment__date">12 мар, 2020. 15:32</div>
+                                            </div>
+                                            <div class="comment__body">
+                                                <p>Отгрузка будет завтра в 12:00</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="comment comment--message">
+                                        <div class="comment__icon __icon-message"></div>
+                                        <div class="comment__content">
+                                            <div class="comment__header">
+                                                <div class="comment__label">Сервисное сообщение</div>
+                                                <div class="comment__date">12 мар, 2020. 15:32</div>
+                                            </div>
+                                            <div class="comment__body">
+                                                <p>Заказ был вами согласован и принят в производство. Дальнейшее изменение заказа невозможно. Обратите внимание, что для запуска в производство необходимо произвести оплату. Счет в скором времени будет приложен сюда</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                
+                
+                                
+            </div>
+        </div>
+
+        <!-- овелей с волнами -->
+        <div class="overlay-half">
+            <div class="overlay-half__figure"></div>
+        </div>
+    </div>
+</body>
+
+<script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="vendors/formstyler/jquery.formstyler.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+</html>

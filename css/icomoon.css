@@ -70,6 +70,7 @@
 }
 .__icon-blank:before {
   content: "\e909";
+  font-size: 20px;
 }
 .__icon-burger:before {
   content: "\e90a";
@@ -128,6 +129,7 @@
 }
 .__icon-edit-pencil:before {
   content: "\e91d";
+  font-size: 18px;
 }
 .__icon-exit:before {
   content: "\e91e";

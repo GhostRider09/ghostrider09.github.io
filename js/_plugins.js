@@ -153,6 +153,40 @@
             });
         };
 
+        $.fn.tabs = function () {
+            $(this).each(function () {
+                const $container = $(this);
+                var _this = this;
+
+                if ( _this.inited ) {
+                    return false;
+                }
+
+                $container.find('.tabs__item').on('click', function(){
+                    let $currentActiveTab = $container.find('.tabs__item._active');
+
+                    if ( $currentActiveTab.data('tab') === $(this).data('tab') ) {
+                        return false;
+                    }
+
+                    $currentActiveTab.removeClass('_active');
+                    $container.find('.tabs__block').fadeOut(100);
+
+                    $(this).addClass('_active');
+                    $container.find('.tabs__block.' + $(this).data('tab')).fadeIn(300);
+                });
+
+                let $initActiveTab = $container.find('.tabs__item._active');
+                if ( $initActiveTab.length ) {
+                    $container.find('.tabs__block.' + $initActiveTab.data('tab')).show();
+                } else {
+                    $container.find('.tabs__item').eq(0).trigger('click');
+                }
+
+                _this.inited = true;
+            });
+        }
+
         $.fn.modernModal = function () {
             $(this).each(function () {
                 var $popup = $(this);

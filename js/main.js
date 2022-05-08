@@ -153,6 +153,40 @@
             });
         };
 
+        $.fn.tabs = function () {
+            $(this).each(function () {
+                const $container = $(this);
+                var _this = this;
+
+                if ( _this.inited ) {
+                    return false;
+                }
+
+                $container.find('.tabs__item').on('click', function(){
+                    let $currentActiveTab = $container.find('.tabs__item._active');
+
+                    if ( $currentActiveTab.data('tab') === $(this).data('tab') ) {
+                        return false;
+                    }
+
+                    $currentActiveTab.removeClass('_active');
+                    $container.find('.tabs__block').fadeOut(100);
+
+                    $(this).addClass('_active');
+                    $container.find('.tabs__block.' + $(this).data('tab')).fadeIn(300);
+                });
+
+                let $initActiveTab = $container.find('.tabs__item._active');
+                if ( $initActiveTab.length ) {
+                    $container.find('.tabs__block.' + $initActiveTab.data('tab')).show();
+                } else {
+                    $container.find('.tabs__item').eq(0).trigger('click');
+                }
+
+                _this.inited = true;
+            });
+        }
+
         $.fn.modernModal = function () {
             $(this).each(function () {
                 var $popup = $(this);
@@ -279,11 +313,48 @@
 
 $(document).ready(function(){
     /// init plugins
+    $('._tabs').tabs();
     $('._counter').counterField();
     // $('._counter').trigger('switchDisabled', true);
     // $('._counter').trigger('switchError', true);
     $('.inputRadio, .inputCheckbox, .inputSelect').styler({
         selectSearch: true
+    });
+    $('body').on('change', '._inputFile', function(){
+        let file = this.files[0], sBtnText = '',
+            oParentBlock = $(this).closest('.field');
+            
+        if ( typeof file !== "undefined" ) {
+            let name = file.name,
+                size = file.size,
+                type = file.type,
+                maxSize = 50000;//26214400;
+
+                
+
+            sBtnText = name + ' [' + ( (size / 1024).toFixed( 0 ) > 1000 ? (size / 1024 / 1024).toFixed( 2 ) + 'Мб]' : (size / 1024).toFixed( 2 ) + 'Кб]' );
+            if ( size >= maxSize ) {
+                oParentBlock.addClass('field--error');
+                oParentBlock.find( 'input[type="file"]' ).val('');
+                if ( !oParentBlock.find( '.field__error-message' ).length ) {
+                    oParentBlock.append( '<p class="field__error-message"></p>' );
+                }
+                oParentBlock.find( '.field__error-message' ).html('Превышен масимальный размер файла (25Мб)');
+            } else {
+                oParentBlock.removeClass('field--error').find( '.field__error-message' ).remove();
+            }
+            
+            oParentBlock.find( '._text' ).removeClass('__icon-blank').text( sBtnText );
+        } else {
+            oParentBlock.find( '._text' ).addClass('__icon-blank').text( 'Прикрепите файл' );
+            oParentBlock.find( '.field__error-message' ).remove();
+            
+            if ( !$(this).prop('required') ) {
+                oParentBlock.removeClass('field--error');
+            } else {
+                oParentBlock.addClass('field--error');
+            }
+        }
     });
 
     window.bUnlock = true;

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/icomoon.css">
+<link rel="stylesheet" href="vendors/formstyler/jquery.formstyler.css">
+<link rel="stylesheet" href="css/formstyler.aquadoor.theme.css">
+<link rel="stylesheet" href="css/main.css">
+<title>Document</title>
+</head>
+<body class="order-type-2 no-title">
+    <div class="container">
+        <!-- header -->
+        <header>
+    <div class="head-logo">
+        <div class="head-logo__burger icon __icon-burger _show-main-menu"></div>
+        <div class="head-logo__logo"><a href="#"><img src="../img/logo-02.svg" alt="Aquadoor"></a></div>
+        <div class="head-logo__notifications">
+            <a href="#" class="head-logo__notification icon __icon-notice-ring-active"></a>
+        </div>
+    </div>
+    <div class="head-info">
+        <div class="head-info__contacts">
+            <a href="tel:88003502198" class="head-info__contact icon __icon-phone">8 800 350 2198</a>
+        </div>
+        <div class="head-info__cabinet">
+            <!-- предполагаю, что если отсюда будет делаться выбор, то он будет на модалке -->
+            <a href="#" class="head-info__label-cabinet icon __icon-user"><span>Иваненко Сигизмунд Венеаминович - (ИП)</span></a>
+        </div>
+        <div class="head-info__notifications">
+            <!-- notice-ring-active -->
+            <a href="#" class="head-info__notification icon __icon-notice-ring"></a>
+        </div>
+    </div>
+</header>
+
+        <div class="content-wrapper">
+            <!-- menu -->
+            <aside class="side-area _main-menu-area">    
+    <div class="side-area__content">
+        <button type="button" class="side-area__close close-btn icon __icon-close-only _close" data-target="._main-menu-area"></button>
+        
+        <div class="side-area__cabinet">
+            <a href="#" class="side-area__label-cabinet icon __icon-user"><span>Иваненко Сигизмунд Венеаминович - (ИП)</span></a>
+        </div>
+        
+        <nav class="main-menu">
+            <ul class="main-menu__group">
+                <li class="main-menu__item">
+                    <a href="#" class="main-menu__link icon __icon-plus-in-circle">Сделать заказ</a>
+                </li>
+                <li class="main-menu__item main-menu__item--selected">
+                    <span class="main-menu__link icon __icon-page">История заказов</span>
+                </li>
+                <li class="main-menu__item">
+                    <a href="#" class="main-menu__link icon __icon-people">Заявки</span></a>
+                </li>
+            </ul>
+            <ul class="main-menu__group">
+                <li class="main-menu__item">
+                    <a href="#" class="main-menu__link icon __icon-copy-dir">Маркетинг</a>
+                </li>
+                <li class="main-menu__item">
+                    <a href="#" class="main-menu__link icon __icon-doc">Новости</a>
+                </li>
+                <li class="main-menu__item">
+                    <a href="#" class="main-menu__link icon __icon-manager">Поддержка</a>
+                </li>
+            </ul>
+        </nav>
+        
+        <footer>
+            <div class="menu-contacts">
+                <a href="tel:88003502198" class="menu-contacts__item icon __icon-phone">8 800 350 2198</a>
+            </div>
+        </footer>
+    </div>
+    <div class="side-area__overlay"></div>
+</aside>
+
+            <!-- content -->
+            <div class="page-content">
+
+                <h1 class="page-title">Новый заказ - оформление заказа</h1>
+
+                <form action="#" class="form order-form">
+                 
+                    <div class="info-block order-form__block">
+                        <div class="info-block__header order-form__block-header">
+                            <span class="info-block__title __h1">Оформление заказа</span>
+                        </div>
+                        <div class="info-block__body order-form__block-body">
+                            <!-- Доставка -->
+                            <div class="form-section">
+                                <div class="form-section__title __h3">Доставка</div>
+                                <div class="form__field field">
+                                    <label for="f1" class="field__label">Грузополучатель</label>
+                                    <input id="f1" type="text" class="field__element" placeholder="Грузополучатель"/>
+                                </div>
+                                <div class="form__field field">
+                                    <label for="f2" class="field__label">Адрес доставки</label>
+                                    <input id="f2" type="text" class="field__element" placeholder="Адрес"/>
+                                </div>
+                            </div>
+                            
+                            <!-- Оплата -->
+                            <div class="form-section">
+                                <div class="form-section__title __h3">Оплата</div>
+                                <div class="form__field field field--select">
+                                    <label for="s1" class="field__label">Контрагент</label>
+                                    <select name="s1" class="field__element inputSelect" data-placeholder="Выбрать">
+                                        <option value=""></option>
+                                        <option value="1">Пункт 01</option>
+                                        <option value="2">Пункт 02</option>
+                                        <option value="3">Пункт 03</option>
+                                    </select>
+                                </div>
+                                <div class="form__field field field--select">
+                                    <label for="s2" class="field__label">Договор</label>
+                                    <select name="s2" class="field__element inputSelect" data-placeholder="Выбрать">
+                                        <option value=""></option>
+                                        <option value="1">Пункт 01</option>
+                                        <option value="2">Пункт 02</option>
+                                        <option value="3">Пункт 03</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Дополнительно -->
+                            <div class="form-section">
+                                <div class="form-section__title __h3">Дополнительно</div>
+                                <div class="form__field field">
+                                    <label for="f3" class="field__label">Добавить комментарий</label>
+                                    <textarea class="field__element" placeholder="Сообщение" name="f3"></textarea>
+                                </div>
+                                <div class="form__field field field--file">
+                                    <label>
+                                        <input type="file" class="field__element _inputFile" /><span class="field__btn-text __icon-blank _text">Прикрепить файл</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-section">
+                                <div class="form-field field field--checkbox">
+                                    <label class="field__item"><input type="checkbox" name="checkbox" class="field__element inputCheckbox" /><span>checkbox base</span></label>                
+                                    <label class="field__item"><input type="checkbox" name="checkbox" class="field__element inputCheckbox" disabled /><span>checkbox disabled</span></label>                
+                                    <label class="field__item"><input type="checkbox" name="checkbox" class="field__element inputCheckbox" checked /><span>checkbox checked base</span></label>
+                                </div>
+                            </div>
+                        
+                            <div class="order-form__summary">
+                                <div class="form__error">
+                                    <p>ошибка 1</p>
+                                </div>
+                                <div class="order-form__sum __h3">Итого: <span class="__nowrap __rub">2 344 000</span></div>
+                                <div class="order-form__actions">
+                                    <button type="reset" class="btn btn--secondary">Назад</button>
+                                    <button type="submit" class="order-form__submit btn btn--primary">Оформить</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+                
+                                
+            </div>
+        </div>
+
+        <!-- овелей с волнами -->
+        <div class="overlay-half">
+            <div class="overlay-half__figure"></div>
+        </div>
+    </div>
+</body>
+
+<script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="vendors/formstyler/jquery.formstyler.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+</html>

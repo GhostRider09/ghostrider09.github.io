@@ -15,7 +15,7 @@
 <link rel="stylesheet" href="css/main.css">
 <title>Document</title>
 </head>
-<body class="">
+<body class="order-type-2 no-title">
     <div class="container">
         <!-- header -->
         <header>
@@ -88,35 +88,33 @@
             <!-- content -->
             <div class="page-content">
 
-                <h1 class="page-title">История заказов</h1>
+                <h1 class="page-title">Новый заказ - Выбор контрагента</h1>
 
-                <div class="table">
-                    <div class="table__tr __head">
-                        <div class="table__td table__td--order">Заказ</div>
-                        <div class="table__td">Контрагент</div>
-                        <div class="table__td">Статус</div>
-                        <div class="table__td __txt-right">Дата</div>
-                        <div class="table__td __txt-right">Сумма</div>
-                    </div>
-                    <div class="table__tr">
-                        <div class="table__td table__td--order">
-                            <a href="#" class="table__link table__link--order">Заказ №123456</a>
+                <form action="#" class="form order-form">
+                 
+                    <div class="info-block order-form__block">
+                        <div class="info-block__header order-form__block-header">
+                            <span class="info-block__title __h3">Выберите на какое юридическое лицо оформляем заказ</span>
                         </div>
-                        <div class="table__td">ООО “Повезло”</div>
-                        <div class="table__td">Производится расчет итоговой цены</div>
-                        <div class="table__td table__td--mob-footer table__td--first-footer-row __txt-right" data-title="Дата"><span class="__nowrap">28 фев, 2020</span></div>
-                        <div class="table__td table__td--mob-footer __txt-right" data-title="Сумма"><span class="__nowrap __rub">2 344 000</span></div>
-                    </div>
-                    <div class="table__tr">
-                        <div class="table__td table__td--order">
-                            <a href="#" class="table__link table__link--order __changed">Заказ №654321</a>
+                        <div class="info-block__body order-form__block-body">
+                            <div class="form-section order-form__choose-section">
+                                <div class="form-field field field--radio">
+                                    <label class="field__item order-form__company"><input type="radio" name="radio" class="field__element inputRadio" /><span>ООО Повезло</span></label>                
+                                    <label class="field__item order-form__company"><input type="radio" name="radio" class="field__element inputRadio" checked /><span>ООО Ласточка</span></label>
+                                    <label class="field__item order-form__company"><input type="radio" name="radio" class="field__element inputRadio" /><span>ИП Крамин Павел Сергеевич</span></label>
+                                </div>
+                            </div>
+                        
+                            <div class="order-form__summary">
+                                <div class="order-form__actions">
+                                    <button type="reset" class="btn btn--secondary">Отменить</button>
+                                    <button type="submit" class="order-form__submit btn btn--primary">Продолжить</button>
+                                </div>
+                            </div>
                         </div>
-                        <div class="table__td">Иваненко Сигизмунд Венеаминович - (ИП)</div>
-                        <div class="table__td">Производится расчет итоговой цены</div>
-                        <div class="table__td table__td--mob-footer table__td--first-footer-row __txt-right" data-title="Дата"><span class="__nowrap">28 фев, 2020</span></div>
-                        <div class="table__td table__td--mob-footer __txt-right" data-title="Сумма"><span class="__nowrap __rub">2 344 000</span></div>
                     </div>
-                </div>
+
+                </form>
                 
                                 
             </div>
