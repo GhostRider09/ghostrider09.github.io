@@ -328,9 +328,7 @@ $(document).ready(function(){
             let name = file.name,
                 size = file.size,
                 type = file.type,
-                maxSize = 50000;//26214400;
-
-                
+                maxSize = 26214400;
 
             sBtnText = name + ' [' + ( (size / 1024).toFixed( 0 ) > 1000 ? (size / 1024 / 1024).toFixed( 2 ) + 'Мб]' : (size / 1024).toFixed( 2 ) + 'Кб]' );
             if ( size >= maxSize ) {
@@ -356,7 +354,6 @@ $(document).ready(function(){
             }
         }
     });
-
     window.bUnlock = true;
     $('._modern-modal').modernModal();
     $("body").on('click', "._show-modal", function(e){
@@ -399,5 +396,20 @@ $(document).ready(function(){
         $('body').removeClass('_open-window');
 
         e.preventDefault;
+    })
+    .on('click', '._characteristic-choose', function(){
+        let bSelected = $(this).hasClass('_selected');
+
+        $(this).find('input').prop('checked', !bSelected).trigger('change');
+    })
+    .on('change', '._characteristic-choose input.inputCheckbox', function(){
+        let $input = $(this), $product = $input.closest('._characteristic-choose');
+
+        let bSelected = $input.prop('checked');
+        if ( bSelected ) {
+            $product.addClass('_selected');
+        } else {
+            $product.removeClass('_selected');
+        }
     });
 });

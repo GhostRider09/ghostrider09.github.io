@@ -91,10 +91,28 @@
                 <h1 class="page-title">Модалки</h1>
 
                 <div>
-                    <button type="button" class="btn btn--primary _show-modal" data-content="._products-modal">Номенклатура</button>
+                    <button type="button" class="btn btn--primary _show-modal" data-content="._loading">Loading</button><br/>
+                    <button type="button" class="btn btn--primary _show-modal" data-content="._products-modal">Номенклатура</button><br/>
+                    <button type="button" class="btn btn--primary _show-modal" data-content="._characteristics-modal">Характеристики</button><br/>
                 </div>
 
-                <div class="modal _modern-modal _products-modal open _active">
+                <!-- loading -->
+                <div class="modal _modern-modal _loading">
+                    <div class="modal__body">
+                        <div class="modal__container">
+                            <div class="modal__close"><span class="icons __icon-close-only"></span></div>
+                            <div class="modal__title __h3">Номенклатура</div>
+                            <div class="modal__content">
+                                
+                                <div class="preloader"></div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Номенклатура -->
+                <div class="modal _modern-modal _products-modal">
                     <div class="modal__body">
                         <div class="modal__container">
                             <div class="modal__close"><span class="icons __icon-close-only"></span></div>
@@ -151,6 +169,102 @@
                                             </div>
                                             <div class="product-card__description">
                                                 Прямоугольная конструкция, основная часть двери, но без установленного коробочного бруса, наличников, петель и т. п.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Характеристики -->
+                <div class="modal _modern-modal _characteristics-modal">
+                    <div class="modal__body">
+                        <div class="modal__container">
+                            <div class="modal__close"><span class="icons __icon-close-only"></span></div>
+                            <div class="modal__title __h3">Характеристики</div>
+                            <div class="modal__content">
+                                
+                                <div class="choose-produts __characteristics">
+                                    <div class="choose-produts__item">
+                                        <div class="choose-produts__product characteristics-card _characteristic-choose">
+                                            <div class="characteristics-card__image">
+                                                <img src="img/trash/order/product-01.jpg"">
+                                            </div>
+                                            <div class="characteristics-card__body">
+                                                <div class="characteristics-card__title __subtitle2">
+                                                    Дверное полотно ZARGO Duo 600 скандинавский дуб с/о (армированное)
+                                                </div>
+                                                <div class="characteristics-card__description">
+                                                    Прямоугольная конструкция, основная часть двери, но без установленного коробочного бруса, наличников, петель и т. п.
+                                                </div>
+                                            </div>
+                                            <div class="characteristics-card__actions">
+                                                <div class="characteristics-card__action field field--checkbox">
+                                                    <label class="field__item"><input type="checkbox" name="checkbox1" class="field__element inputCheckbox" /></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="choose-produts__item">
+                                        <div class="choose-produts__product characteristics-card _characteristic-choose _selected">
+                                            <div class="characteristics-card__image __no-image">
+                                                <img src="img/no-product.svg">
+                                            </div>
+                                            <div class="characteristics-card__body">
+                                                <div class="characteristics-card__title __subtitle2">
+                                                    Дверное полотно ZARGO Duo 600 скандинавский дуб с/о (армированное)
+                                                </div>
+                                                <div class="characteristics-card__description">
+                                                    Прямоугольная конструкция, основная часть двери, но без установленного коробочного бруса, наличников, петель и т. п.
+                                                </div>
+                                            </div>
+                                            <div class="characteristics-card__actions">
+                                                <div class="characteristics-card__action field field--checkbox">
+                                                    <label class="field__item"><input type="checkbox" name="checkbox1" class="field__element inputCheckbox" checked /></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="choose-produts__item">
+                                        <div class="choose-produts__product characteristics-card _characteristic-choose">
+                                            <div class="characteristics-card__image">
+                                                <img src="img/trash/order/product-01.jpg"">
+                                            </div>
+                                            <div class="characteristics-card__body">
+                                                <div class="characteristics-card__title __subtitle2">
+                                                    Дверное полотно ZARGO Duo 600 скандинавский дуб с/о (армированное)
+                                                </div>
+                                                <div class="characteristics-card__description">
+                                                    Прямоугольная конструкция, основная часть двери, но без установленного коробочного бруса, наличников, петель и т. п.
+                                                </div>
+                                            </div>
+                                            <div class="characteristics-card__actions">
+                                                <div class="characteristics-card__action field field--checkbox">
+                                                    <label class="field__item"><input type="checkbox" name="checkbox1" class="field__element inputCheckbox" /></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="choose-produts__item">
+                                        <div class="choose-produts__product characteristics-card _characteristic-choose">
+                                            <div class="characteristics-card__image">
+                                                <img src="img/trash/order/product-01.jpg"">
+                                            </div>
+                                            <div class="characteristics-card__body">
+                                                <div class="characteristics-card__title __subtitle2">
+                                                    Дверное полотно ZARGO Duo 600 скандинавский дуб с/о (армированное)
+                                                </div>
+                                                <div class="characteristics-card__description">
+                                                    Прямоугольная конструкция, основная часть двери, но без установленного коробочного бруса, наличников, петель и т. п.
+                                                </div>
+                                            </div>
+                                            <div class="characteristics-card__actions">
+                                                <div class="characteristics-card__action field field--checkbox">
+                                                    <label class="field__item"><input type="checkbox" name="checkbox1" class="field__element inputCheckbox" /></label>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

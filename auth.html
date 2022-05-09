@@ -104,6 +104,19 @@
                                     <div class="field__icon"><i class="icons __icon-eye-hide _switch-pass"></i></div>
                                 </div>
                             </div>
+                            <div class="form__field field captcha">
+                                <div class="captcha__image">
+                                    <input type="hidden" name="captcha_sid" value="0282b426e70314190b0b87ba4ec9e6a7">
+                                    <img src="img/trash/auth/captcha.jpg" width="180" height="40" alt="CAPTCHA">
+                                </div>
+                                <button type="button" class="captcha__refresh"><i></i></button>
+                            </div>
+                            <div class="form__field field">
+                                <input type="text" name="captcha_word" maxlength="50" value="" size="15" autocomplete="off" class="field__element" placeholder="Введите слово на картинке">
+                            </div>
+                        </div>
+                        <div class="form__error">
+                            <p>Неверный логин или пароль</p>
                         </div>
                         <div class="form__footer">
                             <input type="submit" class="auth-block__btn btn btn--primary" value="Войти"/>
