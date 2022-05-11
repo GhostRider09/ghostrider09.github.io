@@ -965,7 +965,7 @@ header {
   -ms-flex: 1 1 1.625rem;
   flex: 1 1 1.625rem;
   min-width: 1.625rem;
-  padding: 0.25rem .5rem;
+  padding: 0 .5rem;
   font-size: 1rem;
   line-height: 1.5rem;
   height: 100%;
@@ -1871,6 +1871,10 @@ body._lock {
   padding-bottom: 0;
 }
 
+.order-form__page-title {
+  padding: 0.25rem 0 1.75rem;
+}
+
 .order-form__summary {
   padding: 1rem 1.5rem;
 }
@@ -2366,6 +2370,7 @@ body._lock {
   }
 
   .table__td {
+    display: block;
     padding: 2px 0.75rem;
     border-color: transparent;
   }
@@ -2430,6 +2435,8 @@ body._lock {
   .table__td--features {
     border-top: 1px solid #E3E3ED;
     padding-top: 0.75rem;
+    margin-bottom: -0.625rem;
+    padding-bottom: 0.625rem;
   }
 
   .table__td--features:before {
@@ -2548,6 +2555,10 @@ body._lock {
 
   .form-section {
     padding: 1.5rem 1rem;
+  }
+
+  .order-form__page-title {
+    padding: .5rem 0 1.5rem;
   }
 
   .order-form__summary.__fixed {
