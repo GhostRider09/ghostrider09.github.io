@@ -412,4 +412,18 @@ $(document).ready(function(){
             $product.removeClass('_selected');
         }
     });
+
+
+
+
+
+    $('._load-more').on('click', function(){
+        $(this).addClass('__loading').prop('disabled', true);
+    })
+    $('._load-more-v2').on('click', function(){
+        if ( !$('.history__table').find('.preloader').length ) {
+            $('.history__table').append('<div class="preloader"><span></span></div>');
+            $(this).prop('disabled', true);
+        }
+    })
 });
