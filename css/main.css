@@ -1374,7 +1374,7 @@ body._lock {
 .section-table__add-button > div {
   display: inline-block;
   position: relative;
-  padding-right: 2.25rem;
+  padding-right: 0.25rem;
 }
 
 .section-table__add-button.btn--icon {

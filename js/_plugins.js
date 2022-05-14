@@ -18,6 +18,7 @@
                 init();
                 
                 function init() {
+                    _that._options = opts;
                     _that._settings = {
                         min: parseInt( $input.data('min') ) || 1,
                         max: parseInt( $input.data('max') ),
@@ -112,6 +113,10 @@
                     }
 
                     $input.val( parsedValue );
+
+                    if ( _that._options.onSetValue ) {
+                        _that._options.onSetValue.call(_that, parsedValue);
+                    }
 
                     if ( parsedValue >= _that._settings.max ) {
                         $addBtn.addClass('_disabled');
@@ -308,5 +313,200 @@
                 };
             });
         };
+
+        $.fn.orderTable = function (opts) {
+            opts = opts || {};
+
+            $(this).each(function () {
+                const $currentTable = $(this);
+                let _this = this;
+
+                if ( _this.inited ) {
+                    return false;
+                }
+
+                _this._warmex = {
+                    type: ( $currentTable.data('type') || "PRODUCTS" ),
+                    options: opts 
+                };
+
+                $currentTable.on('appendPosition', function( e, item ){
+                    if ( !item || !item.id ) {
+                        console.error('[Warmex] Передан некорректный продукт!');
+                        return false;
+                    }
+
+                    let nextId = getNextRowId();
+                    let $newProductItem = $(`<div class="table__tr _order-item" data-item-id="${nextId}"></div>`);
+
+                    item.rowId = nextId;
+                    appendProduct($newProductItem, item);
+                    appendFeatures($newProductItem, nextId);
+                    appendCounter($newProductItem, nextId);
+                    appendPrice($newProductItem, nextId, item.price);
+                    $newProductItem.append(`<div class="table__td table__td--mob-footer __txt-right" data-title="Сумма">
+                        <span class="__nowrap __rub _sum-label">${WMX.number_format( item.price, 2, '.', "&nbsp;" )}</span>
+                    </div>`);
+                    appendClose( $newProductItem );
+
+                    $currentTable.append( $newProductItem );
+                    $currentTable.children().eq(-1).find('._counter').counterField({
+                        onSetValue: function(value) {
+                            let price = $(this).closest('._order-item').find('input._price').val(),
+                                $prodSumLabel = $(this).closest('._order-item').find('._sum-label');
+
+                            $prodSumLabel.html( WMX.number_format( roundAsCurrency( price * value ), 2, ".", "&nbsp;" ) );
+                            
+                            updateSummarize();
+                        }
+                    });
+
+                    updateSummarize();
+                });
+
+                $currentTable.on('removePosition', function( e, productRow ){
+                    if ( productRow && !$(productRow).length ) {
+                        console.error('[Warmex] Передан некорректный объект!');
+                        return false;
+                    }
+
+                    $(productRow).remove();
+
+                    updateSummarize();
+                });
+
+                _this.inited = true;
+
+                function updateSummarize() {
+                    let $summarize = $(_this._warmex.options.summarize);
+
+                    if ( !$summarize.length ) {
+                        console.error('[Warmex] Не удалось найти объект суммы Итого!');
+                        return false;
+                    }
+
+                    let $tables = _this._warmex.options.form.find( '.'+_this._warmex.options.tablesClass );
+                    let $rows = $tables.find('._order-item');
+                    let itogo = 0;
+                    $rows.each(function(i, row){
+                        let $product = $(row);
+                        itogo += roundAsCurrency($product.find('input._price').val() * $product.find('input._count').val());
+                    });
+
+                    $summarize.html( WMX.number_format( itogo, 2, '.', "&nbsp;" ) );
+                }
+
+                function appendProduct( $newItem, oProduct ) {
+                    let noProductImagePath = '/local/templates/warmex/img/no-product.svg';
+
+                    let srcImage = oProduct.image || noProductImagePath;
+                    let productCell = `<div class="table__td table__td--link">
+                        <a href="#" class="table__link table__link--show-modal product-link _show-modal" data-content="._products-modal">
+                            <div class="product-link__container">
+                                <div class="product-link__image">
+                                    <img src="${srcImage}" alt="${oProduct.name}">
+                                </div>
+                                <div class="product-link__title">${oProduct.name}</div>
+                            </div>
+                            <input type="hidden" class="_product" name="${getFieldNamePrefix(oProduct.rowId)}[NOMENCLATURE]" value="${oProduct.id}">
+                        </a>                        
+                    </div>`;
+
+                    $newItem.append( productCell );
+                }
+
+                function appendFeatures( $newItem, rowId ) {
+                    let cell = `<div class="table__td table__td--link table__td--features" data-title="Характеристики" >
+                        <a href="#" class="table__link table__link--show-modal _empty _show-modal" data-content="._features-modal">Выбрать характеристики</a>
+                        <input type="hidden" class="_features" name="${getFieldNamePrefix(rowId)}[FEATURE]" value="">
+                    </div>`;
+
+                    $newItem.append( cell );
+                }
+
+                function appendCounter( $newItem, rowId ) {
+                    let cell = `<div class="table__td table__td--counter">
+                        <div class="field table-field-counter counter-field _counter">
+                            <span class="counter-field__minus _minus"><i class="icons __icon-subtract-line"></i></span>
+                            <input type="text" class="counter-field__input _input _count" name="${getFieldNamePrefix(rowId)}[COUNT]" autocomplete="off" />
+                            <span class="counter-field__plus _plus"><i class="icons __icon-plus-only"></i></span>
+                        </div>
+                    </div>`;
+
+                    $newItem.append( cell );
+                }
+
+                function appendPrice( $newItem, rowId, price ) {
+                    let cell = `<div class="table__td table__td--mob-footer table__td--first-footer-row __txt-right" data-title="Цена">
+                        <span class="__nowrap __rub _price-label">${WMX.number_format( price, 2, '.', "&nbsp;" )}</span>
+                        <input type="hidden" class="_price" name="${getFieldNamePrefix(rowId)}[PRICE]" value="${price}">
+                    </div>`;
+
+                    $newItem.append( cell );
+                }
+
+                function appendClose( $newItem ) {
+                    $newItem.append('<div class="table__td table__td--close-icon"><span class="_remove-product"><i class="icons __icon-close-only"></i></span></div>');
+                    $newItem.find('._remove-product').on('click', function(){
+                        $currentTable.trigger('removePosition', $(this).closest('._order-item'));
+                    });
+                }
+
+                function getNextRowId() {
+                    let $lastProduct = $currentTable.find('._order-item').eq(-1);
+                    if ( $lastProduct.length && typeof $lastProduct.data('itemId') !== "undefined" ) {
+                        return parseInt($lastProduct.data('itemId')) + 1;
+                    }
+
+                    return 0
+                }
+
+                function getFieldNamePrefix( rowId ) {
+                    return `FIELDS[${_this._warmex.type}][${rowId}]`;
+                }
+
+                function roundAsCurrency(number) {
+                    return Math.round(number * 100) / 100;
+                }
+            });
+        }
     });
 })(jQuery);
+
+WMX = {
+    dig3cut: function(num) { 
+        e = num.toString();
+        let t = "";
+        
+        for (n = e.length - 3; n > 0; n -= 3)
+            t = "&nbsp;" + e.substr(n, 3) + t;
+
+        return e.substr(0, 3 + n) + t 
+    },
+    number_format: function(number, decimals, dec_point, thousands_sep) {
+        number = (number + '')
+            .replace(/[^0-9+\-Ee.]/g, '');
+        var n = !isFinite(+number) ? 0 : +number,
+            prec = !isFinite(+decimals) ? 0 : Math.abs(decimals),
+            sep = (typeof thousands_sep === 'undefined') ? '&nbsp;' : thousands_sep,
+            dec = (typeof dec_point === 'undefined') ? ',' : dec_point,
+            toFixedFix = function (n, prec) {
+                var k = Math.pow(10, prec);
+                return '' + (Math.round(n * k) / k)
+                        .toFixed(prec);
+            };
+        // Fix for IE parseFloat(0.55).toFixed(0) = 0;
+        var s = (prec ? toFixedFix(n, prec) : '' + Math.round(n))
+            .split('.');
+        if (s[0].length > 3) {
+            s[0] = s[0].replace(/\B(?=(?:\d{3})+(?!\d))/g, sep);
+        }
+        if ((s[1] || '')
+                .length < prec) {
+            s[1] = s[1] || '';
+            s[1] += new Array(prec - s[1].length + 1)
+                .join('0');
+        }
+        return s.join(dec);
+    }
+}
