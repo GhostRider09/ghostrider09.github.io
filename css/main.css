@@ -677,6 +677,7 @@ header {
   margin: .25rem 0;
   border: 1px solid;
   padding: 17px 31px;
+  text-align: center;
 }
 
 .btn--primary {
@@ -765,6 +766,10 @@ header {
 
 .field:not(:is(.field--radio, .field--checkbox, .field--select)) .field__element {
   border: 1px solid #E3E3ED;
+}
+
+.field--error.field:not(:is(.field--radio, .field--checkbox, .field--select)) .field__element {
+  border-color: #E80F0F;
 }
 
 .field__element::-webkit-input-placeholder {
@@ -1221,6 +1226,15 @@ body._lock {
   padding-top: 1.25em;
 }
 
+.modal__footer {
+  padding: 1.5rem 1.25rem 0;
+  text-align: center;
+}
+
+.modal__footer .btn {
+  margin: .5rem;
+}
+
 .modal--centered .modal__body {
   text-align: center;
   vertical-align: middle;
@@ -1672,6 +1686,7 @@ body._lock {
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
   padding: 0.75rem 0;
+  overflow: hidden;
 }
 
 .comment__header {
@@ -2209,6 +2224,17 @@ body._lock {
   order: 2;
 }
 
+.order-tabs__empty-row {
+  padding: 1rem;
+  font-size: 0.875rem;
+  line-height: 128.57143%;
+  border-bottom: 1px solid #E3E3ED;
+  display: block;
+  background-color: #FFFFFF;
+  text-align: center;
+  color: #9599AC;
+}
+
 .order-tabs__order-summarize {
   padding: 1.5rem 0;
   font-size: 20px;
@@ -2257,6 +2283,62 @@ body._lock {
   padding: .75rem 1.5rem .75rem;
 }
 
+.comments-list__title {
+  padding: 0.5rem 0;
+}
+
+.comments-list--loading {
+  min-height: 12rem;
+  position: relative;
+}
+
+.comments-list__products-changes {
+  padding-top: 0.5rem;
+  overflow-y: hidden;
+  overflow-x: auto;
+  width: 100%;
+  display: block;
+}
+
+.comments-list__products-changes::-webkit-scrollbar {
+  height: 0.425rem;
+}
+
+.comments-list__products-changes::-webkit-scrollbar-track {
+  background-color: #F4F5F9;
+}
+
+.comments-list__products-changes::-webkit-scrollbar-thumb {
+  background-color: #0E3F96;
+}
+
+.comments-list__products-changes table {
+  font-size: 0.75rem;
+  min-width: 400px;
+  line-height: 1.25em;
+  border: none;
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.comments-list__products-changes table tr:nth-child(odd) {
+  background-color: #F4F5F9;
+}
+
+.comments-list__products-changes table td {
+  vertical-align: top;
+  text-align: center;
+  padding: 0.25rem 0;
+}
+
+.comments-list__products-changes table td:nth-child(1),
+.comments-list__products-changes table td:nth-child(2) {
+  text-align: left;
+  width: 30%;
+  word-wrap: break-word;
+}
+
 .history__footer {
   text-align: center;
   padding-top: 1.5rem;
@@ -2282,6 +2364,11 @@ body._lock {
 
 .__hidden {
   display: none;
+}
+
+.__show-loading {
+  min-height: 12rem;
+  position: relative;
 }
 
 @media (min-width: 992px) {
@@ -2467,6 +2554,10 @@ body._lock {
 
   .modal__text {
     padding: 0 1rem;
+  }
+
+  .modal__footer {
+    padding: 1rem 1rem 0;
   }
 
   .page-title {
@@ -2860,6 +2951,11 @@ body._lock {
 }
 
 @media (max-width: 479px) {
+  .modal__footer .btn {
+    margin: 0.5rem 0;
+    width: 100%;
+  }
+
   .comment__label {
     display: block;
     padding-right: 0;

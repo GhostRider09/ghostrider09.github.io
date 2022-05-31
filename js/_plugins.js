@@ -341,7 +341,7 @@
 
                     item.rowId = nextId;
                     appendProduct($newProductItem, item);
-                    appendFeatures($newProductItem, nextId);
+                    appendFeatures($newProductItem, nextId, item.features);
                     appendCounter($newProductItem, nextId);
                     appendPrice($newProductItem, nextId, item.price);
                     $newProductItem.append(`<div class="table__td table__td--mob-footer __txt-right" data-title="Сумма">
@@ -415,11 +415,17 @@
                     $newItem.append( productCell );
                 }
 
-                function appendFeatures( $newItem, rowId ) {
+                function appendFeatures( $newItem, rowId, features ) {
                     let cell = `<div class="table__td table__td--link table__td--features" data-title="Характеристики" >
-                        <a href="#" class="table__link table__link--show-modal _empty _show-modal" data-content="._features-modal">Выбрать характеристики</a>
-                        <input type="hidden" class="_features" name="${getFieldNamePrefix(rowId)}[FEATURE]" value="">
-                    </div>`;
+                            <a href="#" class="table__link table__link--show-modal choose-feature__item" data-content="._features-modal">Выбрать характеристики</a>
+                            <input type="hidden" class="_features" name="${getFieldNamePrefix(rowId)}[FEATURE]" value="">
+                        </div>`;
+
+                    if(!features) {
+                        cell = `<div class="table__td table__td--link table__td--features" data-title="Характеристики" >
+                            <input type="hidden" class="_features" name="${getFieldNamePrefix(rowId)}[FEATURE]" value="">
+                        </div>`;
+                    }
 
                     $newItem.append( cell );
                 }
@@ -437,7 +443,7 @@
                 }
 
                 function appendPrice( $newItem, rowId, price ) {
-                    let cell = `<div class="table__td table__td--mob-footer table__td--first-footer-row __txt-right" data-title="Цена">
+                    let cell = `<div class="table__td table__td--mob-footer table__td--first-footer-row table__td--price __txt-right" data-title="Цена">
                         <span class="__nowrap __rub _price-label">${WMX.number_format( price, 2, '.', "&nbsp;" )}</span>
                         <input type="hidden" class="_price" name="${getFieldNamePrefix(rowId)}[PRICE]" value="${price}">
                     </div>`;

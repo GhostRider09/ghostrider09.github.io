@@ -91,10 +91,28 @@
                 <h1 class="page-title">Модалки</h1>
 
                 <div>
+                    <button type="button" class="btn btn--primary _show-modal" data-content="._confirm-order-modal">Подтверждение заказа</button><br/>
                     <button type="button" class="btn btn--primary _show-modal" data-content="._loading">Loading</button><br/>
                     <button type="button" class="btn btn--primary _show-modal" data-content="._products-modal">Номенклатура</button><br/>
                     <button type="button" class="btn btn--primary _show-modal" data-content="._characteristics-modal">Характеристики</button><br/>
                     <button type="button" class="btn btn--primary _show-modal" data-content="._success">На всякий случай, модалка с центральных позиционированием</button><br/>
+                </div>
+
+                <!-- Подтверждение заказа. По центру с футером -->
+                <div class="modal modal--centered _modern-modal _confirm-order-modal">
+                    <div class="modal__body">
+                        <div class="modal__container">
+                            <div class="modal__close"><span class="icons __icon-close-only"></span></div>
+                            <div class="modal__title __h3">Согласовать заказ?</div>
+                            <div class="modal__text">
+                                <p>После согласования заказ будет принят в работу, мы выставим вам счет, и изменение заказа станет невозможно. Перед продолжением убедитесь, что содержание заказа верно.</p>
+                            </div>
+                            <div class="modal__footer">
+                                <button type="button" class="btn btn--primary _confirm-order-action">Я подтверждаю заказ</button>
+                                <button type="button" class="btn btn--secondary _close-modal">Отменить</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- loading -->
