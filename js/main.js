@@ -617,6 +617,52 @@ $(document).ready(function(){
         } else {
             $product.removeClass('_selected');
         }
+    })
+    .on('input', '._filter-modal-elements input', function(){
+        let $input = $(this), $icon = $input.parent().find('._filter-icon');
+
+        let $container = $input.closest('._modern-modal').find( $input.data('container') );
+        if ( !$container.length ) {
+            console.error('[WMX] Elements container not found!');
+            return false;
+        }
+        
+        if ( $input.val().length < 2 ) {
+            if ( $container.hasClass('_filtered') ) {
+                resetSearch();
+            }
+
+            return false;
+        }       
+        
+
+        let inputValue = $input.val().toLowerCase();
+
+        $icon.addClass('__icon-close-only').removeClass('__icon-search');
+        $container.find('._filter-item').each((i, el) => {
+            let $item = $(el), $valueEl = $item.find('._filter-value');
+
+            if ( !~($valueEl.html().toLowerCase().indexOf( inputValue )) ) {
+                $item.hide();
+            } else {
+                $item.show();
+            }
+        });
+        $container.addClass('_filtered');
+
+        if ( !$icon.hasClass('_inited') ) {
+            $icon.on('click', () => {
+                resetSearch();
+            });
+            $icon.addClass('_inited');
+        }
+
+        function resetSearch() {
+            $input.val('');
+            $icon.removeClass('__icon-close-only').addClass('__icon-search');
+            $container.find('._filter-item').show();
+            $container.removeClass('_filtered');
+        }
     });
 
 
