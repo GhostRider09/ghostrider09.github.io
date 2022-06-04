@@ -651,17 +651,18 @@ $(document).ready(function(){
         $container.addClass('_filtered');
 
         if ( !$icon.hasClass('_inited') ) {
-            $icon.on('click', () => {
-                resetSearch();
-            });
+            $input.on('wmx.clear', () => { resetSearch(); });
+            $icon.on('click', () => { resetSearch(); });
             $icon.addClass('_inited');
         }
 
         function resetSearch() {
-            $input.val('');
-            $icon.removeClass('__icon-close-only').addClass('__icon-search');
-            $container.find('._filter-item').show();
-            $container.removeClass('_filtered');
+            if ( $input.val().length ) {
+                $input.val('');
+                $icon.removeClass('__icon-close-only').addClass('__icon-search');
+                $container.find('._filter-item').show();
+                $container.removeClass('_filtered');
+            }
         }
     });
 
