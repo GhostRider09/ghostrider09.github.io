@@ -988,9 +988,9 @@ header {
 }
 
 .counter-field {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -1999,7 +1999,7 @@ body._lock {
 }
 
 .table-field-counter {
-  width: 6.25rem;
+  width: 7rem;
 }
 
 .form-section {
@@ -2452,6 +2452,10 @@ body._lock {
 }
 
 @media (min-width: 992px) {
+  .table__td--product {
+    max-width: 15rem;
+  }
+
   .__mobile-only {
     display: none;
   }
@@ -2993,6 +2997,18 @@ body._lock {
 
   .history__footer {
     padding-top: 1rem;
+  }
+
+  .__txt-right {
+    text-align: right;
+  }
+
+  .__nowrap {
+    white-space: nowrap;
+  }
+
+  .__hidden {
+    display: none;
   }
 
   .__desktop-only {

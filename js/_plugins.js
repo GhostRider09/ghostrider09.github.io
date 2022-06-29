@@ -400,7 +400,7 @@
                     let noProductImagePath = '/local/templates/warmex/img/no-product.svg';
 
                     let srcImage = oProduct.image || noProductImagePath;
-                    let productCell = `<div class="table__td table__td--link">
+                    let productCell = `<div class="table__td table__td--product table__td--link">
                         <a href="#" class="table__link table__link--show-modal product-link _show-modal" data-content="._products-modal">
                             <div class="product-link__container">
                                 <div class="product-link__image">
@@ -431,7 +431,7 @@
                 }
 
                 function appendCounter( $newItem, rowId ) {
-                    let cell = `<div class="table__td table__td--counter">
+                    let cell = `<div class="table__td table__td--counter __txt-right">
                         <div class="field table-field-counter counter-field _counter">
                             <span class="counter-field__minus _minus"><i class="icons __icon-subtract-line"></i></span>
                             <input type="text" class="counter-field__input _input _count" name="${getFieldNamePrefix(rowId)}[COUNT]" autocomplete="off" />
@@ -452,7 +452,7 @@
                 }
 
                 function appendClose( $newItem ) {
-                    $newItem.append('<div class="table__td table__td--close-icon"><span class="_remove-product"><i class="icons __icon-close-only"></i></span></div>');
+                    $newItem.append('<div class="table__td table__td--close-icon __txt-right"><span class="_remove-product"><i class="icons __icon-close-only"></i></span></div>');
                     $newItem.find('._remove-product').on('click', function(){
                         $currentTable.trigger('removePosition', $(this).closest('._order-item'));
                     });
