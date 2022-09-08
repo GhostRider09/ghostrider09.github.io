@@ -10,6 +10,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="css/icomoon.css">
+<link rel="stylesheet" href="vendors/tooltipster/css/tooltipster.bundle.min.css">
+<link rel="stylesheet" href="css/tooltipster.warmex.theme.css">
 <link rel="stylesheet" href="vendors/formstyler/jquery.formstyler.css">
 <link rel="stylesheet" href="css/formstyler.aquadoor.theme.css">
 <link rel="stylesheet" href="css/main.css">
@@ -93,79 +95,203 @@
                 <form action="#" class="form order-form">
                     <div class="order-form__page-title __h1">Новый заказ</div>
 
-                    <div class="section-table">
+                    <div class="section-table _section-table-01">
                         <div class="section-table__title">Полотна</div>
 
                         <div class="section-table__body">
-
-                        <div class="section-table__table table">
-                            <div class="table__tr __head">
-                                <div class="table__td">Номенклатура</div>
-                                <div class="table__td table__td--features">Характеристики</div>
-                                <div class="table__td table__td--counter __txt-right">Количество</div>
-                                <div class="table__td __txt-right">Цена</div>
-                                <div class="table__td __txt-right">Тип цен</div>
-                                <div class="table__td __txt-right">Сумма</div>
-                                <div class="table__td table__td--close-icon">&nbsp;</div>
-                            </div>
-                            <div class="table__tr">
-                                <div class="table__td table__td--link">
-                                    <a href="#" class="table__link table__link--show-modal product-link">
-                                        <div class="product-link__container">
-                                            <div class="product-link__image">
-                                                <img src="img/no-product.svg" alt="product">
+                            <div class="section-table__table table _order-table PRODUCTS" data-type="PRODUCTS" data-no-sale="N" data-counterparty-sale="35" >
+                                
+                                <div class="table__tr __head">
+                                    <div class="table__td table__td--product">Номенклатура</div>
+                                    <div class="table__td table__td--features">Характеристики</div>
+                                    <div class="table__td __txt-right table__td--tooltipped">
+                                        <div>Ваша цена</div><div class="tooltip-label _tooltip" title="Цена отгрузки единицы изделия для вас с учетом диллерской скидки"><i class="tooltip-label__icon icons __icon-question-only"></i></div>
+                                    </div>
+                                    <div class="table__td table__td--counter __txt-right">Количество</div>
+                                    <div class="table__td __txt-right">Ваша сумма</div>
+                                    <div class="table__td __txt-right table__td--tooltipped">                                        
+                                        <div>Сумма клиенту</div><div class="tooltip-label _tooltip" title="Сумма рассчитывается как цена для клиента + цена всех выбранных характеристик"><i class="tooltip-label__icon icons __icon-question-only"></i></div>
+                                    </div>
+                                    <div class="table__td table__td--counter __txt-right table__td--tooltipped">                                        
+                                        <div>Скидка/Наценка</div><div class="tooltip-label _tooltip" title="Вы можете дать скидку или сделать наценку для клиента. Это влияет на ваш доход"><i class="tooltip-label__icon icons __icon-question-only"></i></div>
+                                    </div>
+                                    <div class="table__td __txt-right">Ваш доход</div>
+                                    <div class="table__td table__td--close-icon __txt-right">&nbsp;</div>
+                                </div>
+                                <div class="table__tr _order-item" data-item-id="0">
+                                    <div class="table__td table__td--product table__td--link">
+                                        <a href="#" class="table__link table__link--show-modal product-link _show-modal" data-content="._products-modal">
+                                            <div class="product-link__container">
+                                                <div class="product-link__image"><img src="img/trash/order/product-01.jpg" alt="Дверное полотно ZARGO Duo 500 скандинавский дуб с/о (армированное)"></div>
+                                                <div class="product-link__title wide-product-title">
+                                                    <p class="wide-product-title__text">Дверное полотно ZARGO Duo 500 скандинавский дуб с/о (армированное)</p>                                                    
+                                                    <div class="wide-product-title__prices">
+                                                        <span>Цена для клиента: 4&nbsp;900.00 руб.</span>
+                                                        <span>Ваша скидка: 35%</span>
+                                                        <span>Ваша цена: 3&nbsp;185.00 руб.</span>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="product-link__title">Дверное полотно ZARGO Duo 600 скандинавский дуб с/о (армированное)</div>
+                                            <input type="hidden" class="_product" name="FIELDS[PRODUCTS][0][NOMENCLATURE]" value="00000004293">
+                                        </a>
+                                    </div>
+                                    <div class="table__td table__td--link table__td--features" data-title="Характеристики">
+                                        <a href="#" class="table__link table__link--show-modal wide-product-title choose-feature__item">                                            
+                                            <p class="wide-product-title__text">Заполнение пенополистеролом, отбойная пластина 300 мм с двух сторон, Усиление под доводчик, Ф2</p>                                                    
+                                            <div class="wide-product-title__prices">Цена: 4&nbsp;900.00 руб.</div>
+                                        </a>
+                                        <input type="hidden" class="_features" name="FIELDS[PRODUCTS][0][FEATURE]" value="">
+                                    </div>
+                                    <div class="table__td table__td--mob-footer table__td--first-footer-row table__td--price __txt-right" data-title="Ваша цена">
+                                        <span class="__nowrap __rub _price-label">3&nbsp;185.00</span>
+                                        <input type="hidden" class="_price" data-rrc="4900" name="FIELDS[PRODUCTS][0][PRICE]" value="3185">
+                                    </div>
+                                    <div class="table__td table__td--counter __txt-right" data-title="Количество">
+                                        <div class="field table-field-counter counter-field _counter">
+                                            <span class="counter-field__minus _minus _disabled"><i class="icons __icon-subtract-line"></i></span>
+                                            <input type="text" class="counter-field__input _input _count" name="FIELDS[PRODUCTS][0][COUNT]" autocomplete="off">
+                                            <span class="counter-field__plus _plus"><i class="icons __icon-plus-only"></i></span>
                                         </div>
-                                    </a>
-                                </div>
-                                <div class="table__td table__td--link table__td--features" data-title="Характеристики">
-                                    <a href="#" class="table__link table__link--show-modal">Заполнение пенополистеролом, отбойная пластина 300 мм с двух сторон, Усиление под доводчик, Ф2</a>
-                                </div>
-                                <div class="table__td table__td--counter __txt-right">
-                                    <div class="field table-field-counter counter-field _counter">
-                                        <span class="counter-field__minus _minus"><i class="icons __icon-subtract-line"></i></span>
-                                        <input id="f1" type="text" class="counter-field__input _input" autocomplete="off" />
-                                        <span class="counter-field__plus _plus"><i class="icons __icon-plus-only"></i></span>
+                                    </div>
+                                    <div class="table__td table__td--mob-footer __txt-right" data-title="Ваша сумма">
+                                        <span class="__nowrap __rub _sum-counterparty-label" data-sum="3185">3&nbsp;185&nbsp;185.00</span>
+                                    </div>
+                                    <div class="table__td table__td--mob-footer __txt-right __gray-text" data-title="Сумма клиенту">
+                                        <span class="__nowrap __rub _sum-client-label" data-sum="4900">4&nbsp;655&nbsp;655.00</span>
+                                    </div>
+                                    <div class="table__td table__td--counter __txt-right" data-title="Скидка/наценка">
+                                        <div class="field table-field-range counter-field _counter-range">
+                                            <span class="counter-field__minus _minus"><i class="icons __icon-subtract-line"></i></span>
+                                            <input type="tel" class="counter-field__input _input _client-sale" name="FIELDS[PRODUCTS][0][COUNT]" autocomplete="off" value="-5" data-min="-99" data-max="99" step="5" inputmode="text">
+                                            <span class="counter-field__plus _plus"><i class="icons __icon-plus-only"></i></span>
+                                        </div>
+                                    </div>
+                                    <div class="table__td table__td--mob-footer __txt-right __gray-text" data-title="Ваш доход">
+                                        <span class="__nowrap __rub _sum-income-label" data-sum="1715">9&nbsp;470&nbsp;470.00</span>
+                                    </div>
+                                    <div class="table__td table__td--close-icon __txt-right">
+                                        <span class="_remove-product"><i class="icons __icon-close-only"></i></span>
                                     </div>
                                 </div>
-                                <div class="table__td table__td--mob-footer table__td--first-footer-row __txt-right" data-title="Цена"><span class="__nowrap __rub">344 000</span></div>
-                                <div class="table__td table__td--mob-footer __txt-right" data-title="Тип цен">Крупный&nbsp;опт</div>
-                                <div class="table__td table__td--mob-footer __txt-right" data-title="Сумма"><span class="__nowrap __rub">2 344 000</span></div>
-                                <div class="table__td table__td--close-icon">
-                                    <span><i class="icons __icon-close-only"></i></span>
-                                </div>
-                            </div>
-                            <div class="table__tr">
-                                <div class="table__td table__td--link">
-                                    <a href="#" class="table__link table__link--show-modal product-link">
-                                        <div class="product-link__container">
-                                            <div class="product-link__image">
-                                                <img src="img/trash/order/product-01.jpg" alt="product">
+                                <div class="table__tr _order-item" data-item-id="0">
+                                    <div class="table__td table__td--product table__td--link">
+                                        <a href="#" class="table__link table__link--show-modal product-link _show-modal" data-content="._products-modal">
+                                            <div class="product-link__container">
+                                                <div class="product-link__image"><img src="img/trash/order/product-01.jpg" alt="Дверное полотно ZARGO Duo 500 скандинавский дуб с/о (армированное)"></div>
+                                                <div class="product-link__title wide-product-title">
+                                                    <p class="wide-product-title__text">Дверное полотно ZARGO Duo 500 скандинавский дуб с/о (армированное)</p>                                                    
+                                                    <div class="wide-product-title__prices">
+                                                        <span>Цена для клиента: 4&nbsp;900.00 руб.</span>
+                                                        <span>Ваша скидка: 35%</span>
+                                                        <span>Ваша цена: 3&nbsp;185.00 руб.</span>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="product-link__title">Дверное полотно ZARGO Duo 600 скандинавский дуб с/о (армированное)</div>
+                                            <input type="hidden" class="_product" name="FIELDS[PRODUCTS][0][NOMENCLATURE]" value="00000004293">
+                                        </a>
+                                    </div>
+                                    <div class="table__td table__td--link table__td--features" data-title="Характеристики">
+                                        <a href="#" class="table__link table__link--show-modal _empty">Выбрать характеристики</a>
+                                    </div>
+                                    <div class="table__td table__td--mob-footer table__td--first-footer-row table__td--price __txt-right" data-title="Ваша цена">
+                                        <span class="__nowrap __rub _price-label">3&nbsp;185.00</span>
+                                        <input type="hidden" class="_price" data-rrc="4900" name="FIELDS[PRODUCTS][0][PRICE]" value="3185">
+                                    </div>
+                                    <div class="table__td table__td--counter __txt-right" data-title="Количество">
+                                        <div class="field table-field-counter counter-field _counter">
+                                            <span class="counter-field__minus _minus _disabled"><i class="icons __icon-subtract-line"></i></span>
+                                            <input type="text" class="counter-field__input _input _count" name="FIELDS[PRODUCTS][0][COUNT]" autocomplete="off">
+                                            <span class="counter-field__plus _plus"><i class="icons __icon-plus-only"></i></span>
                                         </div>
-                                    </a>
-                                </div>
-                                <div class="table__td table__td--link table__td--features" data-title="Характеристики" >
-                                    <a href="#" class="table__link table__link--show-modal _empty">Выбрать характеристики</a>
-                                </div>
-                                <div class="table__td table__td--counter __txt-right">
-                                    <div class="field table-field-counter counter-field _counter">
-                                        <span class="counter-field__minus _minus"><i class="icons __icon-subtract-line"></i></span>
-                                        <input id="f1" type="text" class="counter-field__input _input" autocomplete="off" />
-                                        <span class="counter-field__plus _plus"><i class="icons __icon-plus-only"></i></span>
+                                    </div>
+                                    <div class="table__td table__td--mob-footer __txt-right" data-title="Ваша сумма">
+                                        <span class="__nowrap __rub _sum-counterparty-label" data-sum="3185">3&nbsp;185.00</span>
+                                    </div>
+                                    <div class="table__td table__td--mob-footer __txt-right __gray-text" data-title="Сумма клиенту">
+                                        <span class="__nowrap __rub _sum-client-label" data-sum="4900">4&nbsp;655.00</span>
+                                    </div>
+                                    <div class="table__td table__td--counter __txt-right" data-title="Скидка/наценка">
+                                        <div class="field table-field-range counter-field _counter-range">
+                                            <span class="counter-field__minus _minus"><i class="icons __icon-subtract-line"></i></span>
+                                            <input type="tel" class="counter-field__input _input _client-sale" name="FIELDS[PRODUCTS][0][COUNT]" autocomplete="off" value="-5" data-min="-99" data-max="99" step="5" inputmode="text">
+                                            <span class="counter-field__plus _plus"><i class="icons __icon-plus-only"></i></span>
+                                        </div>
+                                    </div>
+                                    <div class="table__td table__td--mob-footer __txt-right __gray-text" data-title="Ваш доход">
+                                        <span class="__nowrap __rub _sum-income-label" data-sum="1715">1&nbsp;470.00</span>
+                                    </div>
+                                    <div class="table__td table__td--close-icon __txt-right">
+                                        <span class="_remove-product"><i class="icons __icon-close-only"></i></span>
                                     </div>
                                 </div>
-                                <div class="table__td table__td--mob-footer table__td--first-footer-row __txt-right" data-title="Цена"><span class="__nowrap __rub">344 000</span></div>
-                                <div class="table__td table__td--mob-footer __txt-right" data-title="Тип цен">Крупный&nbsp;опт</div>
-                                <div class="table__td table__td--mob-footer __txt-right" data-title="Сумма"><span class="__nowrap __rub">2 344 000</span></div>
-                                <div class="table__td table__td--close-icon">
-                                    <span><i class="icons __icon-close-only"></i></span>
+                                <div class="table__tr _order-item" data-item-id="0">
+                                    <div class="table__td table__td--product table__td--link">
+                                        <a href="#" class="table__link table__link--show-modal product-link _show-modal" data-content="._products-modal">
+                                            <div class="product-link__container">
+                                                <div class="product-link__image"><img src="img/trash/order/product-01.jpg" alt="Дверное полотно ZARGO Duo 500 скандинавский дуб с/о (армированное)"></div>
+                                                <div class="product-link__title wide-product-title">
+                                                    <p class="wide-product-title__text">Дверное полотно ZARGO Duo 500 скандинавский дуб с/о (армированное)</p>                                                    
+                                                    <div class="wide-product-title__prices">
+                                                        <span>Цена для клиента: 4&nbsp;900.00 руб.</span>
+                                                        <span>Ваша скидка: 35%</span>
+                                                        <span>Ваша цена: 3&nbsp;185.00 руб.</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <input type="hidden" class="_product" name="FIELDS[PRODUCTS][0][NOMENCLATURE]" value="00000004293">
+                                        </a>
+                                    </div>
+                                    <div class="table__td table__td--link table__td--features __empty" data-title="Характеристики"></div>
+                                    <div class="table__td table__td--mob-footer table__td--first-footer-row table__td--price __txt-right" data-title="Ваша цена">
+                                        <span class="__nowrap __rub _price-label">3&nbsp;185.00</span>
+                                        <input type="hidden" class="_price" data-rrc="4900" name="FIELDS[PRODUCTS][0][PRICE]" value="3185">
+                                    </div>
+                                    <div class="table__td table__td--counter __txt-right" data-title="Количество">
+                                        <div class="field table-field-counter counter-field _counter">
+                                            <span class="counter-field__minus _minus _disabled"><i class="icons __icon-subtract-line"></i></span>
+                                            <input type="text" class="counter-field__input _input _count" name="FIELDS[PRODUCTS][0][COUNT]" autocomplete="off">
+                                            <span class="counter-field__plus _plus"><i class="icons __icon-plus-only"></i></span>
+                                        </div>
+                                    </div>
+                                    <div class="table__td table__td--mob-footer __txt-right" data-title="Ваша сумма">
+                                        <span class="__nowrap __rub _sum-counterparty-label" data-sum="3185">3&nbsp;185.00</span>
+                                    </div>
+                                    <div class="table__td table__td--mob-footer __txt-right __gray-text" data-title="Сумма клиенту">
+                                        <span class="__nowrap __rub _sum-client-label" data-sum="4900">4&nbsp;655.00</span>
+                                    </div>
+                                    <div class="table__td table__td--counter __txt-right" data-title="Скидка/наценка">
+                                        <div class="field table-field-range counter-field _counter-range">
+                                            <span class="counter-field__minus _minus"><i class="icons __icon-subtract-line"></i></span>
+                                            <input type="tel" class="counter-field__input _input _client-sale" name="FIELDS[PRODUCTS][0][COUNT]" autocomplete="off" value="-5" data-min="-99" data-max="99" step="5" inputmode="text">
+                                            <span class="counter-field__plus _plus"><i class="icons __icon-plus-only"></i></span>
+                                        </div>
+                                    </div>
+                                    <div class="table__td table__td--mob-footer __txt-right __gray-text" data-title="Ваш доход">
+                                        <span class="__nowrap __rub _sum-income-label" data-sum="1715">1&nbsp;470.00</span>
+                                    </div>
+                                    <div class="table__td table__td--close-icon __txt-right">
+                                        <span class="_remove-product"><i class="icons __icon-close-only"></i></span>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
+                                <div class="table__tr table__tr--summarize _order-item" data-item-id="0"  data-da="._section-table-01,991,last">
+                                    <div class="table__td table__td--product table__td--link __empty __desktop-only"></div>
+                                    <div class="table__td table__td--link table__td--features __empty __desktop-only" data-title="Характеристики"></div>
+                                    <div class="table__td table__td--mob-footer table__td--first-footer-row table__td--price __txt-right __desktop-only" data-title="Ваша цена"></div>
+                                    <div class="table__td table__td--counter __txt-right __desktop-only"></div>
+                                    <div class="table__td table__td--mob-footer __txt-right" data-title="Итого ваша сумма">
+                                        <span class="__nowrap __rub _sum-counterparty-label" data-sum="3185">3&nbsp;185&nbsp;185.00</span>
+                                    </div>
+                                    <div class="table__td table__td--mob-footer __txt-right __gray-text" data-title="Итого сумма клиенту">
+                                        <span class="__nowrap __rub _sum-client-label" data-sum="4900">4&nbsp;655&nbsp;655.00</span>
+                                    </div>
+                                    <div class="table__td table__td--counter __txt-right __desktop-only"></div>
+                                    <div class="table__td table__td--mob-footer __txt-right __gray-text" data-title="Итого ваш доход">
+                                        <span class="__nowrap __rub _sum-income-label" data-sum="1715">1&nbsp;470&nbsp;470.00</span>
+                                    </div>
+                                    <div class="table__td table__td--close-icon __txt-right __desktop-only"></div>
+                                </div>
 
+                            </div>
                         </div>
 
                         <div class="section-table__add-row">
@@ -175,7 +301,7 @@
                         </div>
                     </div>
 
-                    <div class="section-table">
+                    <div class="section-table __empty">
                         <div class="section-table__title">Погонаж</div>
                         <div class="section-table__table table">
                             <div class="table__tr __head">
@@ -195,7 +321,7 @@
                         </div>
                     </div>
 
-                    <div class="section-table">
+                    <div class="section-table __empty">
                         <div class="section-table__title">Прочее</div>
                         <div class="section-table__table table">
                             <div class="table__tr __head">
@@ -215,7 +341,7 @@
                         </div>
                     </div>
 
-                    <div class="section-table">
+                    <div class="section-table __empty">
                         <div class="section-table__title">Полотна</div>
 
                         <div class="section-table__body">
@@ -270,8 +396,16 @@
                     </div>
 
                     <div class="order-form__summary __fixed">
-                        <div class="order-form__sum">Итого: <span class="__nowrap __rub">2 344 000</span></div>
+                        <div class="form__error">
+                            <p>aslkdjf skdfsdflksd jfsdkfjsfd sslkd jfslkdf sdkfjlsdk fsd</p>
+                        </div>
+                        <div class="order-form__sum order-form__sum--multi">
+                            <span>Ваша сумма: <i class="__nowrap __rub _summarize-counterparty">92 344 000</i></span>
+                            <span>Сумма клиенту: <i class="__nowrap __rub _summarize-client">92 344 000</i></span>
+                            <span>Ваш доход: <i class="__nowrap __rub _summarize-income">92 344 000</i></span>
+                        </div>
                         <div class="order-form__actions">
+                            <button type="button" class="btn btn--secondary">Сохранить как черновик</button>
                             <button type="submit" class="order-form__submit btn btn--primary">Оформить</button>
                         </div>
                     </div>
@@ -289,6 +423,14 @@
 </body>
 
 <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="vendors/inputmask/jquery.inputmask.min.js"></script>
+<script type="text/javascript" src="vendors/tooltipster/js/tooltipster.bundle.min.js"></script>
 <script type="text/javascript" src="vendors/formstyler/jquery.formstyler.min.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
+<script>
+	$(document).ready(function(){
+		const da = new DynamicAdapt("max");
+		da.init();
+	});
+</script>
 </html>

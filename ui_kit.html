@@ -10,6 +10,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="css/icomoon.css">
+<link rel="stylesheet" href="vendors/tooltipster/css/tooltipster.bundle.min.css">
+<link rel="stylesheet" href="css/tooltipster.warmex.theme.css">
 <link rel="stylesheet" href="vendors/formstyler/jquery.formstyler.css">
 <link rel="stylesheet" href="css/formstyler.aquadoor.theme.css">
 <link rel="stylesheet" href="css/main.css">
@@ -138,6 +140,13 @@
             <div class="field field--error">
                 <input type="text" class="field__element" placeholder="Адрес"/>
                 <p class="field__error-message">Какой-то текст ошибки</p>
+            </div>
+            <br/>
+
+            <div class="field counter-field counter-field--range _counter-range">
+                <span class="counter-field__minus _minus"><i class="icons __icon-subtract-line"></i></span>
+                <input type="tel" class="counter-field__input _input" value="-5" data-min="-99" data-max="99" step="5" />
+                <span class="counter-field__plus _plus"><i class="icons __icon-plus-only"></i></span>
             </div>
             <br/>
 
@@ -278,6 +287,8 @@
 </body>
 
 <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="vendors/inputmask/jquery.inputmask.min.js"></script>
+<script type="text/javascript" src="vendors/tooltipster/js/tooltipster.bundle.min.js"></script>
 <script type="text/javascript" src="vendors/formstyler/jquery.formstyler.min.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
 </html>

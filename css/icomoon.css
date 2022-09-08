@@ -24,6 +24,15 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.__icon-question:before {
+  content: "\e911";
+}
+.__icon-question-only:before {
+  content: "\e912";
+}
+.__icon-question-outline:before {
+  content: "\e950";
+}
 .__icon-check-only:before {
   content: "\e94b";
 }

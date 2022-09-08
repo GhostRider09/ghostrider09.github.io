@@ -10,6 +10,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="css/icomoon.css">
+<link rel="stylesheet" href="vendors/tooltipster/css/tooltipster.bundle.min.css">
+<link rel="stylesheet" href="css/tooltipster.warmex.theme.css">
 <link rel="stylesheet" href="vendors/formstyler/jquery.formstyler.css">
 <link rel="stylesheet" href="css/formstyler.aquadoor.theme.css">
 <link rel="stylesheet" href="css/main.css">
@@ -97,20 +99,23 @@
                         <div class="section-table__title">Полотна</div>
             
                         <div class="section-table__body">            
-                            <div class="section-table__table table _order-table" data-type="PRODUCTS">
+                            <div class="section-table__table table _order-table PRODUCTS" data-type="PRODUCTS" data-no-sale="N" data-counterparty-sale="35" >
                                 <div class="table__tr __head">
-                                    <div class="table__td">Номенклатура</div>
+                                    <div class="table__td table__td--product">Номенклатура</div>
                                     <div class="table__td table__td--features">Характеристики</div>
+                                    <div class="table__td __txt-right"><span>Ваша цена</span><div class="tooltip-label" title="jsdlkfjsdlkfjsldkfj"><i class="tooltip-label__icon icons __icon-question-only"></i></div></div>
                                     <div class="table__td table__td--counter __txt-right">Количество</div>
-                                    <div class="table__td __txt-right">Цена</div>
-                                    <div class="table__td __txt-right">Сумма</div>
+                                    <div class="table__td __txt-right">Ваша сумма</div>
+                                    <div class="table__td __txt-right">Сумма клиенту</div>
+                                    <div class="table__td table__td--counter __txt-right">Скидка/Наценка</div>
+                                    <div class="table__td __txt-right">Ваш доход</div>
                                     <div class="table__td table__td--close-icon __txt-right">&nbsp;</div>
                                 </div>
                             </div>
                         </div>
 
                         <div class="section-table__add-row">
-                            <button type="button" class="btn btn--secondary btn--icon section-table__add-button _add-product">
+                            <button type="button" class="btn btn--secondary btn--icon section-table__add-button _show-modal" data-type="PRODUCTS" data-content="._PRODUCTS-modal">
                                 <div><span>Добавить</span><i class="icons __icon-plus-only"></i></div>
                             </button>
                         </div>
@@ -140,7 +145,9 @@
                     </div>
 
                     <div class="order-form__summary __fixed">
-                        <div class="order-form__sum">Итого: <span class="__nowrap __rub _order-summarize">2 344 000</span></div>
+                        <div class="order-form__sum">Ваша сумма: <span class="__nowrap __rub _summarize-counterparty">2 344 000</span></div>
+                        <div class="order-form__sum">Сумма клиенту: <span class="__nowrap __rub _summarize-client">2 344 000</span></div>
+                        <div class="order-form__sum">Ваш доход: <span class="__nowrap __rub _summarize-income">2 344 000</span></div>
                         <div class="order-form__actions">
                             <button type="submit" class="order-form__submit btn btn--primary">Оформить</button>
                         </div>
@@ -149,6 +156,86 @@
                 
                                 
             </div>
+
+
+            <div class="modal _modern-modal _PRODUCTS-modal">
+                <div class="modal__body">
+                    <div class="modal__container">
+                        <div class="modal__close"><span class="icons __icon-close-only"></span></div>
+                        <div class="modal__title modal__title--filtered">
+                            <div class="__h3">Номенклатура</div>
+                            <div>
+                                <div class="field field--icon-right _filter-modal-elements">
+                                    <div class="field__wrapper">
+                                        <input type="text" class="field__element" placeholder="Введине название" data-container="._filter-container"/>
+                                        <div class="field__icon"><i class="icons __icon-search _filter-icon"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal__content">
+
+                            <div class="choose-produts _filter-container">
+                                <div class="choose-produts__item _filter-item _product" data-type="PRODUCTS" data-image="img/trash/order/product-01.jpg" data-features="1" data-name="Дверное полотно ZARGO Duo 500 скандинавский дуб с/о (армированное)" data-price="4900" data-nomenclature="00000004293">
+                                    <div class="choose-produts__product product-card">
+                                        <div class="product-card__image">
+                                            <img src="img/trash/order/product-01.jpg"">
+                                        </div>
+                                        <div class="product-card__title __subtitle2 _filter-value">
+                                            Дверное полотно ZARGO Duo 500 скандинавский дуб с/о (армированное)
+                                        </div>
+                                        <div class="product-card__description">
+                                            Прямоугольная конструкция, основная часть двери, но без установленного коробочного бруса, наличников, петель и т. п.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="choose-produts__item _filter-item _product" data-type="PRODUCTS" data-features="1" data-name="Прочая конструкция ZARGO Duo" data-price="4900" data-nomenclature="00000004293">
+                                    <div class="choose-produts__product product-card">
+                                        <div class="product-card__image __no-image">
+                                            <img src="img/no-product.svg" alt="">
+                                        </div>
+                                        <div class="product-card__title __subtitle2 _filter-value">
+                                            Прочая конструкция ZARGO Duo
+                                        </div>
+                                        <div class="product-card__description">
+                                            Прямоугольная конструкция, основная часть двери, но без установленного коробочного бруса, наличников, петель и т. п.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="choose-produts__item _filter-item _product" data-type="PRODUCTS" data-image="img/trash/order/product-01.jpg" data-features="1" data-name="Дверное полотно ZARGO Duo 600 скандинавский дуб с/о (армированное)" data-price="4900" data-nomenclature="00000004293">
+                                    <div class="choose-produts__product product-card">
+                                        <div class="product-card__image">
+                                            <img src="img/trash/order/product-01.jpg"">
+                                        </div>
+                                        <div class="product-card__title __subtitle2 _filter-value">
+                                            Дверное полотно ZARGO Duo 600 скандинавский дуб с/о (армированное)
+                                        </div>
+                                        <div class="product-card__description">
+                                            Прямоугольная конструкция, основная...
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="choose-produts__item _filter-item _product" data-type="PRODUCTS" data-image="img/trash/order/product-01.jpg" data-features="1" data-name="Пагонаж ZARGO Duo 600 скандинавский дуб с/о (армированное)" data-price="4900" data-nomenclature="00000004293">
+                                    <div class="choose-produts__product product-card">
+                                        <div class="product-card__image">
+                                            <img src="img/trash/order/product-01.jpg"">
+                                        </div>
+                                        <div class="product-card__title __subtitle2 _filter-value">
+                                            Пагонаж ZARGO Duo 600 скандинавский дуб с/о (армированное)
+                                        </div>
+                                        <div class="product-card__description">
+                                            Прямоугольная конструкция, основная часть двери, но без установленного коробочного бруса, наличников, петель и т. п.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
         <!-- овелей с волнами -->
@@ -159,6 +246,8 @@
 </body>
 
 <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="vendors/inputmask/jquery.inputmask.min.js"></script>
+<script type="text/javascript" src="vendors/tooltipster/js/tooltipster.bundle.min.js"></script>
 <script type="text/javascript" src="vendors/formstyler/jquery.formstyler.min.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
 </html>
