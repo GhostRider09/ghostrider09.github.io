@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+
+        <title>Upload apps</title>
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Selectivity.js/2.1.0/selectivity-full.min.css">
+        <link rel="stylesheet" href="assets/css/uikit.min.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+    </head>
+    <body>
+
+        <div id="main-app-container" class="main-container">
+            <header></header>
+            <main>
+                <aside>
+                    <div class="account-title">
+                        <div class="account-title__text">Аккаунты</div>
+                        <div class="account-title__button">
+                            <!-- <button type="button" class="button button--success js-popup-open" data-name="info-window">+</button> -->
+                        </div>
+                    </div>
+                    <ul class="account-navigation">
+                        <li class="account-navigation__item __active"><span>Account1</span></li>
+                        <li class="account-navigation__item"><span>Account2</span></li>
+                    </ul>
+                </aside>
+                <section>
+                    <div class="body-header">
+                        <div class="body-header__row body-header__row--support">
+                            <div class="body-header__app-state state-app __active">
+                                <div class="state-app__label">Статус приложения:</div>
+                                <div class="state-app__value">В порядке</div>
+                            </div>
+                            <div class="body-header__support">
+                                <button type="button" class="button button--info js-popup-open" data-name="feedback-window">Поддержка</button>
+                            </div>
+                        </div>
+                        <div class="body-header__row">
+                            <div class="body-header__navigation navigation">
+                                <div class="navigation__container">
+                                    <div class="navigation__item __active"><span>Инструкция</span></div>
+                                    <div class="navigation__item"><span>Подключитесь</span></div>
+                                    <div class="navigation__item"><span>Укажите общие настройки</span></div>
+                                    <div class="navigation__item"><span>Управление синхронизацией</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="content" class="body-wrapper"><!-- aside -->
+<!-- section -->
+<!--    navigation -->
+<!--    body-wrapper -->
+
+
+<h1 class="body-wrapper__title">Инструкции по подключению</h1>
+<p>После полной настройки картинки из карточки товара Мой склад и описания товаров начнут автоматически выгружаться ваш кабинет Озон.</p>
+
+<p>Приложение позволяет работать с любым количеством кабинетов Озон.</p>
+<p>Настройка занимает примерно 15 минут, вам нужно:</p> 
+<ol>
+    <li>Подключить кабинет Озон и проверить соединение. </li>
+    <li>Настроить поля для сопоставления товаров, а так же выбрать - из какого поля будет выгружаться описание.</li>
+</ol>
+
+<p>После завершения настройки ваши карточки будут добавлены в очередь и начнут обновляться. После этого доп. настроек в приложении делать не нужно, все изменения из моего склада будут передаваться в Озон автоматически.</p>
+
+
+<!--    /body-wrapper -->
+<!-- /section -->
+
+                    </div> <!-- body-wrapper -->
+                </section>
+            </main>
+            <footer></footer>
+        </div>
+
+        <div class="popup b-hide js-popup-window" data-name="feedback-window">
+            <div class="popup__overlay js-popup-close"></div>
+            <dialog open class="popup__body">
+                <button class="popup__close js-popup-close"></button>
+                <div class="popup__title">Напишите нам письмо</div>
+                <div class="popup__content">
+                    
+                    <form class="form">
+                        <div class="form__row">
+                            <div class="form__field-box field">
+                                <label class="field__label">Как вас зовут?</label>
+                                <input class="ui-input field__input" type="text" name="ui-input" placeholder="" value="">
+                                <div class="field__notice"></div>
+                            </div>
+                            <div class="form__field-box field __100">
+                                <label class="field__label">Что у вас случилось</label>
+                                <textarea class="ui-input field__input field__input--textarea"></textarea>
+                                <div class="field__notice"></div>
+                            </div>
+                        </div>
+                    
+                        <div class="form__row">
+                            <div class="form__field-box">
+                                <button class="button button--success">Сохранить</button>
+                                <button class="button js-popup-close">Отмена</button>
+                            </div>
+                        </div>
+                    
+                        <div class="form__notice __error">Не удалось подключиться. Проверьте, что скопировали ключ и ID полностью.</div>
+                        <div class="form__notice __success">Подключение удалось - переходите на следующую вкладку.</div>
+                    </form>
+
+                </div>
+            </dialog>
+        </div>
+    </body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Selectivity.js/2.1.0/selectivity-full.min.js"></script>
+    <script src="assets/js/uikit.min.js"></script>
+    <script src="assets/js/plugins.js"></script>
+</html>
