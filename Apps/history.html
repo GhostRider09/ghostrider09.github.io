@@ -20,7 +20,7 @@
                     <div class="account-title">
                         <div class="account-title__text">Аккаунты</div>
                         <div class="account-title__button">
-                            <!-- <button type="button" class="button button--success js-popup-open" data-name="info-window">+</button> -->
+                            <button type="button" class="button button--info js-popup-open" data-name="add-account-window">+</button>
                         </div>
                     </div>
                     <ul class="account-navigation">
@@ -45,7 +45,8 @@
                                     <div class="navigation__item __active"><span>Инструкция</span></div>
                                     <div class="navigation__item"><span>Подключитесь</span></div>
                                     <div class="navigation__item"><span>Укажите общие настройки</span></div>
-                                    <div class="navigation__item"><span>Управление синхронизацией</span></div>
+                                    <div class="navigation__item"><span>Настройте выгрузку</span></div>
+                                    <div class="navigation__item"><span>Лог обновлений</span></div>
                                 </div>
                             </div>
                         </div>
@@ -156,6 +157,42 @@
             <footer></footer>
         </div>
 
+        <div class="popup b-hide js-popup-window" data-name="add-account-window">
+            <div class="popup__overlay js-popup-close"></div>
+            <dialog open class="popup__body">
+                <button class="popup__close js-popup-close"></button>
+                <div class="popup__title">Добавление аккаунта</div>
+                <div class="popup__content">
+                    <p>Форма для примера. Набор полей будет сформирован на этапе разработки.</p>
+                    
+                    <form class="form">
+                        <div class="form__row __2">
+                            <div class="form__field-box field">
+                                <label class="field__label">Поле №1</label>
+                                <input class="ui-input field__input" type="text" name="ui-input" placeholder="" value="">
+                                <div class="field__notice"></div>
+                            </div>
+                            <div class="form__field-box field">
+                                <label class="field__label">Поле №2</label>
+                                <input class="ui-input field__input" type="text" name="ui-input" placeholder="" value="">
+                                <div class="field__notice"></div>
+                            </div>
+                        </div>
+                    
+                        <div class="form__row">
+                            <div class="form__field-box">
+                                <button class="button button--success">Сохранить</button>
+                            </div>
+                        </div>
+                    
+                        <div class="form__notice __error">Не удалось подключиться. Проверьте, что скопировали ключ и ID полностью.</div>
+                        <div class="form__notice __success">Подключение удалось - переходите на следующую вкладку.</div>
+                    </form>
+
+                </div>
+            </dialog>
+        </div>
+
         <div class="popup b-hide js-popup-window" data-name="feedback-window">
             <div class="popup__overlay js-popup-close"></div>
             <dialog open class="popup__body">
@@ -179,8 +216,7 @@
                     
                         <div class="form__row">
                             <div class="form__field-box">
-                                <button class="button button--success">Сохранить</button>
-                                <button class="button js-popup-close">Отмена</button>
+                                <button class="button button--success">Отправить</button>
                             </div>
                         </div>
                     

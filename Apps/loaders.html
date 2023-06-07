@@ -24,8 +24,8 @@
                         </div>
                     </div>
                     <ul class="account-navigation">
-                        <li class="account-navigation__item __active"><span>Account1</span></li>
-                        <li class="account-navigation__item"><span>Account2</span></li>
+                        <li class="account-navigation__item __loading __active"><span>Account1</span></li>
+                        <li class="account-navigation__item __loading"><span>Account2</span></li>
                     </ul>
                 </aside>
                 <section>
@@ -56,19 +56,49 @@
 <!--    navigation -->
 <!--    body-wrapper -->
 
+<span class="loader"></span>
+<h1 class="body-wrapper__title">Какой-то заголовок</h1>
+<button class="button __loading" disabled>Кнопка 1</button>
+<button class="button button--info __loading" disabled>Кнопка 1</button>
+<button class="button button--success __loading" disabled>Кнопка 1</button>
 
-<h1 class="body-wrapper__title">Инструкции по подключению</h1>
-<p>После полной настройки картинки из карточки товара Мой склад и описания товаров начнут автоматически выгружаться ваш кабинет Озон.</p>
+<br/>
+<br/>
+<br/>
+<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, natus commodi! Molestiae esse quidem odit ex amet eum obcaecati blanditiis, at architecto consequuntur accusantium laboriosam nostrum nemo. Hic, ad ab?
+Necessitatibus ab sapiente repudiandae cupiditate nulla consequuntur mollitia dicta, distinctio provident architecto cum error. Magni cum ut dolorem doloribus, quis dicta nesciunt odit possimus hic error voluptatibus consectetur. Neque, rerum.
+Asperiores porro nemo eligendi praesentium accusamus at repudiandae ullam accusantium dolore distinctio. Sit delectus minus nesciunt culpa iure consequuntur, aut dolore quam dicta eum officiis eius, eveniet libero, ipsum inventore!
+Aut impedit modi esse nesciunt eum, fuga velit maiores, inventore quod porro molestias eveniet! Numquam, reiciendis at itaque culpa libero inventore vero neque! Nobis autem quo maiores perspiciatis molestiae aliquid?
+Non beatae temporibus nostrum qui, vero nam quaerat esse et odit ut illo voluptatibus porro vel modi quibusdam officiis eum at consequuntur numquam sit perspiciatis eaque sunt. Labore, cupiditate aperiam.</p>
 
-<p>Приложение позволяет работать с любым количеством кабинетов Озон.</p>
-<p>Настройка занимает примерно 15 минут, вам нужно:</p> 
-<ol>
-    <li>Подключить кабинет Озон и проверить соединение. </li>
-    <li>Настроить поля для сопоставления товаров, а так же выбрать - из какого поля будет выгружаться описание.</li>
-</ol>
+<div class="sync-table">
+    <div class="sync-table__container">
+        <table class="ui-table">
+            <thead>
+                <tr>
+                    <th>&nbsp;</th>
+                    <th>Наименование</th>
+                    <th>Озон: артикул</th>
+                    <th>МойСклад: артикул</th>
+                    <th>Картинки</th>
+                    <th>Описание</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="6" class="__loading"></td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="6"></td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
 
-<p>После завершения настройки ваши карточки будут добавлены в очередь и начнут обновляться. После этого доп. настроек в приложении делать не нужно, все изменения из моего склада будут передаваться в Озон автоматически.</p>
-
+    <button class="button button--info" disabled type="button">Сохранить отмеченные товары</button>
+</div>
 
 <!--    /body-wrapper -->
 <!-- /section -->
