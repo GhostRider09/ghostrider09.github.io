@@ -192,4 +192,27 @@
 
 $(document).ready(function(){
     $('.multiple-select').multiSelect();
+
+    $('._settings-action').on('change', function(e) {
+        let action = $(this).val(), $form = $(this).closest('form'), $check = $(this);
+
+        let $additionalSettings = $form.find(`._additional-${action}-settings`);
+        if ( $additionalSettings.length ) {
+            if ( $check.prop('checked') ) {
+                $additionalSettings.removeClass('__hidden').find('input, select, textarea').prop('disabled', false);
+            } else {
+                $additionalSettings.addClass('__hidden').find('input, select, textarea').prop('disabled', true);
+            }
+        }
+
+        if ( $form.find('._settings-action:checked').length ) {
+            $form.find('._restrict-field').removeClass('__hidden')
+                .find(".multiple-select").trigger('disable', false);
+        } else {
+            $form.find('._restrict-field').addClass('__hidden')
+                .find(".multiple-select").trigger('disable', true);
+        }
+
+        e.preventDefault();
+    }).eq(0).trigger('change');
 });

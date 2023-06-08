@@ -60,27 +60,6 @@
 <h1 class="body-wrapper__title">Подключитесь</h1>
 <p class="body-wrapper__subtitle">Настройте подключение к аккаунтам для возможности успешной синхронизации</p>
 <form class="body-wrapper__filter form">
-    <div class="form__row __3">
-        <div class="form__field-box field">
-            <label class="field__label">Название магазина</label>
-            <input class="ui-input field__input" type="text" name="ui-input" placeholder="" value="Account1">
-            <div class="field__notice"></div>
-        </div>
-        <div class="form__field-box field">
-            <label class="field__label">Модель работы маркетплейса</label>
-            <select class="ui-select field__input" name="ui-select">
-                <option value="">-</option>
-                <option value="" selected>FBS</option>
-                <option value="">FBO</option>
-            </select>
-            <div class="field__notice"></div>
-        </div>
-        <div class="form__field-box field __align-right">
-            <label class="field__label">&nbsp;</label>
-            <button class="button button--alert" type="button">Удалить аккаунт</button>
-        </div>
-    </div>
-    <hr/>
     <h3 class="form__section-title">Настройки API</h3>    
     <div class="form__row __2">
         <div class="form__field-box field">
@@ -104,6 +83,44 @@
     <div class="form__notice __error">Не удалось подключиться. Проверьте, что скопировали ключ и ID полностью.</div>
     <div class="form__notice __success">Подключение удалось - переходите на следующую вкладку.</div>
 </form>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<hr>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<h1 class="body-wrapper__title">Настройки подключения к OZON</h1>
+<form class="body-wrapper__filter form">
+    <div class="form__notice __success">Соединение установлено</div>
+    <div class="form__row __2">
+        <div class="form__field-box field">
+            <label class="field__label">OZON API key</label>
+            <input class="ui-input field__input" type="text" name="ui-input" placeholder="" value="92d0b595-5ef8-11ea-0a80-024b0019fa23">
+            <div class="field__notice">Сгенерируйте и скопируйте в ЛК > Настройки > API ключи</div>
+        </div>
+        <div class="form__field-box field">
+            <label class="field__label">OZON Сlient Id</label>
+            <input class="ui-input field__input" type="text" name="ui-input" value="65465454">
+            <div class="field__notice">Ваш ID, скопируйте в ЛК > Настройки > API ключи</div>
+        </div>
+    </div>
+
+    <div class="form__row __1">
+        <div class="form__field-box">
+            <button class="button button--info" type="button">Сохранить</button>
+            <button class="button js-popup-open" data-name="accept-notice-window" type="button">Выключить</button>
+            <button class="button button--alert js-popup-open" data-name="accept-notice-window" type="button">Удалить</button>
+        </div>
+    </div>
+</form>
+
 
 
 <!--    /body-wrapper -->
@@ -179,6 +196,26 @@
                     
                         <div class="form__notice __error">Не удалось подключиться. Проверьте, что скопировали ключ и ID полностью.</div>
                         <div class="form__notice __success">Подключение удалось - переходите на следующую вкладку.</div>
+                    </form>
+
+                </div>
+            </dialog>
+        </div>
+
+        <div class="popup b-hide js-popup-window" data-name="accept-notice-window">
+            <div class="popup__overlay js-popup-close"></div>
+            <dialog open class="popup__body">
+                <button class="popup__close js-popup-close"></button>
+                <div class="popup__title">Уверены?</div>
+                <div class="popup__content">
+                    <p>При подтверждении магазин будет отключен от синхронизации и карточки в озон перестанут отправляться. Все сопоставленные данные будут сохранены. Включить синхронизацию обратно будет возможно.</p>
+                    <form class="form">                    
+                        <div class="form__row __1">
+                            <div class="form__field-box">
+                                <button class="button button--info">Отправить</button>
+                                <button class="button js-popup-close">Отменить</button>
+                            </div>
+                        </div>
                     </form>
 
                 </div>

@@ -57,98 +57,105 @@
 <!--    body-wrapper -->
 
 
-<h1 class="body-wrapper__title">Укажите общие настройки</h1>
-<p class="body-wrapper__subtitle">Выберите, по какому полю сопоставлять карточки с товарами. Чаще всего используется связка “Артикул - Баркод (штрихкод)”. По этому полю будет выполнено автоматическое сопоставление карточек Озон с товарами Мой Склад.</p>
-<form class="body-wrapper__form-settings form">
-    <div class="form__row">
-        <div class="form__field-box field __100">
-            <label class="check option">
-                <input class="check__input _settings-action" value="image" type="checkbox" checked>
-                <span class="check__box"></span>
-                <span class="check__text">Теперь в озон будут выгружаться изображения из карточки товара Мой склад</span>
-            </label>
-            <label class="check option">
-                <input class="check__input _settings-action" value="description" type="checkbox">
-                <span class="check__box"></span>
-                <span class="check__text">Если вы хотите выгружать описания, включите</span>
-            </label>
-        </div>
-        <div class="form__field-box field __33 __hidden _additional-description-settings">
-            <label class="field__label">Выберите, из какого поля брать текст описания для выгрузки</label>
-            <select class="ui-select field__input" name="ui-select">
-                <option value="">Текстовое поле 1</option>
-                <option value="">Текстовое поле 2</option>
-            </select>
-        </div>
+<h1 class="body-wrapper__title">Настройте выгрузку товаров</h1>
+
+<h3>Фильтры</h3>
+<div class="body-wrapper__filter-sync sync-filter">
+    <div class="sync-filter__links">
+        <div class="sync-filter__link __selected"><a href="">Все(1233)</a></div>
+        <div class="sync-filter__link"><a href="">Сопоставлены(123)</a></div>
+        <div class="sync-filter__link"><a href="">Не сопоставлены(1233)</a></div>
+    </div>
+    <div class="sync-filter__search">
+        <input class="ui-input" type="text" name="ui-input" placeholder="Поиск по артикулу">
+    </div>
+</div>
+<div class="sync-table">
+    <div class="sync-table__container">
+        <table class="ui-table">
+            <thead>
+                <tr>
+                    <th>&nbsp;</th>
+                    <th>Наименование</th>
+                    <th>Озон: артикул</th>
+                    <th>МойСклад: артикул</th>
+                    <th>Картинки</th>
+                    <th>Описание</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <label class="check option">
+                            <input class="check__input" type="checkbox" checked>
+                            <span class="check__box"></span>
+                        </label>
+                    </td>
+                    <td>Лампа Н1 12v 55w (Р14.5s) дальний свет (NARVA)</td>
+                    <td>200000000007</td>
+                    <td>
+                        <input class="ui-input sync-table__row-input" type="text" name="ui-input" placeholder="" value="2000000000077">
+                    </td>
+                    <td>Есть</td>
+                    <td>Есть</td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="check option">
+                            <input class="check__input" type="checkbox" checked>
+                            <span class="check__box"></span>
+                        </label>
+                    </td>
+                    <td>
+                        <i class="__text-hint">Лампа Н1 12v 55w (Р14.5s) дальний свет (NARVA) Супер много текста фд выодафвдлоафщцуощ шф ываощфыв афуфошуа фщоадф воафзвшоафж дылвоафжуша цщшуоаяж дво цушояуа</i>
+                    </td>
+                    <td>200000000007</td>
+                    <td>
+                        <input class="ui-input sync-table__row-input" type="text" name="ui-input" placeholder="" value="">
+                    </td>
+                    <td>Есть</td>
+                    <td>Есть</td>
+                </tr>
+            </tbody>
+            <!--<tfoot>
+                <tr>
+                    <td colspan="2">
+                        <div class="ui-table__pager">
+                            <div class="ui-table__buttons">
+                                <a href="#" class="ui-table__link">
+                                    <button class="ui-table__button" title="Предыдущая страница" disabled="">&#8249;
+                                    </button>
+                                </a>
+                                <a href="#" class="ui-table__link">
+                                    <button class="ui-table__button" title="В начало" disabled="">&#171;</button>
+                                </a>
+                            </div>
+                            <div class="ui-table__count">1-3 из 1</div>
+                            <div class="ui-table__buttons">
+                                <a href="#" class="ui-table__link">
+                                    <button class="ui-table__button" title="В конец">&#187;</button>
+                                </a>
+                                <a href="#" class="ui-table__link">
+                                    <button class="ui-table__button" title="Следующая страница">&#8250;</button>
+                                </a>
+                            </div>
+                        </div>
+                    </td>
+                    <td colspan="4"></td>
+                </tr>
+            </tfoot>-->
+            <tfoot>
+                <tr>
+                    <td colspan="6"></td>
+                </tr>
+            </tfoot>
+        </table>
     </div>
 
-    <div class="form__row __hidden _restrict-field">
-        <div class="form__field-box field __50">
-            <label class="field__label">Выберите товары и категории, которые не должны участвовать в обмене</label>
-            <div class="multiple-select field__input __disabled _container _empty" data-placeholder="Выберите элементы">
-                <div class="multiple-select__label _label" data-text=""></div>
-                <div class="multiple-select__dropdown _dropdown">
-                    <div class="multiple-select__filter _filter">
-                        <input type="text" class="multiple-select__input" placeholder="Введите название или код" />
-                    </div>
-                    <div class="multiple-select__items _items">
-                        <div class="multiple-select__item select-item _item _selected">
-                            <label class="select-item__container">
-                                <div class="select-item__check">
-                                    <div class="check option">
-                                        <input class="check__input" type="checkbox" value="1" data-code="3" checked>
-                                        <span class="check__box"></span>
-                                    </div>
-                                </div>
-                                <div class="select-item__body">
-                                    <div class="select-item__title _item-title">Кузовные элементы</div>
-                                    <div class="select-item__hint">Элементы дизайна > Кузов Газель > Газель 3310 > Еще подраздел</div>
-                                </div>
-                            </label>
-                        </div>
-                        <div class="multiple-select__item select-item _item">
-                            <label class="select-item__container">
-                                <div class="select-item__check">
-                                    <div class="check option">
-                                        <input class="check__input" type="checkbox" value="2" data-code="4">
-                                        <span class="check__box"></span>
-                                    </div>
-                                </div>
-                                <div class="select-item__body">
-                                    <div class="select-item__title _item-title">Кузовные элементы 2</div>
-                                    <div class="select-item__hint">Элементы дизайна > Кузов Газель > Газель 3310 > Еще подраздел</div>
-                                </div>
-                            </label>
-                        </div>
-                        <div class="multiple-select__item select-item _item">
-                            <label class="select-item__container">
-                                <div class="select-item__check">
-                                    <div class="check option">
-                                        <input class="check__input" type="checkbox" value="5" data-code="8">
-                                        <span class="check__box"></span>
-                                    </div>
-                                </div>
-                                <div class="select-item__body">
-                                    <div class="select-item__title _item-title">элементы 2</div>
-                                    <div class="select-item__hint">Элементы дизайна > Кузов Газель > Газель 3310 > Еще подраздел</div>
-                                </div>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="field__notice __text-warning">Товары из отмеченных разделов синхронизироваться не будут</div>
-        </div>
-    </div>
-
-    <div class="form__row form__row--footer">
-        <div class="form__field-box">
-            <button class="button button--info" type="button">Сохранить настройки</button>
-        </div>
-    </div>
-
-    <div class="form__notice __error">Выберите хотя бы одну настройку, иначе в чем смысл?</div>
-</form>
+    <button class="button button--info" type="button">Сохранить отмеченные товары</button>
+    <p class="__text-warning">Приложение будет синхронизировать только отмеченные в таблице товары</p>
+    <div class="sync-table__notice __text-success">Настроки успешно сохранены</div>
+</div>
 
 <!--    /body-wrapper -->
 <!-- /section -->

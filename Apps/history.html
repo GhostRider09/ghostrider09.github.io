@@ -82,31 +82,37 @@
         <thead>
             <tr>
                 <th>Наименование в Озон</th>
-                <th>Дата выполнения операции</th>
-                <th>Статус</th>
+                <th>ОЗОН: Баркод</th>
+                <th>МойСклад: Баркод</th>
+                <th>Картинки</th>
+                <th>Описание</th>
                 <th>Ошибки</th>
-                <th>&nbsp;</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td>Накладки на Газель 2705; 3321 (обвес по кузову) компл. 4 шт (пластик) графит</td>
-                <td><i class="__text-warning">12/12/2012 12:12:12</i></td>
+                <td><i class="">200000000007</i></td>
+                <td><i class="">200000000007</i></td>
+                <td><i class="__text-warning">в очереди</i></td>
                 <td><i class="__text-warning __nowrap">в очереди</i></td>
+                <td><i class="__text-warning"></i></td>
                 <td></td>
-                <td><a href="javascript:void(0);">Отменить</a></td>
             </tr>
             <tr>
                 <td>Накладки на Газель 2705; 3321 (обвес по кузову) компл. 4 шт (пластик) графит</td>
+                <td><i class="">200000000007</i></td>
+                <td><i class="">200000000007</i></td>
                 <td><i class="__text-success">12/12/2012 12:12:12</i></td>
-                <td><i class="__text-success">успешно</i></td>
+                <td><i class="__text-success">12/12/2012 12:12:12</i></td>
                 <td><i class="__text-success">Синхронизация выполнена по расписанию</i></td>
-                <td><a href="javascript:void(0);">Запустить вручную</a></td>
             </tr>
             <tr>
                 <td>Накладки на Газель 2705; 3321 (обвес по кузову) компл. 4 шт (пластик) графит</td>
+                <td><i class="">200000000007</i></td>
+                <td><i class="">200000000007</i></td>
                 <td><i class="__text-error">12/12/2012 12:12:12</i></td>
-                <td><i class="__text-error">ошибка</i></td>
+                <td><i class="__text-error">12/12/2012 12:12:12</i></td>
                 <td>
                     Возникли ошибки в процессе синхронизации:
                     <ul>
@@ -114,7 +120,6 @@
                         <li>Товар 45: товар на ОЗОН не найден. Выполните синхронизацию еще раз</li>
                     </ul>
                 </td>
-                <td><a href="javascript:void(0);">Запустить вручную</a></td>
             </tr>
         </tbody>
         <tfoot>
@@ -141,7 +146,7 @@
                         </div>
                     </div>
                 </td>
-                <td colspan="3"></td>
+                <td colspan="4"></td>
             </tr>
         </tfoot>
     </table>
@@ -222,6 +227,26 @@
                     
                         <div class="form__notice __error">Не удалось подключиться. Проверьте, что скопировали ключ и ID полностью.</div>
                         <div class="form__notice __success">Подключение удалось - переходите на следующую вкладку.</div>
+                    </form>
+
+                </div>
+            </dialog>
+        </div>
+
+        <div class="popup b-hide js-popup-window" data-name="accept-notice-window">
+            <div class="popup__overlay js-popup-close"></div>
+            <dialog open class="popup__body">
+                <button class="popup__close js-popup-close"></button>
+                <div class="popup__title">Уверены?</div>
+                <div class="popup__content">
+                    <p>При подтверждении магазин будет отключен от синхронизации и карточки в озон перестанут отправляться. Все сопоставленные данные будут сохранены. Включить синхронизацию обратно будет возможно.</p>
+                    <form class="form">                    
+                        <div class="form__row __1">
+                            <div class="form__field-box">
+                                <button class="button button--info">Отправить</button>
+                                <button class="button js-popup-close">Отменить</button>
+                            </div>
+                        </div>
                     </form>
 
                 </div>

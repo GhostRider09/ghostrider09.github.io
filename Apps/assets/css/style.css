@@ -587,44 +587,6 @@ hr {
   text-transform: uppercase;
   font-weight: bold;
 }
-.sync-filter {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-.sync-filter__links {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-.sync-filter__link {
-  padding: 0.25em;
-}
-.sync-filter__link a {
-  font-size: 0.75rem;
-  color: #979797;
-}
-.sync-filter__link.__selected a {
-  color: #333;
-  text-decoration: none;
-  cursor: default;
-}
-@media (hover: hover) {
-  .sync-filter__link:not(.__selected):hover a {
-    color: #608de3;
-  }
-}
 .state-app__label {
   font-size: 0.875rem;
   padding-bottom: 0.25em;
@@ -642,6 +604,44 @@ hr {
   color: #DC1717;
 }
 
+.sync-filter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 0.75rem;
+}
+.sync-filter__links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 0.5em;
+}
+.sync-filter__link a {
+  font-size: 0.75rem;
+  color: #979797;
+}
+.sync-filter__link.__selected a {
+  color: #333;
+  text-decoration: none;
+  cursor: default;
+  font-weight: 700;
+}
+@media (hover: hover) {
+  .sync-filter__link:not(.__selected):hover a {
+    color: #608de3;
+  }
+}
 .sync-table__container {
   padding-bottom: 1rem;
 }
@@ -649,6 +649,9 @@ hr {
   padding-top: 0.5em;
   font-size: 0.875rem;
   font-style: italic;
+}
+.sync-table__row-input {
+  min-width: 0;
 }
 .sync-table td.__loading {
   height: 5rem;
@@ -938,8 +941,16 @@ hr {
   color: #608de3;
 }
 
+.__text-hint {
+  color: #979797;
+}
+
 .__nowrap {
   white-space: nowrap;
+}
+
+.__hidden {
+  display: none;
 }
 
 .body-header {
@@ -972,14 +983,14 @@ hr {
   padding: 0.5rem;
 }
 .body-wrapper__title {
-  padding-bottom: 0.5rem;
+  padding-bottom: 1rem;
   font-weight: 700;
 }
 .body-wrapper__subtitle {
   padding-bottom: 1rem;
 }
 .body-wrapper__filter-sync {
-  padding: 1.5rem 0 1rem;
+  padding: 0 0 1rem;
 }
 .body-wrapper ul, .body-wrapper ol {
   font-size: 0.75rem;
