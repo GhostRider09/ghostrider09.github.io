@@ -190,6 +190,37 @@
     });
 })(jQuery);
 
+function plural( $num, $im, $rod_ed, $rod_mn, bWithNum ) {
+    var sResult = "";
+    $num = Math.round($num);
+    if ( $num > 10 && (Math.round(($num % 100) - ($num % 10)) / 10) == 1 ) {
+        sResult = $rod_mn;
+    } else {
+        switch ($num % 10) {
+            case (1) :
+                sResult = $im;
+                break;
+            case (2) :
+            case (3) :
+            case (4) :
+                sResult = $rod_ed;
+                break;
+            case (5) :
+            case (6) :
+            case (7) :
+            case (8) :
+            case (9) :
+            case (0) :
+                sResult = $rod_mn;
+                break;
+            default:
+                sResult = $im;
+        }
+    }
+
+    return ( bWithNum ? $num + ' ' + sResult : sResult );
+}
+
 $(document).ready(function(){
     $('.multiple-select').multiSelect();
 
@@ -215,4 +246,15 @@ $(document).ready(function(){
 
         e.preventDefault();
     }).eq(0).trigger('change');
+
+
+    $('.page-content__body').on('change', '._table-item-check', function() {
+        let $counter = $('._group-panel-counter');
+
+        if ( $counter.length ) {
+            let $activeCheckboxes = $('._table-item-check:checked');
+            let countText = plural( $activeCheckboxes.length, "элемент", "элемента", "элементов", true );
+            $counter.text( countText );
+        }
+    });
 });

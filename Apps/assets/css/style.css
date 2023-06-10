@@ -74,7 +74,8 @@ img {
 .main-container {
   font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   color: #333;
-  min-height: 50vh;
+  height: 100%;
+  overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -108,6 +109,8 @@ img {
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
   padding: 0.5rem;
+  overflow: hidden;
+  height: 100vh;
 }
 hr {
   background: #e4e5e5;
@@ -658,6 +661,37 @@ hr {
   font-size: 1.5rem;
 }
 
+.statistic {
+  font-size: 0.875rem;
+  font-weight: 700;
+  padding: 0 1.5rem 0.25rem 0;
+}
+.statistic span {
+  font-weight: 500;
+  display: block;
+  padding-top: 0.65em;
+}
+
+.group-actions__row {
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  padding: 0;
+  gap: 1rem;
+  margin: 0;
+}
+.group-actions__field-box {
+  padding: 0;
+}
+.group-actions .field__input {
+  padding-bottom: 0;
+}
+.group-actions .selectivity-single-select {
+  background-color: #fff;
+}
+
 .loader {
   font-size: 0.5em;
   width: 1em;
@@ -950,7 +984,55 @@ hr {
 }
 
 .__hidden {
-  display: none;
+  display: none !important;
+}
+
+.page-content {
+  position: relative;
+}
+.page-content__body {
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: calc(100% - 6rem);
+  padding-right: 0.5rem;
+  padding-bottom: 1rem;
+}
+.page-content__body::-webkit-scrollbar {
+  width: 0.5rem;
+}
+.page-content__body::-webkit-scrollbar-track {
+  background-color: rgba(96, 141, 227, 0.3);
+  border-radius: 0.5rem;
+}
+.page-content__body::-webkit-scrollbar-thumb {
+  background-color: #608de3;
+  border-radius: 0.5rem;
+}
+.page-content--has-panel .page-content__body {
+  padding-bottom: calc(4rem + 1rem);
+}
+.page-content__panel {
+  position: absolute;
+  top: calc(100% - 4rem);
+  left: 0;
+  width: 100%;
+  height: 4rem;
+  display: block;
+  background: #efefef;
+  -webkit-box-shadow: 0 -2px 6px #e4e5e5;
+          box-shadow: 0 -2px 6px #e4e5e5;
+  border-top: 1px solid #e4e5e5;
+}
+.page-content__panel-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0.5rem;
+  height: 100%;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  gap: 1rem;
 }
 
 .body-header {
@@ -979,8 +1061,6 @@ hr {
 
 .body-wrapper {
   display: block;
-  width: 100%;
-  padding: 0.5rem;
 }
 .body-wrapper__title {
   padding-bottom: 1rem;
