@@ -77,6 +77,11 @@
                         }
                     }
                 });
+                
+                if ( getItems().length < 10 ) {
+                    $dropdown.addClass('__no-filter');
+                    $dropdownFilter.hide();
+                }
 
                 $oSelectBox.on( 'click', '._remove-bubble', function(e) {
                     if ( _that._plugin.isDisabled ) {
@@ -187,6 +192,76 @@
                 _that._inited
             });
         };
+
+        $.fn.previewImageInput = function(initOptions) {
+            $(this).each(function() {
+                let _that = this;
+
+                if ( _that._inited ) {
+                    return false;
+                }
+
+                let initCounter = (start) => {
+                    count = start || 0;
+                    return () => {
+                        return count++;
+                    };
+                }
+
+                _that._plugin = {
+                    $container: $(this),
+                    $switch: $(this).find('input._switch'),
+                    $photoContainer: $(this).find('._photo-container'),
+                    nextIndex: initCounter(1),
+                };
+                _that._plugin.options = initOptions || {};
+
+                _that._plugin.$switch.on('change', (e) => {
+                    if ( $(e.target).prop('checked') ) {
+                        _that._plugin.$photoContainer.find('input').prop('disabled', false);
+                        _that._plugin.$container.find('._photos-wrapper').show();
+
+                    } else {
+                        _that._plugin.$container.find('._photos-wrapper').hide();
+                        _that._plugin.$photoContainer.find('input').prop('disabled', true);
+                    }
+                }).trigger('change');
+
+                _that._plugin.$photoContainer.on('click', '._remove-image', function(e) {
+                    $(this).closest('._item').remove();
+
+                    e.preventDefault();
+                });
+
+                _that._plugin.$photoContainer.on('change', '._add-image-file', function(e) {
+                    let $addNode = $(this).closest('._item');
+                    let $input = $(this);
+
+                    if ( $input[0].files.length ) {
+                        let $newNode = $addNode.clone();
+                        $newNode.removeClass('__empty');
+                        $newNode.find('input').attr('name', "image" + _that._plugin.nextIndex());
+                        
+                        let [ file ] = $newNode.find('input').get(0).files;
+                        if ( file ) {
+                            let $img = $('<img src="" />');
+                            $img[0].src = URL.createObjectURL(file);
+
+                            $newNode.find('._preview').append( $img );
+                        }
+
+                        $addNode.before( $newNode );
+
+                        $input.val('');
+                    }
+
+                    e.preventDefault();
+                });
+
+
+                _that._inited
+            });
+        };
     });
 })(jQuery);
 
@@ -223,6 +298,7 @@ function plural( $num, $im, $rod_ed, $rod_mn, bWithNum ) {
 
 $(document).ready(function(){
     $('.multiple-select').multiSelect();
+    $('._promo-photo-group').previewImageInput();
 
     $('._settings-action').on('change', function(e) {
         let action = $(this).val(), $form = $(this).closest('form'), $check = $(this);

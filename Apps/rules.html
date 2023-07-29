@@ -1,0 +1,533 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+
+        <title>Upload apps</title>
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Selectivity.js/2.1.0/selectivity-full.min.css">
+        <link rel="stylesheet" href="/assets/css/uikit.min.css">
+        <link rel="stylesheet" href="/assets/css/style.css">
+    </head>
+    <body>
+
+        <div id="main-app-container" class="main-container">
+            <header></header>
+            <main>
+                <aside>
+                    <div class="account-title">
+                        <div class="account-title__text">Аккаунты</div>
+                        <div class="account-title__button">
+                            <button type="button" class="button button--info js-popup-open" data-name="add-account-window">+</button>
+                        </div>
+                    </div>
+                    <ul class="account-navigation">
+                        <li class="account-navigation__item __active"><span>Account1</span></li>
+                        <li class="account-navigation__item"><span>Account2</span></li>
+                    </ul>
+                </aside>
+                <section class="page-content page-content--has-panel">
+                    <div class="page-content__header body-header">
+                        <div class="body-header__row body-header__row--support">
+                            <div class="body-header__app-state state-app __active">
+                                <div class="state-app__label">Статус приложения:</div>
+                                <div class="state-app__value">В порядке</div>
+                            </div>
+                            <div class="body-header__support">
+                                <button type="button" class="button button--info js-popup-open" data-name="feedback-window">Поддержка</button>
+                            </div>
+                        </div>
+                        <div class="body-header__row">
+                            <div class="body-header__navigation navigation">
+                                <div class="navigation__container">
+                                    <div class="navigation__item __active"><span>Инструкция</span></div>
+                                    <div class="navigation__item"><span>Подключитесь</span></div>
+                                    <div class="navigation__item"><span>Укажите общие настройки</span></div>
+                                    <div class="navigation__item"><span>Настройте выгрузку</span></div>
+                                    <div class="navigation__item"><span>Настройте правила</span></div>
+                                    <div class="navigation__item"><span>Лог обновлений</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="content" class="page-content__body body-wrapper"><!-- aside -->
+<!-- section -->
+<!--    navigation -->
+<!--    body-wrapper -->
+
+
+<h1 class="body-wrapper__title">Настройте правила обработки картинок</h1>
+<p>Создайте правила с нуля или скопируйте существующее. Задайте порядок их выполнения. <a href="#">Смотрите видео</a></p>
+<p>&nbsp;</p>
+
+<div class="body-wrapper__filter-sync sync-filter">
+    <div class="sync-filter__links"></div>
+    <div class="sync-filter__search">
+
+        <div class="multiple-select sync-filter__field _container _empty" data-placeholder="Поиск по тегам">
+            <div class="multiple-select__label _label" data-text=""></div>
+            <div class="multiple-select__dropdown __no-filter _dropdown">
+                <div class="multiple-select__items _items">
+                    <div class="multiple-select__item select-item _item">
+                        <label class="select-item__container">
+                            <div class="select-item__check">
+                                <div class="check option">
+                                    <input class="check__input" type="checkbox" value="1" data-code="3">
+                                    <span class="check__box"></span>
+                                </div>
+                            </div>
+                            <div class="select-item__body">
+                                <div class="select-item__title _item-title">Тег 1</div>
+                                <div class="select-item__hint"></div>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="multiple-select__item select-item _item">
+                        <label class="select-item__container">
+                            <div class="select-item__check">
+                                <div class="check option">
+                                    <input class="check__input" type="checkbox" value="2" data-code="4">
+                                    <span class="check__box"></span>
+                                </div>
+                            </div>
+                            <div class="select-item__body">
+                                <div class="select-item__title _item-title">Тег 2</div>
+                                <div class="select-item__hint"></div>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="multiple-select__item select-item _item">
+                        <label class="select-item__container">
+                            <div class="select-item__check">
+                                <div class="check option">
+                                    <input class="check__input" type="checkbox" value="2" data-code="4">
+                                    <span class="check__box"></span>
+                                </div>
+                            </div>
+                            <div class="select-item__body">
+                                <div class="select-item__title _item-title">Тег 3</div>
+                                <div class="select-item__hint"></div>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="multiple-select__item select-item _item">
+                        <label class="select-item__container">
+                            <div class="select-item__check">
+                                <div class="check option">
+                                    <input class="check__input" type="checkbox" value="2" data-code="4">
+                                    <span class="check__box"></span>
+                                </div>
+                            </div>
+                            <div class="select-item__body">
+                                <div class="select-item__title _item-title">Тег 4</div>
+                                <div class="select-item__hint"></div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <input class="ui-input sync-filter__field" type="text" name="ui-input" placeholder="Поиск по артикулу">
+    </div>
+</div>
+<div class="sync-table">
+    <table class="ui-table">
+        <thead>
+            <tr>
+                <th>&nbsp;</th>
+                <th>Наименование правила</th>
+                <th>Теги</th>
+                <th>Порядок выполнения</th>
+                <th>Активность</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <label class="check option">
+                        <input class="check__input _table-item-check" type="checkbox">
+                        <span class="check__box"></span>
+                    </label>
+                </td>
+                <td>Правило 1</td>
+                <td>Тег 1, Тег 2</td>
+                <td>100</td>
+                <td>Y</td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="check option">
+                        <input class="check__input _table-item-check" type="checkbox">
+                        <span class="check__box"></span>
+                    </label>
+                </td>
+                <td>Правило 2</td>
+                <td>Тег 3</td>
+                <td>100</td>
+                <td>Y</td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="check option">
+                        <input class="check__input _table-item-check" type="checkbox">
+                        <span class="check__box"></span>
+                    </label>
+                </td>
+                <td>Правило 3</td>
+                <td>Тег 4</td>
+                <td>100</td>
+                <td>Y</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2">
+                    <div class="ui-table__pager">
+                        <div class="ui-table__buttons">
+                            <a href="#" class="ui-table__link">
+                                <button class="ui-table__button" title="Предыдущая страница" disabled="">&#8249;
+                                </button>
+                            </a>
+                            <a href="#" class="ui-table__link">
+                                <button class="ui-table__button" title="В начало" disabled="">&#171;</button>
+                            </a>
+                        </div>
+                        <div class="ui-table__count">1-200 из 30 000</div>
+                        <div class="ui-table__buttons">
+                            <a href="#" class="ui-table__link">
+                                <button class="ui-table__button" title="В конец">&#187;</button>
+                            </a>
+                            <a href="#" class="ui-table__link">
+                                <button class="ui-table__button" title="Следующая страница">&#8250;</button>
+                            </a>
+                        </div>
+                    </div>
+                </td>
+                <td colspan="3"></td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Пример таблицы в режиме редактирования</p>
+
+<div class="body-wrapper__filter-sync sync-filter">
+    <div class="sync-filter__links"></div>
+    <div class="sync-filter__search">
+        <input class="ui-input sync-filter__field" type="text" name="ui-input" placeholder="Поиск по артикулу">
+    </div>
+</div>
+<div class="sync-table">
+    <table class="ui-table">
+        <thead>
+            <tr>
+                <th>&nbsp;</th>
+                <th>Наименование правила</th>
+                <th>Теги</th>
+                <th>Порядок выполнения</th>
+                <th>Активность</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <label class="check option">
+                        <input class="check__input _table-item-check" type="checkbox">
+                        <span class="check__box"></span>
+                    </label>
+                </td>
+                <td>Правило 1</td>
+                <td>Тег 1, Тег 2</td>
+                <td>100</td>
+                <td>Y</td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="check option">
+                        <input class="check__input _table-item-check" type="checkbox">
+                        <span class="check__box"></span>
+                    </label>
+                </td>
+                <td>Правило 2</td>
+                <td>Тег 3</td>
+                <td>100</td>
+                <td>Y</td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="check option">
+                        <input class="check__input _table-item-check" type="checkbox" checked>
+                        <span class="check__box"></span>
+                    </label>
+                </td>
+                <td><input class="ui-input" type="text" name="ui-input" value="Правило 3" /></td>
+                <td>
+                    <div class="multiple-select _container _empty" data-placeholder="Выберите теги">
+                        <div class="multiple-select__label _label" data-text=""></div>
+                        <div class="multiple-select__dropdown __no-filter _dropdown">
+                            <div class="multiple-select__items _items">
+                                <div class="multiple-select__item select-item _item _selected">
+                                    <label class="select-item__container">
+                                        <div class="select-item__check">
+                                            <div class="check option">
+                                                <input class="check__input" type="checkbox" value="1" data-code="3" checked>
+                                                <span class="check__box"></span>
+                                            </div>
+                                        </div>
+                                        <div class="select-item__body">
+                                            <div class="select-item__title _item-title">Тег 1</div>
+                                            <div class="select-item__hint"></div>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="multiple-select__item select-item _item">
+                                    <label class="select-item__container">
+                                        <div class="select-item__check">
+                                            <div class="check option">
+                                                <input class="check__input" type="checkbox" value="2" data-code="4">
+                                                <span class="check__box"></span>
+                                            </div>
+                                        </div>
+                                        <div class="select-item__body">
+                                            <div class="select-item__title _item-title">Тег 2</div>
+                                            <div class="select-item__hint"></div>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="multiple-select__item select-item _item">
+                                    <label class="select-item__container">
+                                        <div class="select-item__check">
+                                            <div class="check option">
+                                                <input class="check__input" type="checkbox" value="2" data-code="4">
+                                                <span class="check__box"></span>
+                                            </div>
+                                        </div>
+                                        <div class="select-item__body">
+                                            <div class="select-item__title _item-title">Тег 3</div>
+                                            <div class="select-item__hint"></div>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="multiple-select__item select-item _item">
+                                    <label class="select-item__container">
+                                        <div class="select-item__check">
+                                            <div class="check option">
+                                                <input class="check__input" type="checkbox" value="2" data-code="4">
+                                                <span class="check__box"></span>
+                                            </div>
+                                        </div>
+                                        <div class="select-item__body">
+                                            <div class="select-item__title _item-title">Тег 4</div>
+                                            <div class="select-item__hint"></div>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td><input class="ui-input" type="text" name="ui-input" value="100" /></td>
+                <td>
+                    <label class="check option">
+                        <input class="check__input _table-item-check" type="checkbox" checked>
+                        <span class="check__box"></span>
+                    </label>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2">
+                    <div class="ui-table__pager">
+                        <div class="ui-table__buttons">
+                            <a href="#" class="ui-table__link">
+                                <button class="ui-table__button" title="Предыдущая страница" disabled="">&#8249;
+                                </button>
+                            </a>
+                            <a href="#" class="ui-table__link">
+                                <button class="ui-table__button" title="В начало" disabled="">&#171;</button>
+                            </a>
+                        </div>
+                        <div class="ui-table__count">1-200 из 30 000</div>
+                        <div class="ui-table__buttons">
+                            <a href="#" class="ui-table__link">
+                                <button class="ui-table__button" title="В конец">&#187;</button>
+                            </a>
+                            <a href="#" class="ui-table__link">
+                                <button class="ui-table__button" title="Следующая страница">&#8250;</button>
+                            </a>
+                        </div>
+                    </div>
+                </td>
+                <td colspan="3"></td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+
+
+
+<!--    /body-wrapper -->
+<!-- /section -->
+                    </div> <!-- body-wrapper page-content__body -->
+                    <div class="page-content__panel">
+                        <div class="page-content__panel-container">
+                            <div class="statistic">
+                                <div>Выбрано: <span class="_group-panel-counter">0 элементов</span></div>
+                            </div>
+                            <div class="group-actions">
+                                <form action="#">
+                                    <div class="group-actions__row form__row _2">
+                                        <div class="group-actions__field-box form__field-box field">
+                                            <label class="field__label">Выберите действие:</label>
+                                            <select class="ui-select field__input" name="ui-select">
+                                                <option value="">Удалить</option>
+                                                <option value="">Перезапустить синхронизацию</option>
+                                                <option value="">Сохранить изменения</option>
+                                                <option value="">Еще какие-то действия</option>
+                                                <option value="">Еще какие-то действия1</option>
+                                                <option value="">Еще какие-то действия2</option>
+                                                <option value="">Еще какие-то действия3</option>
+                                            </select>
+                                        </div>
+                                        <div class="group-actions__field-box form__field-box">
+                                            <button class="group-actions__button button button--info js-popup-open" data-name="group-notice-window" type="button">Применить</button>
+                                            <button class="group-actions__button button button--success" type="button">Сохранить</button>
+                                            <button class="group-actions__button button button--alert" type="button">Отменить</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            <footer></footer>
+        </div>
+
+        <div class="popup b-hide js-popup-window" data-name="add-account-window">
+            <div class="popup__overlay js-popup-close"></div>
+            <dialog open class="popup__body">
+                <button class="popup__close js-popup-close"></button>
+                <div class="popup__title">Добавление аккаунта</div>
+                <div class="popup__content">
+                    <p>Форма для примера. Набор полей будет сформирован на этапе разработки.</p>
+                    
+                    <form class="form">
+                        <div class="form__row __2">
+                            <div class="form__field-box field">
+                                <label class="field__label">Поле №1</label>
+                                <input class="ui-input field__input" type="text" name="ui-input" placeholder="" value="">
+                                <div class="field__notice"></div>
+                            </div>
+                            <div class="form__field-box field">
+                                <label class="field__label">Поле №2</label>
+                                <input class="ui-input field__input" type="text" name="ui-input" placeholder="" value="">
+                                <div class="field__notice"></div>
+                            </div>
+                        </div>
+                    
+                        <div class="form__row">
+                            <div class="form__field-box">
+                                <button class="button button--success">Сохранить</button>
+                            </div>
+                        </div>
+                    
+                        <div class="form__notice __error">Не удалось подключиться. Проверьте, что скопировали ключ и ID полностью.</div>
+                        <div class="form__notice __success">Подключение удалось - переходите на следующую вкладку.</div>
+                    </form>
+
+                </div>
+            </dialog>
+        </div>
+
+        <div class="popup b-hide js-popup-window" data-name="feedback-window">
+            <div class="popup__overlay js-popup-close"></div>
+            <dialog open class="popup__body">
+                <button class="popup__close js-popup-close"></button>
+                <div class="popup__title">Напишите нам письмо</div>
+                <div class="popup__content">
+                    
+                    <form class="form">
+                        <div class="form__row">
+                            <div class="form__field-box field">
+                                <label class="field__label">Как вас зовут?</label>
+                                <input class="ui-input field__input" type="text" name="ui-input" placeholder="" value="">
+                                <div class="field__notice"></div>
+                            </div>
+                            <div class="form__field-box field __100">
+                                <label class="field__label">Что у вас случилось</label>
+                                <textarea class="ui-input field__input field__input--textarea"></textarea>
+                                <div class="field__notice"></div>
+                            </div>
+                        </div>
+                    
+                        <div class="form__row">
+                            <div class="form__field-box">
+                                <button class="button button--success">Отправить</button>
+                            </div>
+                        </div>
+                    
+                        <div class="form__notice __error">Не удалось подключиться. Проверьте, что скопировали ключ и ID полностью.</div>
+                        <div class="form__notice __success">Подключение удалось - переходите на следующую вкладку.</div>
+                    </form>
+
+                </div>
+            </dialog>
+        </div>
+
+        <div class="popup b-hide js-popup-window" data-name="accept-notice-window">
+            <div class="popup__overlay js-popup-close"></div>
+            <dialog open class="popup__body">
+                <button class="popup__close js-popup-close"></button>
+                <div class="popup__title">Уверены?</div>
+                <div class="popup__content">
+                    <p>При подтверждении магазин будет отключен от синхронизации и карточки в озон перестанут отправляться. Все сопоставленные данные будут сохранены. Включить синхронизацию обратно будет возможно.</p>
+                    <form class="form">                    
+                        <div class="form__row __1">
+                            <div class="form__field-box">
+                                <button class="button button--info">Отправить</button>
+                                <button class="button js-popup-close">Отменить</button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </dialog>
+        </div>
+
+        <div class="popup b-hide js-popup-window" data-name="group-notice-window">
+            <div class="popup__overlay js-popup-close"></div>
+            <dialog open class="popup__body">
+                <button class="popup__close js-popup-close"></button>
+                <div class="popup__title">Подтверждение группового действия</div>
+                <div class="popup__content">
+                    <p>&nbsp;</p>
+                    <p>Применить действие "Удалить" к выбранным элементам?</p>
+                    <form class="form">                    
+                        <div class="form__row __1">
+                            <div class="form__field-box">
+                                <button class="button button--info">Применить</button>
+                                <button class="button js-popup-close">Отменить</button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </dialog>
+        </div>
+    </body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Selectivity.js/2.1.0/selectivity-full.min.js"></script>
+    <script src="/assets/js/uikit.min.js"></script>
+    <script src="/assets/js/plugins.js"></script>
+</html>
