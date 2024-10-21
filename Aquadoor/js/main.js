@@ -500,36 +500,64 @@
 
                     item.rowId = nextId;
                     appendProduct($newProductItem, item, calculateResult);
-                    appendFeatures($newProductItem, nextId, item.features);
-                    appendPrice($newProductItem, nextId, { price: calculateResult.counterpartyPrice, rrc: calculateResult.basePrice });
-                    appendCounter($newProductItem, nextId);
-                    $newProductItem.append(`<div class="table__td table__td--mob-footer __txt-right" data-title="Ваша сумма">
-                        <span class="__nowrap __rub _sum-counterparty-label" data-sum="${calculateResult.counterpartySum}">${WMX.formatAsCurrencyLabel( calculateResult.counterpartySum )}</span>
-                    </div>`);
-                    $newProductItem.append(`<div class="table__td table__td--mob-footer __txt-right" data-title="Сумма клиенту">
-                        <span class="__nowrap __rub _sum-client-label" data-sum="${calculateResult.clientSum}">${WMX.formatAsCurrencyLabel( calculateResult.clientSum )}</span>
-                    </div>`);
-                    appendRange($newProductItem, nextId);
-                    $newProductItem.append(`<div class="table__td table__td--mob-footer __txt-right" data-title="Ваш доход">
-                        <span class="__nowrap __rub _sum-income-label" data-sum="${calculateResult.counterpartyIncome}">${WMX.formatAsCurrencyLabel( calculateResult.counterpartyIncome )}</span>
-                    </div>`);
+                    if ( item.category !== "FITTINGS" ) {
+                        appendFeatures($newProductItem, nextId, item.features);
+                    }
+
+                    if ( _this._warmex.options.isSimpleCalc ) {
+                        appendCounter($newProductItem, nextId);
+                        appendPrice($newProductItem, nextId, { price: calculateResult.counterpartyPrice, rrc: calculateResult.basePrice });
+                        $newProductItem.append(`<div class="table__td table__td--mob-footer __txt-right" data-title="Ваша сумма">
+                            <span class="__nowrap __rub _sum-counterparty-label" data-sum="${calculateResult.counterpartySum}">${WMX.formatAsCurrencyLabel( calculateResult.counterpartySum )}</span>
+                        </div>`);
+                    } else {
+                        appendPrice($newProductItem, nextId, { price: calculateResult.counterpartyPrice, rrc: calculateResult.basePrice });
+                        appendCounter($newProductItem, nextId);
+                        $newProductItem.append(`<div class="table__td table__td--mob-footer __txt-right" data-title="Ваша сумма">
+                            <span class="__nowrap __rub _sum-counterparty-label" data-sum="${calculateResult.counterpartySum}">${WMX.formatAsCurrencyLabel( calculateResult.counterpartySum )}</span>
+                        </div>`);
+                        $newProductItem.append(`<div class="table__td table__td--mob-footer  __gray-text __txt-right" data-title="Сумма клиенту">
+                            <span class="__nowrap __rub _sum-client-label" data-sum="${calculateResult.clientSum}">${WMX.formatAsCurrencyLabel( calculateResult.clientSum )}</span>
+                        </div>`);
+                        appendRange($newProductItem, nextId);
+                        $newProductItem.append(`<div class="table__td table__td--mob-footer  __gray-text __txt-right" data-title="Ваш доход">
+                            <span class="__nowrap __rub _sum-income-label" data-sum="${calculateResult.counterpartyIncome}">${WMX.formatAsCurrencyLabel( calculateResult.counterpartyIncome )}</span>
+                        </div>`);
+                    }
                     appendClose( $newProductItem );
 
-                    $currentTable.append( $newProductItem );
-                    $currentTable.children().eq(-1).find('._counter').counterField({
-                        onSetValue: function(value) {
-                            updateCalculationInRow( $(this).closest('._order-item') );
-                            
-                            updateSummarize();
+                    if ( !_this._warmex.options.isSimpleCalc ) {
+                        if ( !$currentTable.find('._section-summarize').length ) {
+                            appendSectionSummarize($currentTable);
                         }
-                    });
-                    $currentTable.children().eq(-1).find('._counter-range').counterRange({
-                        onSetValue: function(value) {
-                            updateCalculationInRow( $(this).closest('._order-item') );
-                            
-                            updateSummarize();
-                        }
-                    });
+
+                        $currentTable.closest('.section-table').removeClass('__empty');
+
+                        $currentTable.find('._section-summarize').before( $newProductItem );
+                        $currentTable.children().eq(-2).find('._counter').counterField({
+                            onSetValue: function(value) {
+                                updateCalculationInRow( $(this).closest('._order-item') );
+
+                                updateSummarize();
+                            }
+                        });
+                        $currentTable.children().eq(-2).find('._counter-range').counterRange({
+                            onSetValue: function(value) {
+                                updateCalculationInRow( $(this).closest('._order-item') );
+
+                                updateSummarize();
+                            }
+                        });
+                    } else {
+                        $currentTable.append( $newProductItem );
+                        $currentTable.children().eq(-1).find('._counter').counterField({
+                            onSetValue: function(value) {
+                                updateCalculationInRow( $(this).closest('._order-item') );
+
+                                updateSummarize();
+                            }
+                        });
+                    }
 
                     updateSummarize();
                 });
@@ -545,34 +573,116 @@
                     updateSummarize();
                 });
 
-                $currentTable.on('appendProperties', function( e, productRow, properties ){
-                    // TODO: append properties
+                $currentTable.on('recalculate', function( e, productRow ){
+                    if ( productRow && !$(productRow).length ) {
+                        console.error('[Warmex] Передан некорректный объект!');
+                        return false;
+                    }
 
                     updateCalculationInRow( $(productRow) );
                     updateSummarize();
                 });
 
+                $currentTable.find('._counter').counterField({
+                    onSetValue: function(value) {
+                        updateCalculationInRow( $(this).closest('._order-item') );
+
+                        updateSummarize();
+                    }
+                });
+                $currentTable.find('._counter-range').counterRange({
+                    onSetValue: function(value) {
+                        updateCalculationInRow( $(this).closest('._order-item') );
+
+                        updateSummarize();
+                    }
+                });
+
                 _this.inited = true;
 
-                function updateCalculationInRow($row) {
+                function updateSimpleCalculationInRow($row) {
                     let $price = $row.find('input._price'), propsSum = $row.find('._features-sum-label').data('sum'),
                         clientSale = parseInt($row.find('input._client-sale').val()),
                         countItems = parseInt($row.find('input._count').val());
 
-                    let calculateResult = WMX.calculateSales({
-                        counterpartySale: ( _this._warmex.noSale ? 0 : _this._warmex.counterpartySale ),
-                        propertySum: ( propsSum || 0 ),
-                        clientSale: ( isNaN(clientSale) ? 0 : clientSale ),
-                        price: $price.data('rrc'),
-                        count: ( isNaN(countItems) ? 0 : countItems ),
-                    });
+                    if ( !$price.hasClass( '._loaded' ) ) {
+                        $price.val(calculateResult.counterpartyPrice);
+                        $row.find('._price-label').html(WMX.formatAsCurrencyLabel(calculateResult.counterpartyPrice));
+                        $row.find('._sum-counterparty-label').data('sum', calculateResult.counterpartySum).html(WMX.formatAsCurrencyLabel(calculateResult.counterpartySum));
+                    }
+                }
 
-                    $row.find('._sum-counterparty-label').data('sum', calculateResult.counterpartySum).html( WMX.formatAsCurrencyLabel( calculateResult.counterpartySum ) );
-                    $row.find('._sum-client-label').data('sum', calculateResult.clientSum).html( WMX.formatAsCurrencyLabel( calculateResult.clientSum ) );
-                    $row.find('._sum-income-label').data('sum', calculateResult.counterpartyIncome).html( WMX.formatAsCurrencyLabel( calculateResult.counterpartyIncome ) );
+                function updateCalculationInRow($row) {
+                    let $price = $row.find('input._price'), propsSum = $row.find('._features-sum-label').data('sum'),
+                        countItems = parseInt($row.find('input._count').val());
+
+                    if ( _this._warmex.options.isSimpleCalc ) {
+                        if ( $row.hasClass( '_loaded' ) ) {
+                            let sum = ( parseFloat( $price.val() ) ? parseFloat( $price.val() ) : 0 ) * countItems;
+                            $row.find('._sum-counterparty-label').data('sum', sum).html(WMX.formatAsCurrencyLabel(sum));
+                        } else {
+                            let price = ( parseFloat( $price.data('rrc') ) ? parseFloat( $price.data('rrc') ) : 0 );
+                            propsSum = ( propsSum || 0 );
+                            if ( propsSum > 0 ) {
+                                price += propsSum;
+                            }
+
+                            $price.val(price);
+                            $row.find('._price-label').html(WMX.formatAsCurrencyLabel(price));
+
+                            let sum = price * countItems;
+                            $row.find('._sum-counterparty-label').data('sum', sum).html(WMX.formatAsCurrencyLabel(sum));
+                        }
+                    } else {
+                        let clientSale = parseInt($row.find('input._client-sale').val());
+
+                        let calculateResult = WMX.calculateSales({
+                            counterpartySale: ( _this._warmex.noSale ? 0 : _this._warmex.counterpartySale ),
+                            propertySum: ( propsSum || 0 ),
+                            clientSale: ( isNaN(clientSale) ? 0 : clientSale ),
+                            price: $price.data('rrc'),
+                            count: ( isNaN(countItems) ? 0 : countItems ),
+                        });
+
+                        $price.val( calculateResult.counterpartyPrice );
+                        $row.find('._price-label').html( WMX.formatAsCurrencyLabel( calculateResult.counterpartyPrice ) );
+                        $row.find('._sum-counterparty-label').data('sum', calculateResult.counterpartySum).html( WMX.formatAsCurrencyLabel( calculateResult.counterpartySum ) );
+                        $row.find('._sum-client-label').data('sum', calculateResult.clientSum).html( WMX.formatAsCurrencyLabel( calculateResult.clientSum ) );
+                        $row.find('._sum-income-label').data('sum', calculateResult.counterpartyIncome).html( WMX.formatAsCurrencyLabel( calculateResult.counterpartyIncome ) );
+                    }
                 }
 
                 function updateSummarize() {
+                    if ( _this._warmex.options.isSimpleCalc ) { updateSummarizeSimple(); } else { updateSummarizeFull(); }
+                }
+
+                function updateSummarizeSimple () {
+                    let $summarizeIncome = $(_this._warmex.options.summarizeSimple);
+
+                    if ( !$summarizeIncome.length ) {
+                        console.error('[Warmex] Не удалось найти объект суммы Итого!');
+                        return false;
+                    }
+
+                    let $tables = _this._warmex.options.form.find( '.'+_this._warmex.options.tablesClass );
+
+                    let itogoIncome = 0;
+                    $tables.each((i, table) => {
+                        let $rows = $(table).find('._order-item'), tableIncome = 0;
+
+                        if ( $rows.length ) {
+                            $rows.each(function (i, row) {
+                                tableIncome += $(row).find('._sum-counterparty-label').data('sum');
+                            });
+                        }
+
+                        itogoIncome += tableIncome;
+                    });
+
+                    $summarizeIncome.html( WMX.formatAsCurrencyLabel( WMX.roundAsCurrency( itogoIncome ) ) );
+                }
+
+                function updateSummarizeFull() {
                     let $summarizeIncome = $(_this._warmex.options.summarizeIncome);
                     let $summarizeCounterparty = $(_this._warmex.options.summarizeCounterparty);
                     let $summarizeClient = $(_this._warmex.options.summarizeClient);
@@ -583,12 +693,29 @@
                     }
 
                     let $tables = _this._warmex.options.form.find( '.'+_this._warmex.options.tablesClass );
-                    let $rows = $tables.find('._order-item');
+
                     let itogoIncome = 0, itogoCounterparty = 0, itogoClient = 0;
-                    $rows.each(function(i, row){
-                        itogoIncome += $(row).find('._sum-income-label').data('sum');
-                        itogoCounterparty += $(row).find('._sum-counterparty-label').data('sum');
-                        itogoClient += $(row).find('._sum-client-label').data('sum');
+                    $tables.each((i, table) => {
+                        let $rows = $(table).find('._order-item'), $summaryRow = $(table).find('._section-summarize');
+                        let tableIncome = 0, tableCounterparty = 0, tableClient = 0;
+
+                        if ( $rows.length ) {
+                            $rows.each(function (i, row) {
+                                tableIncome += $(row).find('._sum-income-label').data('sum');
+                                tableCounterparty += $(row).find('._sum-counterparty-label').data('sum');
+                                tableClient += $(row).find('._sum-client-label').data('sum');
+                            });
+                        }
+
+                        if ( $summaryRow.length ) {
+                            $summaryRow.find('._sum-income-label').data('sum', tableIncome).html(WMX.formatAsCurrencyLabel(WMX.roundAsCurrency(tableIncome)));
+                            $summaryRow.find('._sum-counterparty-label').data('sum', tableCounterparty).html(WMX.formatAsCurrencyLabel(WMX.roundAsCurrency(tableCounterparty)));
+                            $summaryRow.find('._sum-client-label').data('sum', tableClient).html(WMX.formatAsCurrencyLabel(WMX.roundAsCurrency(tableClient)));
+                        }
+
+                        itogoIncome += tableIncome;
+                        itogoCounterparty += tableCounterparty;
+                        itogoClient += tableClient;
                     });
 
                     $summarizeIncome.html( WMX.formatAsCurrencyLabel( WMX.roundAsCurrency( itogoIncome ) ) );
@@ -600,6 +727,10 @@
                     let noProductImagePath = '/local/templates/warmex/img/no-product.svg';
                     calculateResult = calculateResult || {};
 
+                    let pricesHtml = `<br/>Цена для клиента: ${WMX.formatAsCurrencyLabel( calculateResult.basePrice )} руб.<br/>
+                        Ваша скидка: ${_this._warmex.counterpartySale}%<br/>
+                        Ваша цена: ${WMX.formatAsCurrencyLabel( calculateResult.counterpartyProductPrice )} руб.`;
+
                     let srcImage = oProduct.image || noProductImagePath;
                     let productCell = `<div class="table__td table__td--product table__td--link">
                         <a href="#" class="table__link table__link--show-modal product-link _show-modal" data-content="._products-modal">
@@ -607,11 +738,7 @@
                                 <div class="product-link__image">
                                     <img src="${srcImage}" alt="${oProduct.name}">
                                 </div>
-                                <div class="product-link__title">${oProduct.name}<br/>
-                                    Цена для клиента: ${WMX.number_format( calculateResult.basePrice, 2, ".", "&nbsp;" )} руб.<br/>
-                                    Ваша скидка: ${_this._warmex.counterpartySale}%<br/>
-                                    Ваша цена: ${WMX.number_format( calculateResult.counterpartyProductPrice, 2, ".", "&nbsp;" )} руб.
-                                </div>
+                                <div class="product-link__title">${oProduct.name} ${(!_this._warmex.options.isSimpleCalc ? pricesHtml : "")}</div>
                             </div>
                             <input type="hidden" class="_product" name="${getFieldNamePrefix(oProduct.rowId)}[NOMENCLATURE]" value="${oProduct.id}">
                         </a>                        
@@ -623,12 +750,12 @@
                 function appendFeatures( $newItem, rowId, features ) {
                     let cell = `<div class="table__td table__td--link table__td--features" data-title="Характеристики" >
                             <a href="#" class="table__link table__link--show-modal choose-feature__item" data-content="._features-modal">Выбрать характеристики</a>
-                            <input type="hidden" class="_features" name="${getFieldNamePrefix(rowId)}[FEATURE]" value="">
+                            <input type="hidden" class="_features" name="${getFieldNamePrefix(rowId)}[PROPERTIES]" value="">
                         </div>`;
 
                     if(!features) {
                         cell = `<div class="table__td table__td--link table__td--features" data-title="Характеристики" >
-                            <input type="hidden" class="_features" name="${getFieldNamePrefix(rowId)}[FEATURE]" value="">
+                            <input type="hidden" class="_features" name="${getFieldNamePrefix(rowId)}[PROPERTIES]" value="">
                         </div>`;
                     }
 
@@ -647,11 +774,38 @@
                     $newItem.append( cell );
                 }
 
+                function appendSectionSummarize( $table ) {
+                    let propertyColumn = "";
+                    if ( $table.data('type') !== "FITTINGS" ) {
+                        propertyColumn = '<div class="table__td table__td--link table__td--features __empty __desktop-only" data-title="Характеристики"></div>';
+                    }
+
+                    let row = `<div class="table__tr table__tr--summarize _section-summarize" data-item-id="0"  data-da="._section-table-01,991,last">
+                        <div class="table__td table__td--product table__td--link __empty __desktop-only"></div>
+                        ${propertyColumn}
+                        <div class="table__td table__td--mob-footer table__td--first-footer-row table__td--price __txt-right __desktop-only" data-title="Ваша цена"></div>
+                        <div class="table__td table__td--counter __txt-right __desktop-only"></div>
+                        <div class="table__td table__td--mob-footer __txt-right" data-title="Итого ваша сумма">
+                            <span class="__nowrap __rub _sum-counterparty-label" data-sum="0">0.00</span>
+                        </div>
+                        <div class="table__td table__td--mob-footer __txt-right __gray-text" data-title="Итого сумма клиенту">
+                            <span class="__nowrap __rub _sum-client-label" data-sum="0">0.00</span>
+                        </div>
+                        <div class="table__td table__td--counter __txt-right __desktop-only"></div>
+                        <div class="table__td table__td--mob-footer __txt-right __gray-text" data-title="Итого ваш доход">
+                            <span class="__nowrap __rub _sum-income-label" data-sum="0">0.00</span>
+                        </div>
+                        <div class="table__td table__td--close-icon __txt-right __desktop-only"></div>
+                    </div>`;
+
+                    $table.append( row );
+                }
+
                 function appendRange( $newItem, rowId ) {
                     let cell = `<div class="table__td table__td--counter __txt-right">
                         <div class="field table-field-range counter-field _counter-range">
                             <span class="counter-field__minus _minus"><i class="icons __icon-subtract-line"></i></span>
-                            <input type="tel" class="counter-field__input _input _client-sale" name="${getFieldNamePrefix(rowId)}[COUNT]" autocomplete="off" value="-5" data-min="-99" data-max="99" step="5" />
+                            <input type="tel" class="counter-field__input _input _client-sale" name="${getFieldNamePrefix(rowId)}[CLIENT_PERCENT]" autocomplete="off" value="0" data-min="-99" data-max="99" step="5" />
                             <span class="counter-field__plus _plus"><i class="icons __icon-plus-only"></i></span>
                         </div>
                     </div>`;
@@ -661,7 +815,7 @@
 
                 function appendPrice( $newItem, rowId, priceParam ) {
                     let cell = `<div class="table__td table__td--mob-footer table__td--first-footer-row table__td--price __txt-right" data-title="Ваша цена">
-                        <span class="__nowrap __rub _price-label">${WMX.number_format( priceParam.price, 2, '.', "&nbsp;" )}</span>
+                        <span class="__nowrap __rub _price-label">${WMX.formatAsCurrencyLabel( priceParam.price )}</span>
                         <input type="hidden" class="_price" data-rrc="${priceParam.rrc}" name="${getFieldNamePrefix(rowId)}[PRICE]" value="${priceParam.price}">
                     </div>`;
 
@@ -763,8 +917,9 @@ WMX = {
     roundAsCurrency: function(number) {
         return Math.round(number * 100) / 100;
     },
-    formatAsCurrencyLabel: function(number) {
-        return this.number_format( number, 2, ".", "&nbsp;" )
+    formatAsCurrencyLabel: function(number, decimal) {
+        decimal = decimal || 0;
+        return this.number_format( number, decimal, ".", "&nbsp;" );
     }
 }
 // Dynamic Adapt v.1
@@ -938,7 +1093,7 @@ $(document).ready(function(){
     $('._tooltip').tooltipster({
         theme: "tooltipster-warmex",
         maxWidth: 256,
-        trigger: 'click'
+        trigger: 'hover'
     });
     $('body').on('change', '._inputFile', function(){
         let file = this.files[0], sBtnText = '',
@@ -1032,6 +1187,16 @@ $(document).ready(function(){
             $product.removeClass('_selected');
         }
     })
+    .on('refresh', '._characteristic-choose input.inputCheckbox', function(){
+        let $input = $(this), $product = $input.closest('._characteristic-choose');
+
+        let bSelected = $input.prop('checked');
+        if ( bSelected ) {
+            $product.addClass('_selected');
+        } else {
+            $product.removeClass('_selected');
+        }
+    })
     .on('input', '._filter-modal-elements input', function(){
         let $input = $(this), $icon = $input.parent().find('._filter-icon');
 
@@ -1089,6 +1254,25 @@ $(document).ready(function(){
         }
     });
 
+    let $videoBlocks = $('._youtube-video');
+
+    if ( $videoBlocks.length ) {
+        $videoBlocks.each((i, el) => {
+            let code = $(el).data('video');
+            $(el).append( `<img src="https://img.youtube.com/vi/${code}/hqdefault.jpg"  alt=""><div class="video-block__play _play"></div>` );
+        });
+
+        $(document).on('click', '._youtube-video', function(e){
+            let $c = $(this), code = $c.data('video');
+
+            $c.append(`<iframe src="https://www.youtube.com/embed/${code}?controls=0&autoplay=1" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; autoplay" allowfullscreen></iframe>`);
+            $c.find('img').remove();
+            $c.find('._play').remove();
+            setTimeout(() => {
+                $c.addClass('__active');
+            }, 1000);            
+        });
+    }
 
 
 
