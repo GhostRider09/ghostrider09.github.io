@@ -692,7 +692,7 @@ header {
   border-radius: 50%;
   background: #46CBE3;
   position: absolute;
-  top: .75em;
+  top: 50%;
   left: .5rem;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
@@ -3371,7 +3371,7 @@ body._lock {
   padding-bottom: 1.25rem;
 }
 
-.news-detail__body:last-child {
+.news-detail__body > *:last-child {
   padding-bottom: 0;
 }
 
