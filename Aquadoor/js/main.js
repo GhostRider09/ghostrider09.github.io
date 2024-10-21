@@ -1095,6 +1095,11 @@ $(document).ready(function(){
         maxWidth: 256,
         trigger: 'hover'
     });
+    $('._tooltip-black').tooltipster({
+        theme: "tooltipster-warmex-black",
+        maxWidth: 256,
+        trigger: 'hover'
+    });
     $('body').on('change', '._inputFile', function(){
         let file = this.files[0], sBtnText = '',
             oParentBlock = $(this).closest('.field');

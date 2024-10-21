@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/icomoon.css">
+<link rel="stylesheet" href="vendors/tooltipster/css/tooltipster.bundle.min.css">
+<link rel="stylesheet" href="css/tooltipster.warmex.theme.css">
+<link rel="stylesheet" href="vendors/formstyler/jquery.formstyler.css">
+<link rel="stylesheet" href="css/formstyler.aquadoor.theme.css">
+<link rel="stylesheet" href="css/main.css">
+<title>Document</title>
+</head>
+<body class="order-type-2 no-title">
+    <div class="container">
+        <!-- header -->
+        <header>
+    <div class="head-logo">
+        <div class="head-logo__burger icon __icon-burger _show-main-menu"></div>
+        <div class="head-logo__logo"><a href="#"><img src="../img/logo-02.svg" alt="Aquadoor"></a></div>
+        <div class="head-logo__notifications">
+            <a href="#" class="head-logo__notification icon __icon-notice-ring-active"></a>
+        </div>
+    </div>
+    <div class="head-info">
+        <div class="head-info__contacts">
+            <a href="tel:88003502198" class="head-info__contact icon __icon-phone">8 800 350 2198</a>
+        </div>
+        <div class="head-info__cabinet">
+            <!-- предполагаю, что если отсюда будет делаться выбор, то он будет на модалке -->
+            <a href="#" class="head-info__label-cabinet icon __icon-user"><span>Иваненко Сигизмунд Венеаминович - (ИП)</span></a>
+        </div>
+        <div class="head-info__notifications">
+            <!-- notice-ring-active -->
+            <a href="#" class="head-info__notification icon __icon-notice-ring"></a>
+        </div>
+    </div>
+</header>
+
+        <div class="content-wrapper">
+            <!-- menu -->
+            <aside class="side-area _main-menu-area">    
+    <div class="side-area__content">
+        <button type="button" class="side-area__close close-btn icon __icon-close-only _close" data-target="._main-menu-area"></button>
+        
+        <div class="side-area__cabinet">
+            <a href="#" class="side-area__label-cabinet icon __icon-user"><span>Иваненко Сигизмунд Венеаминович - (ИП)</span></a>
+        </div>
+        
+        <nav class="main-menu">
+            <ul class="main-menu__group">
+                <li class="main-menu__item">
+                    <a href="#" class="main-menu__link icon __icon-plus-in-circle">Сделать заказ</a>
+                </li>
+                <li class="main-menu__item main-menu__item--selected">
+                    <span class="main-menu__link icon __icon-page">История заказов</span>
+                </li>
+                <li class="main-menu__item">
+                    <a href="#" class="main-menu__link icon __icon-people">Заявки</span></a>
+                </li>
+            </ul>
+            <ul class="main-menu__group">
+                <li class="main-menu__item">
+                    <a href="#" class="main-menu__link icon __icon-copy-dir">Маркетинг</a>
+                </li>
+                <li class="main-menu__item main-menu__item--selected">
+                    <a href="#" class="main-menu__link main-menu__link--countable icon __icon-doc">
+                        <span>Новости</span>
+                        <div class="main-menu__counter">999</div>
+                    </a>
+                    <ul class="main-menu__submenu">
+                        <li class="main-menu__submenu-item __unread">
+                            <a href="#" class="main-menu__submenu-link">Коммерческие условия</a>
+                        </li>
+                        <li class="main-menu__submenu-item __selected __unread">
+                            <a href="#" class="main-menu__submenu-link">Новинки, изменения номенклатуры</a>
+                        </li>
+                        <li class="main-menu__submenu-item">
+                            <a href="#" class="main-menu__submenu-link">Акции</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="main-menu__item">
+                    <a href="#" class="main-menu__link icon __icon-manager">Поддержка</a>
+                </li>
+            </ul>
+        </nav>
+        
+        <footer>
+            <div class="menu-contacts">
+                <a href="tel:88003502198" class="menu-contacts__item icon __icon-phone">8 800 350 2198</a>
+            </div>
+        </footer>
+    </div>
+    <div class="side-area__overlay"></div>
+</aside>
+
+            <!-- content -->
+            <div class="page-content">
+                 
+                <div class="picker __list">
+                    <div class="picker__header">
+                        <div class="picker__title-wrapper">
+                            <span class="__h3">Коллекции</span>
+                            <button type="button" class="btn btn--primary btn--icon btn--small picker__button" style="width: 100%;"><span>Создать новую<i class="icons __icon-plus-only"></i></span></button>
+                        </div>
+                        <form action="#" class="form picker__search">
+                            <div class="form__body">
+                                <div class="field -field--error">
+                                    <input type="text" class="field__element" placeholder="Поиск"/>
+                                    <!-- <p class="field__error-message">Какой-то текст ошибки</p> -->
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="picker__body">
+                        <div class="complect-list">
+                            <!-- пустой item -->
+                            <div class="complect-list__item complect-small-card complect-small-card--empty">
+                                <div class="complect-small-card__container">
+                                    <i class="icon __icon-copy-dir complect-small-card__icon"></i>
+                                    <span class="__subtitle1">Нет созданных комплектаций</span>
+                                </div>
+                            </div>
+
+                            <!-- карточка комплекта на списке -->
+                            <div class="complect-list__item complect-small-card">
+                                <div class="complect-small-card__container">
+                                    <div class="complect-small-card__image">
+                                        <img src="img/trash/complect/product.png" alt="">
+                                    </div>
+                                    <div class="complect-small-card__body">
+                                        <div class="complect-small-card__header">
+                                            <div class="complect-small-card__title __subtitle2">Двери на 3-й этаж, одноsd fsdf sdf sdf sdf sdf sdfстворчатые</div>
+                                            <div class="complect-small-card__total __subtitle2">1 200 шт.</div>
+                                            <div class="complect-small-card__cost __subtitle2">9 999 000 000 ₽</div>
+                                        </div>
+                                        <div class="complect-small-card__characteristics characteristic-list">
+                                            <div class="characteristic-list__col">
+                                                <div class="characteristic-list__item"><dd>Ширина:</dd><dt>1100 мм</dt></div>
+                                                <div class="characteristic-list__item"><dd>Высота:</dd><dt>2000 мм</dt></div>
+                                                <div class="characteristic-list__item"><dd>Толщина:</dd><dt>60 мм</dt></div>
+                                            </div>
+                                            <div class="characteristic-list__col">
+                                                <div class="characteristic-list__item"><dd>Створчатость:</dd><dt>1</dt></div>
+                                                <div class="characteristic-list__item"><dd>Фрезеровка:</dd><dt>Ф1</dt></div>
+                                            </div>
+                                        </div>
+                                        <div class="complect-small-card__footer">
+                                            <div class="complect-small-card__links">
+                                                <a href="javascript:void(0);" class="" data-modal="">Подробнее</a>
+                                            </div>
+                                            <div class="complect-small-card__buttons">
+                                                <a href="#" class="complect-small-card__button _tooltip-black" title="Редактировать"><i class="icon __icon-edit-pencil"></i></a>
+                                                <a href="#" class="complect-small-card__button _tooltip-black" title="Дублировать"><i class="icon __icon-copy"></i></a>
+                                                <a href="#" class="complect-small-card__button _tooltip-black" title="Удалить"><i class="icon __icon-trash"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="complect-list__item complect-small-card">
+                                <div class="complect-small-card__container">
+                                    <div class="complect-small-card__image">
+                                        <img src="img/trash/complect/product.png" alt="">
+                                    </div>
+                                    <div class="complect-small-card__body">
+                                        <div class="complect-small-card__header">
+                                            <div class="complect-small-card__title __subtitle2">Двери на 3-й этаж, одностворчатые</div>
+                                            <div class="complect-small-card__total __subtitle2">1 шт.</div>
+                                            <div class="complect-small-card__cost __subtitle2">9 000 ₽</div>
+                                        </div>
+                                        <div class="complect-small-card__characteristics characteristic-list">
+                                            <div class="characteristic-list__col">
+                                                <div class="characteristic-list__item"><dd>Ширина:</dd><dt>1100 мм</dt></div>
+                                                <div class="characteristic-list__item"><dd>Высота:</dd><dt>2000 мм</dt></div>
+                                                <div class="characteristic-list__item"><dd>Толщина:</dd><dt>60 мм</dt></div>
+                                            </div>
+                                            <div class="characteristic-list__col">
+                                                <div class="characteristic-list__item"><dd>Створчатость:</dd><dt>1</dt></div>
+                                                <div class="characteristic-list__item"><dd>Фрезеровка:</dd><dt>Ф1</dt></div>
+                                            </div>
+                                        </div>
+                                        <div class="complect-small-card__footer">
+                                            <div class="complect-small-card__links">
+                                                <a href="javascript:void(0);" class="" data-modal="">Подробнее</a>
+                                            </div>
+                                            <div class="complect-small-card__buttons">
+                                                <a href="#" class="complect-small-card__button _tooltip" title="Редактировать"><i class="icon __icon-edit-pencil"></i></a>
+                                                <a href="#" class="complect-small-card__button _tooltip" title="Дублировать"><i class="icon __icon-copy"></i></a>
+                                                <a href="#" class="complect-small-card__button _tooltip" title="Удалить"><i class="icon __icon-trash"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="picker__footer">
+                        
+                    </div>
+                </div>
+                                
+                                
+            </div>
+        </div>
+
+        <!-- овелей с волнами -->
+        <div class="overlay-half">
+            <div class="overlay-half__figure"></div>
+        </div>
+    </div>
+</body>
+
+<script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="vendors/inputmask/jquery.inputmask.min.js"></script>
+<script type="text/javascript" src="vendors/tooltipster/js/tooltipster.bundle.min.js"></script>
+<script type="text/javascript" src="vendors/formstyler/jquery.formstyler.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+</html>
