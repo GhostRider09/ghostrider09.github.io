@@ -10,7 +10,7 @@
                     return false;
                 }
 
-                const $field = $(this), startValue = 1, 
+                const $field = $(this), startValue = opts.startValue || 1, 
                     $input = $field.find('._input'),
                     $addBtn = $field.find('._plus'),
                     $removeBtn = $field.find('._minus');
@@ -18,11 +18,12 @@
                 init();
                 
                 function init() {
+                    let minValue = ( typeof $input.data('min') !== "undefined" && !isNaN(parseInt( $input.data('min') )) ? parseInt( $input.data('min') ) : startValue );
                     _that._options = opts;
                     _that._settings = {
-                        min: parseInt( $input.data('min') ) || 1,
+                        min: minValue,
                         max: parseInt( $input.data('max') ),
-                        lastValue: parseInt( $input.val() ) || parseInt( $input.data('min') ) || 1,
+                        lastValue: parseInt( $input.val() ) || minValue,
                         disabled: $input.prop("disabled")
                     }
                     // $input.val( _that._settings.min );
@@ -107,9 +108,9 @@
 
                     bRunTrigger = ( bRunTrigger !== false );
                     let parsedValue = parseInt(value);
-                    if ( !parsedValue || parsedValue < _that._settings.min 
+                    if ( parsedValue !== 0 && ( !parsedValue || parsedValue < _that._settings.min 
                         || ( _that._settings.max && parsedValue > _that._settings.max ) 
-                    ) {
+                    )) {
                         parsedValue = _that._settings.lastValue || _that._settings.min;
                     }
 
@@ -137,17 +138,19 @@
                 }
 
                 function reset() {
+                    let minValue = ( typeof $input.data('min') !== "undefined" && !isNaN(parseInt( $input.data('min') )) ? parseInt( $input.data('min') ) : startValue );
                     _that._settings = {
-                        min: parseInt( $input.data('min') ) || 1,
+                        min: minValue,
                         max: parseInt( $input.data('max') ),
-                        lastValue: parseInt( $input.data('min') ) || 1,
+                        lastValue: minValue,
                         disabled: $input.prop("disabled")
                     }
                     setValue( _that._settings.min, false );
                 }
 
                 function refresh() {
-                    _that._settings.min = parseInt( $input.data('min') ) || 1;
+                    let minValue = ( typeof $input.data('min') !== "undefined" && !isNaN(parseInt( $input.data('min') )) ? parseInt( $input.data('min') ) : startValue );
+                    _that._settings.min = minValue;
                     _that._settings.max = parseInt( $input.data('max') );
                     _that._settings.disabled = $input.prop("disabled");
 
