@@ -1165,6 +1165,11 @@ header {
   transition: border-color .3s ease, box-shadow .3s ease, -webkit-box-shadow .3s ease;
 }
 
+.counter-field.picker__counter-field {
+  height: 3.25rem;
+  padding: .875rem .5rem;
+}
+
 .counter-field__input {
   -webkit-box-flex: 1;
   -ms-flex: 1 1 1.625rem;
@@ -1178,6 +1183,11 @@ header {
   text-align: center;
 }
 
+.picker__counter-field .counter-field__input {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
 .counter-field__minus,
 .counter-field__plus {
   color: #9599AC;
@@ -1186,6 +1196,26 @@ header {
   -webkit-box-flex: 0;
   -ms-flex: 0 0 1.5rem;
   flex: 0 0 1.5rem;
+}
+
+.picker__counter-field .counter-field__minus,
+.picker__counter-field .counter-field__plus {
+  width: 1.5rem;
+  height: 1.5rem;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 1.5rem;
+  flex: 0 0 1.5rem;
+}
+
+.picker__counter-field .counter-field__minus .icons,
+.picker__counter-field .counter-field__plus .icons {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.picker__counter-field .counter-field__minus .icons::before,
+.picker__counter-field .counter-field__plus .icons::before {
+  line-height: 1.5rem;
 }
 
 .counter-field__minus._disabled,
@@ -3708,19 +3738,9 @@ body._lock {
     padding: 0.25rem;
   }
 
-  .counter-field.picker__counter-field {
-    height: 3.25rem;
-    padding: .875rem .5rem;
-  }
-
   .counter-field__input {
     font-size: .875rem;
     line-height: 1.25rem;
-  }
-
-  .picker__counter-field .counter-field__input {
-    font-size: 1rem;
-    line-height: 1.5rem;
   }
 
   .counter-field__minus,
@@ -3741,26 +3761,6 @@ body._lock {
   .counter-field__minus .icons::before,
   .counter-field__plus .icons::before {
     line-height: 1.25rem;
-  }
-
-  .picker__counter-field .counter-field__minus,
-  .picker__counter-field .counter-field__plus {
-    width: 1.5rem;
-    height: 1.5rem;
-    -webkit-box-flex: 0;
-    -ms-flex: 0 0 1.5rem;
-    flex: 0 0 1.5rem;
-  }
-
-  .picker__counter-field .counter-field__minus .icons,
-  .picker__counter-field .counter-field__plus .icons {
-    width: 1.5rem;
-    height: 1.5rem;
-  }
-
-  .picker__counter-field .counter-field__minus .icons::before,
-  .picker__counter-field .counter-field__plus .icons::before {
-    line-height: 1.5rem;
   }
 
   .table-field-counter {
