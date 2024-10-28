@@ -1103,6 +1103,7 @@ $(document).ready(function(){
         maxWidth: 256,
         trigger: 'hover'
     });
+    Fancybox.bind("[data-fancybox]");
     $('body').on('change', '._inputFile', function(){
         let file = this.files[0], sBtnText = '',
             oParentBlock = $(this).closest('.field');
