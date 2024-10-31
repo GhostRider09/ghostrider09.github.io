@@ -1715,6 +1715,10 @@ body._lock {
   padding-top: 0.75rem;
 }
 
+.picker__radio-group-field:not(:last-child) {
+  padding-bottom: 1.25rem;
+}
+
 .picker__footer {
   padding: 1.5rem 0;
 }
@@ -2183,6 +2187,64 @@ body._lock {
 .item-radio__field .field__element {
   margin: 0;
   background-color: #F4F5F9;
+}
+
+.groupped-radio-field__title {
+  font-size: 20px;
+  line-height: 140%;
+  font-weight: 600;
+  padding-bottom: 0.75rem;
+}
+
+.groupped-radio-field__error {
+  color: #E80F0F;
+  font-size: 14px;
+  line-height: 142.85714%;
+  font-weight: 400;
+}
+
+.groupped-radio-field__list > * + * {
+  margin-top: .75rem;
+}
+
+.groupped-radio-field__sku {
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  padding: 0.75rem;
+  border-radius: 0.25rem;
+  background-color: #F4F5F9;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  border: 2px solid transparent;
+}
+
+.groupped-radio-field__sku:has(input.groupped-radio-field__input:checked) {
+  background-color: #FFFFFF;
+  border-color: #14BAD8;
+}
+
+.groupped-radio-field__name {
+  margin-right: auto;
+  font-size: 14px;
+  line-height: 142.85714%;
+  font-weight: 400;
+  padding-right: 0.5rem;
+}
+
+.groupped-radio-field__price {
+  font-size: 14px;
+  line-height: 142.85714%;
+  font-weight: 400;
+  color: #4B4F68;
+  padding-right: 0.5rem;
+}
+
+.groupped-radio-field div.groupped-radio-field__input {
+  margin: 0;
 }
 
 .page-title {
@@ -4219,6 +4281,26 @@ body._lock {
     line-height: 142.85714%;
   }
 
+  .groupped-radio-field__title {
+    font-size: 16px;
+    line-height: 150%;
+  }
+
+  .groupped-radio-field__error {
+    font-size: 12px;
+    line-height: 150%;
+  }
+
+  .groupped-radio-field__name {
+    font-size: 12px;
+    line-height: 150%;
+  }
+
+  .groupped-radio-field__price {
+    font-size: 12px;
+    line-height: 150%;
+  }
+
   .page-title {
     padding: .5rem 0 1.5rem;
   }
@@ -5084,6 +5166,16 @@ body._lock {
   }
 
   .item-radio:hover:not(:has(.field__element:disabled)) .field__element {
+    border-color: #14BAD8;
+  }
+
+  .groupped-radio-field__sku:hover {
+    background-color: #FFFFFF;
+    border-color: #14BAD8;
+    cursor: pointer;
+  }
+
+  .groupped-radio-field__sku:hover div.groupped-radio-field__input {
     border-color: #14BAD8;
   }
 
