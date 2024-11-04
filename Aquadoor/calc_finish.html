@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="vendors/fancybox/fancybox.umd.css">
+<link rel="stylesheet" href="css/icomoon.css">
+<link rel="stylesheet" href="vendors/tooltipster/css/tooltipster.bundle.min.css">
+<link rel="stylesheet" href="css/tooltipster.warmex.theme.css">
+<link rel="stylesheet" href="vendors/formstyler/jquery.formstyler.css">
+<link rel="stylesheet" href="css/formstyler.aquadoor.theme.css">
+<link rel="stylesheet" href="css/main.css">
+<title>Document</title>
+</head>
+<body class="order-type-2 no-title">
+    <div class="container">
+        <!-- header -->
+        <header>
+    <div class="head-logo">
+        <div class="head-logo__burger icon __icon-burger _show-main-menu"></div>
+        <div class="head-logo__logo"><a href="#"><img src="../img/logo-02.svg" alt="Aquadoor"></a></div>
+        <div class="head-logo__notifications">
+            <a href="#" class="head-logo__notification icon __icon-notice-ring-active"></a>
+        </div>
+    </div>
+    <div class="head-info">
+        <div class="head-info__contacts">
+            <a href="tel:88003502198" class="head-info__contact icon __icon-phone">8 800 350 2198</a>
+        </div>
+        <div class="head-info__cabinet">
+            <!-- предполагаю, что если отсюда будет делаться выбор, то он будет на модалке -->
+            <a href="#" class="head-info__label-cabinet icon __icon-user"><span>Иваненко Сигизмунд Венеаминович - (ИП)</span></a>
+        </div>
+        <div class="head-info__notifications">
+            <!-- notice-ring-active -->
+            <a href="#" class="head-info__notification icon __icon-notice-ring"></a>
+        </div>
+    </div>
+</header>
+
+        <div class="content-wrapper">
+            <!-- menu -->
+            <aside class="side-area _main-menu-area">    
+    <div class="side-area__content">
+        <button type="button" class="side-area__close close-btn icon __icon-close-only _close" data-target="._main-menu-area"></button>
+        
+        <div class="side-area__cabinet">
+            <a href="#" class="side-area__label-cabinet icon __icon-user"><span>Иваненко Сигизмунд Венеаминович - (ИП)</span></a>
+        </div>
+        
+        <nav class="main-menu">
+            <ul class="main-menu__group">
+                <li class="main-menu__item">
+                    <a href="#" class="main-menu__link icon __icon-plus-in-circle">Сделать заказ</a>
+                </li>
+                <li class="main-menu__item main-menu__item--selected">
+                    <span class="main-menu__link icon __icon-page">История заказов</span>
+                </li>
+                <li class="main-menu__item">
+                    <a href="#" class="main-menu__link icon __icon-people">Заявки</span></a>
+                </li>
+            </ul>
+            <ul class="main-menu__group">
+                <li class="main-menu__item">
+                    <a href="#" class="main-menu__link icon __icon-copy-dir">Маркетинг</a>
+                </li>
+                <li class="main-menu__item main-menu__item--selected">
+                    <a href="#" class="main-menu__link main-menu__link--countable icon __icon-doc">
+                        <span>Новости</span>
+                        <div class="main-menu__counter">999</div>
+                    </a>
+                    <ul class="main-menu__submenu">
+                        <li class="main-menu__submenu-item __unread">
+                            <a href="#" class="main-menu__submenu-link">Коммерческие условия</a>
+                        </li>
+                        <li class="main-menu__submenu-item __selected __unread">
+                            <a href="#" class="main-menu__submenu-link">Новинки, изменения номенклатуры</a>
+                        </li>
+                        <li class="main-menu__submenu-item">
+                            <a href="#" class="main-menu__submenu-link">Акции</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="main-menu__item">
+                    <a href="#" class="main-menu__link icon __icon-manager">Поддержка</a>
+                </li>
+            </ul>
+        </nav>
+        
+        <footer>
+            <div class="menu-contacts">
+                <a href="tel:88003502198" class="menu-contacts__item icon __icon-phone">8 800 350 2198</a>
+            </div>
+        </footer>
+    </div>
+    <div class="side-area__overlay"></div>
+</aside>
+
+            <!-- content -->
+            <div class="page-content page-content--picker">
+                <p class="picker-breadcrumb-title">&nbsp;</p>
+                 
+                <form action="#">
+                    <div class="picker">
+                        <div class="picker__header">
+                            <div class="picker__progress step-progress">
+                                <div class="step-progress__container">
+                                    <div class="step-progress__items">
+                                        <div class="step-progress__item __finished"></div>
+                                        <div class="step-progress__item __finished"></div>
+                                        <div class="step-progress__item __finished"></div>
+                                        <div class="step-progress__item __finished"></div>
+                                        <div class="step-progress__item __finished"></div>
+                                        <div class="step-progress__item __active"></div>
+                                    </div>
+                                    <div class="step-progress__line"></div>
+                                </div>
+                            </div>
+                            <div class="picker__title __h3">Завершение настройки</div>
+                        </div>
+                        <div class="picker__body">
+                                                       
+                            <div class="picker__preview complect-preview">
+                                <div class="complect-preview__card">
+                                    <div class="complect-preview__image">
+                                        <img src="img/trash/complect/product_cut.png" alt="">
+                                    </div>
+                                    <div class="complect-preview__info">
+                                        <div class="complect-preview__title">
+                                            <span>Двери на 3й этаж, одностворчатые, 12 шт.</span>
+                                            <div class="complect-preview__price">12 000 000 ₽</div>
+                                        </div>
+                                        <div class="complect-preview__sizes sizes-info">
+                                            <div class="sizes-info__title">Габариты дверного проёма</div>
+                                            <div class="sizes-info__table">
+                                                <div class="sizes-info__row">
+                                                    <div class="sizes-info__label">Ширина</div>
+                                                    <div class="sizes-info__value">1100 мм</div>
+                                                </div>
+                                                <div class="sizes-info__row">
+                                                    <div class="sizes-info__label">Высота</div>
+                                                    <div class="sizes-info__value">2000 мм</div>
+                                                </div>
+                                                <div class="sizes-info__row">
+                                                    <div class="sizes-info__label">Толщина</div>
+                                                    <div class="sizes-info__value">60 мм</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="complect-preview__links">
+                                            <a href="javascript:void(0);" class="complect-preview__link icon-link">
+                                                <i class="icon __icon-edit-pencil"></i><span>Редактировать</span>
+                                            </a>
+                                            <a href="javascript:void(0);" class="complect-preview__link icon-link">
+                                                <i class="icon __icon-copy"></i><span>Дублировать</span>
+                                            </a>
+                                            <a href="javascript:void(0);" class="complect-preview__link icon-link">
+                                                <i class="icon __icon-trash"></i><span>Удалить</span>
+                                            </a>
+                                        </div> -->
+                                    </div>
+                                </div>
+                                <div class="complect-preview__accordeon accordeon">
+                                    <div class="accordeon__item __open">
+                                        <div class="accordeon__header"><span>Полотно</span></div>
+                                        <div class="accordeon__body">
+                                            <p>asdfasdf</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="picker__footer picker-footer">
+                            <div class="picker-footer__container">
+                                <div class="picker-footer__exit">
+                                    <a href="#">Выйти из конструктора</a>
+                                </div>
+                                <div class="picker-footer__error"></div>
+                                <div class="picker-footer__buttons">
+                                    <button type="button" class="btn btn--secondary">Назад</button>
+                                    <button type="button" class="btn btn--primary" >Сохранить комплектацию</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                                
+                                
+            </div>
+        </div>
+
+        <!-- овелей с волнами -->
+        <div class="overlay-half">
+            <div class="overlay-half__figure"></div>
+        </div>
+    </div>
+</body>
+
+<script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="vendors/inputmask/jquery.inputmask.min.js"></script>
+<script type="text/javascript" src="vendors/tooltipster/js/tooltipster.bundle.min.js"></script>
+<script type="text/javascript" src="vendors/formstyler/jquery.formstyler.min.js"></script>
+<script type="text/javascript" src="vendors/fancybox/fancybox.umd.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+</html>
