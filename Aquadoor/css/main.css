@@ -2207,6 +2207,10 @@ body._lock {
   margin-top: .75rem;
 }
 
+.groupped-radio-field__list > .field__item + .field__item {
+  padding-top: 0;
+}
+
 .groupped-radio-field__sku {
   -webkit-box-align: start;
   -ms-flex-align: start;
@@ -2214,7 +2218,7 @@ body._lock {
   -webkit-box-pack: end;
   -ms-flex-pack: end;
   justify-content: flex-end;
-  padding: 0.75rem;
+  padding-right: 0.75rem;
   border-radius: 0.25rem;
   background-color: #F4F5F9;
   -webkit-transition: all .3s ease;
@@ -2227,12 +2231,22 @@ body._lock {
   border-color: #14BAD8;
 }
 
+.groupped-radio-field__image {
+  width: 75px;
+  background-color: #FAFAFA;
+}
+
+.groupped-radio-field__image img {
+  max-width: 100%;
+}
+
 .groupped-radio-field__name {
   margin-right: auto;
   font-size: 14px;
   line-height: 142.85714%;
   font-weight: 400;
   padding-right: 0.5rem;
+  padding: .75rem .625rem .75rem .625rem;
 }
 
 .groupped-radio-field__price {
@@ -2240,11 +2254,11 @@ body._lock {
   line-height: 142.85714%;
   font-weight: 400;
   color: #4B4F68;
-  padding-right: 0.5rem;
+  padding: .75rem .625rem .75rem .75rem;
 }
 
 .groupped-radio-field div.groupped-radio-field__input {
-  margin: 0;
+  margin: .75rem 0;
 }
 
 .page-title {
