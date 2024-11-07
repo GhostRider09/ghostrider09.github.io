@@ -1206,6 +1206,18 @@ $(document).ready(function(){
             $product.removeClass('_selected');
         }
     })
+    .on('click', '.accordeon__header', function(e) {
+        let $item = $(this).closest('.accordeon__item');
+
+        if ( $item.hasClass('__open') ) {
+            $item.find('.accordeon__body').slideUp(300);
+            $item.removeClass('__open');
+        } else {
+            $item.find('.accordeon__body').slideDown(300);
+            $item.addClass('__open');
+        }
+        e.preventDefault();
+    })
     .on('input', '._filter-modal-elements input', function(){
         let $input = $(this), $icon = $input.parent().find('._filter-icon');
 
