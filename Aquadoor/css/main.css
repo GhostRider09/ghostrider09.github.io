@@ -988,8 +988,12 @@ header {
   background-color: #fff;
   color: #14BAD8;
   border-color: #E3E3ED;
-  -webkit-transition: background-color .3s ease,  border-color .3s ease,  color .3s ease;
-  transition: background-color .3s ease,  border-color .3s ease,  color .3s ease;
+  -webkit-transition: background-color .3s ease, 
+ border-color .3s ease, 
+ color .3s ease;
+  transition: background-color .3s ease, 
+ border-color .3s ease, 
+ color .3s ease;
 }
 
 .btn--secondary:disabled,
@@ -1720,11 +1724,13 @@ body._lock {
   line-height: 142.85714%;
   font-weight: 400;
   margin: 0 auto;
-  width: 808px;
+  width: 100%;
+  max-width: 808px;
 }
 
 .picker {
-  width: 808px;
+  width: 100%;
+  max-width: 808px;
   background-color: #ffffff;
   border: none;
   border-radius: 0.25rem;
@@ -2544,6 +2550,36 @@ body._lock {
   line-height: 142.85714%;
   font-weight: 400;
   color: #4B4F68;
+}
+
+.bar-progress__label {
+  font-size: 14px;
+  line-height: 142.85714%;
+  color: #9599AC;
+  font-weight: 700;
+}
+
+.bar-progress progress {
+  width: 100%;
+  height: .75rem;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  overflow: hidden;
+  border-radius: .5rem;
+  background-color: #E3E3ED;
+}
+
+.bar-progress progress::-moz-progress-bar {
+  background-color: #14BAD8;
+}
+
+.bar-progress progress::-webkit-progress-bar {
+  background-color: #E3E3ED;
+}
+
+.bar-progress progress::-webkit-progress-value {
+  background-color: #14BAD8;
 }
 
 .page-title {
@@ -4631,6 +4667,11 @@ body._lock {
   }
 
   .characteristic-preview__price {
+    font-size: 12px;
+    line-height: 150%;
+  }
+
+  .bar-progress__label {
     font-size: 12px;
     line-height: 150%;
   }
