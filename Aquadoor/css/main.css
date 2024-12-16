@@ -988,12 +988,8 @@ header {
   background-color: #fff;
   color: #14BAD8;
   border-color: #E3E3ED;
-  -webkit-transition: background-color .3s ease, 
- border-color .3s ease, 
- color .3s ease;
-  transition: background-color .3s ease, 
- border-color .3s ease, 
- color .3s ease;
+  -webkit-transition: background-color .3s ease,  border-color .3s ease,  color .3s ease;
+  transition: background-color .3s ease,  border-color .3s ease,  color .3s ease;
 }
 
 .btn--secondary:disabled,
@@ -1079,6 +1075,11 @@ header {
 
 .field--error.field:not(:is(.field--radio, .field--checkbox, .field--select)) .field__element {
   border-color: #E80F0F;
+}
+
+.field--small .field__element {
+  height: 40px;
+  padding: 8px 12px;
 }
 
 .field__element::-webkit-input-placeholder {
@@ -1200,6 +1201,10 @@ header {
   height: 52px;
   z-index: 1;
   width: 100%;
+}
+
+.field--small .field__wrapper {
+  height: 40px;
 }
 
 .field__item {
@@ -2555,6 +2560,7 @@ body._lock {
 .bar-progress__label {
   font-size: 14px;
   line-height: 142.85714%;
+  font-weight: 400;
   color: #9599AC;
   font-weight: 700;
 }
@@ -3462,7 +3468,7 @@ body._lock {
 }
 
 .order-form {
-  padding-bottom: 3rem;
+  padding-bottom: 5rem;
 }
 
 .order-type-2 .order-form {
@@ -3471,6 +3477,21 @@ body._lock {
 
 .order-form__page-title {
   padding: 0.25rem 0 1.75rem;
+}
+
+.order-form__page-title--with-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  gap: .5rem;
 }
 
 .order-form__summary {
@@ -3962,6 +3983,26 @@ body._lock {
   background: #FFFFFF;
   color: #151B3D;
   border-color: #46CBE3;
+}
+
+.search-form {
+  background-color: #ffffff;
+  margin-bottom: 1.5rem;
+  padding: .75rem 1rem;
+  border-radius: .25rem;
+}
+
+.search-form__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: .5rem;
 }
 
 .news-list {
