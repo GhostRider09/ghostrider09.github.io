@@ -112,6 +112,7 @@
                     <button type="button" class="btn btn--primary _show-modal" data-content="._loading">Loading</button><br/>
                     <button type="button" class="btn btn--primary _show-modal" data-content="._products-modal">Номенклатура</button><br/>
                     <button type="button" class="btn btn--primary _show-modal" data-content="._characteristics-modal">Характеристики</button><br/>
+                    <button type="button" class="btn btn--primary _show-modal" data-content="._characteristics-as-prod-modal">Характеристики как на бою</button><br/>
                     <button type="button" class="btn btn--primary _show-modal" data-content="._success">На всякий случай, модалка с центральных позиционированием</button><br/>
                 </div>
 
@@ -168,7 +169,7 @@
                 </div>
 
                 <!-- Номенклатура -->
-                <div class="modal _modern-modal _products-modal open">
+                <div class="modal _modern-modal _products-modal">
                     <div class="modal__body">
                         <div class="modal__container">
                             <div class="modal__close"><span class="icons __icon-close-only"></span></div>
@@ -359,7 +360,7 @@
                                     <div class="choose-produts__item">
                                         <div class="choose-produts__product characteristics-card _characteristic-choose">
                                             <div class="characteristics-card__image">
-                                                <img src="img/trash/order/product-01.jpg"">
+                                                <a href="img/trash/order/product-01.jpg" data-fancybox class="fancy-image"><img src="img/trash/order/product-01.jpg"></a>
                                             </div>
                                             <div class="characteristics-card__body">
                                                 <div class="characteristics-card__title __subtitle2">
@@ -379,7 +380,7 @@
                                     <div class="choose-produts__item">
                                         <div class="choose-produts__product characteristics-card _characteristic-choose">
                                             <div class="characteristics-card__image">
-                                                <img src="img/trash/order/product-01.jpg"">
+                                                <a href="img/trash/order/product-01.jpg" data-fancybox class="fancy-image"><img src="img/trash/order/product-01.jpg"></a>
                                             </div>
                                             <div class="characteristics-card__body">
                                                 <div class="characteristics-card__title __subtitle2">
@@ -396,6 +397,91 @@
                                             </div>
                                         </div>
                                     </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+                <!-- Характеристики с группировкой - как на бою -->
+                <div class="modal _modern-modal _characteristics-as-prod-modal open">
+                    <div class="modal__body">
+                        <div class="modal__container">
+                            <div class="modal__close"><span class="icons __icon-close-only"></span></div>
+                            <div class="modal__title __h3">Характеристики</div>
+                            <div class="modal__content">
+                                
+                                <div class="choose-produts __characteristics">
+                                    <div class="choose-produts__group">
+                                        <div class="choose-produts__title-group __subtitle1">Отбойная пластина с установкой</div>
+                                        <div class="choose-produts__item">
+                                            <div class="choose-produts__product characteristics-card characteristics-card--no-image _characteristic-choose">
+                                                <div class="characteristics-card__body">
+                                                    <div class="characteristics-card__title __subtitle2">
+                                                        отбойная пластина 300 мм с двух сторон - 2 400 руб.
+                                                    </div>
+                                                </div>                                                
+                                                <div class="characteristics-card__preview">
+                                                    <a href="img/trash/order/product-01.jpg" data-fancybox><i class="icons __icon-page characteristics-card__preview-icon"></i></a>                                                    
+                                                </div>
+                                                <div class="characteristics-card__actions">
+                                                    <div class="characteristics-card__action field field--checkbox">
+                                                        <label class="field__item"><input type="checkbox" name="checkbox1" class="field__element inputCheckbox" /></label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="choose-produts__item">
+                                            <div class="choose-produts__product characteristics-card characteristics-card--no-image _characteristic-choose">
+                                                <div class="characteristics-card__body">
+                                                    <div class="characteristics-card__title __subtitle2">
+                                                        отбойная пластина 200 мм с двух сторон - 2 000 руб.
+                                                    </div>
+                                                    <div class="characteristics-card__description"></div>
+                                                </div>
+                                                <div class="characteristics-card__actions">
+                                                    <div class="characteristics-card__action field field--checkbox">
+                                                        <label class="field__item"><input type="checkbox" name="checkbox1" class="field__element inputCheckbox" /></label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>                                    
+                                    <div class="choose-produts__group">
+                                        <div class="choose-produts__title-group __subtitle1">Модели с остеклением</div>
+                                        <div class="choose-produts__item">
+                                            <div class="choose-produts__product characteristics-card characteristics-card--no-image _characteristic-choose">
+                                                <div class="characteristics-card__body">
+                                                    <div class="characteristics-card__title __subtitle2">
+                                                        С/О (армированное, Модель2) - 3 000 руб.
+                                                    </div>
+                                                    <div class="characteristics-card__description"></div>
+                                                </div>
+                                                <div class="characteristics-card__actions">
+                                                    <div class="characteristics-card__action field field--checkbox">
+                                                        <label class="field__item"><input type="checkbox" name="checkbox1" class="field__element inputCheckbox" /></label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="choose-produts__item">
+                                            <div class="choose-produts__product characteristics-card characteristics-card--no-image _characteristic-choose">
+                                                <div class="characteristics-card__body">
+                                                    <div class="characteristics-card__title __subtitle2">
+                                                        С/О (прозрачное с бронир. пленкой, модель 5) - 6 000 руб.
+                                                    </div>
+                                                    <div class="characteristics-card__description"></div>
+                                                </div>
+                                                <div class="characteristics-card__actions">
+                                                    <div class="characteristics-card__action field field--checkbox">
+                                                        <label class="field__item"><input type="checkbox" name="checkbox1" class="field__element inputCheckbox" /></label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>                                    
                                 </div>
 
                             </div>
