@@ -1926,6 +1926,26 @@ body._lock {
   margin-left: 10px;
 }
 
+.switcher-field__container {
+  width: 100%;
+}
+
+.switcher-field__item {
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: .75rem;
+}
+
+.switcher-field__label {
+  font-size: 16px;
+  line-height: 150%;
+  font-weight: 600;
+}
+
 .complect-list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2280,6 +2300,7 @@ body._lock {
 .item-radio__price {
   color: #4B4F68;
   padding-top: 1.5rem;
+  white-space: nowrap;
 }
 
 .item-radio__field {
@@ -2370,6 +2391,7 @@ body._lock {
   font-weight: 400;
   color: #4B4F68;
   padding: .75rem .625rem .75rem .75rem;
+  white-space: nowrap;
 }
 
 .groupped-radio-field div.groupped-radio-field__input {
@@ -4333,6 +4355,38 @@ body._lock {
   color: #9599AC;
 }
 
+.__pt-0_75 {
+  padding-top: 0.75rem;
+}
+
+.__pt-1 {
+  padding-top: 1rem;
+}
+
+.__pt-1_25 {
+  padding-top: 1.25rem;
+}
+
+.__pt-1_5 {
+  padding-top: 1.5rem;
+}
+
+.__pb-0_75 {
+  padding-bottom: 0.75rem;
+}
+
+.__pb-1 {
+  padding-bottom: 1rem;
+}
+
+.__pb-1_25 {
+  padding-bottom: 1.25rem;
+}
+
+.__pb-1_5 {
+  padding-bottom: 1.5rem;
+}
+
 @media (min-width: 992px) {
   .table__td--product {
     min-width: 13rem;
@@ -4672,6 +4726,11 @@ body._lock {
   .picker-footer__error {
     font-size: 12px;
     line-height: 150%;
+  }
+
+  .switcher-field__label {
+    font-size: 14px;
+    line-height: 142.85714%;
   }
 
   .complect-small-card__links a {
