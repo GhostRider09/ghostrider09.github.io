@@ -2415,6 +2415,9 @@ body._lock {
 
 .complect-preview__image {
   width: 22.5rem;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 22.5rem;
+  flex: 0 0 22.5rem;
   background-color: #FAFAFA;
   text-align: center;
 }
