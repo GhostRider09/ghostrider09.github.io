@@ -2911,7 +2911,6 @@ body._lock {
 
 .characteristics-card__image img {
   max-width: 100%;
-  width: 82px;
 }
 
 .characteristics-card__body {
@@ -5019,6 +5018,10 @@ body._lock {
     flex: 1 1 100%;
     width: 100%;
     margin-bottom: 0.75rem;
+  }
+
+  .characteristics-card__image img {
+    width: 82px;
   }
 
   .characteristics-card__body {
