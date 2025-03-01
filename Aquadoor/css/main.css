@@ -1749,6 +1749,11 @@ body._lock {
   -ms-flex-direction: column;
   flex-direction: column;
   margin: auto;
+  max-height: calc(100vh - 128px);
+}
+
+.picker.__list {
+  max-height: none;
 }
 
 .picker__header {
@@ -1795,11 +1800,15 @@ body._lock {
 }
 
 .picker__body {
-  padding: 1.25rem 0;
+  padding: 1.25rem .5rem 1.25rem 0;
+  overflow: auto;
+  max-height: calc(100vh - 380px);
+  min-height: 200px;
 }
 
 .__list .picker__body {
   padding-bottom: 0;
+  max-height: none;
 }
 
 .picker__title-group {
