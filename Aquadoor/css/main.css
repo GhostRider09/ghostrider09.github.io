@@ -655,6 +655,11 @@ header {
   transition: color .3s ease;
 }
 
+.menu-label {
+  padding: 0 1.25em 0 1.5em;
+  text-align: center;
+}
+
 .page-content {
   width: calc(100% - 240px);
   position: relative;
@@ -954,6 +959,17 @@ header {
 
 .fancybox__container {
   z-index: 1000000;
+}
+
+.developer-label {
+  font-size: 12px;
+  line-height: 150%;
+  color: #9599AC;
+}
+
+.developer-label a {
+  color: #9599AC;
+  text-decoration: underline;
 }
 
 .btn {
@@ -3309,8 +3325,9 @@ body._lock {
   height: 100vh;
   position: relative;
   z-index: 3;
-  min-height: 480px;
+  min-height: 680px;
   background-color: transparent;
+  padding-bottom: 2.5rem;
 }
 
 .auth-block {
@@ -3353,6 +3370,15 @@ body._lock {
 
 .auth-block__footer p {
   color: #4B4F68;
+}
+
+.auth-label {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  bottom: .5rem;
 }
 
 .not-found-page {
@@ -5561,6 +5587,10 @@ body._lock {
 
   .accordeon__header:hover {
     cursor: pointer;
+  }
+
+  .developer-label a:hover {
+    color: #14BAD8;
   }
 
   .btn:hover {
