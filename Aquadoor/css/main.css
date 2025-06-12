@@ -657,7 +657,6 @@ header {
 
 .menu-label {
   padding: 0 1.25em 0 1.5em;
-  text-align: center;
 }
 
 .page-content {
@@ -4436,6 +4435,10 @@ body._lock {
 }
 
 @media (min-width: 992px) {
+  .menu-label {
+    text-align: center;
+  }
+
   .table__td--product {
     min-width: 13rem;
   }
